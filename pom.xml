@@ -9,5 +9,6 @@
   <modules>
   	<module>pdfbox-rest-api</module>
   	<module>pdfbox-rest-client</module>
+  	<module>pdfbox-rest-application</module>
   </modules>
 </project>
