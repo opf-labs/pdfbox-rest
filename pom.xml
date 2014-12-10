@@ -8,5 +8,6 @@
   <description>Jersey REST web services wrapping of PDFBox</description>
   <modules>
   	<module>pdfbox-rest-api</module>
+  	<module>pdfbox-rest-client</module>
   </modules>
 </project>
