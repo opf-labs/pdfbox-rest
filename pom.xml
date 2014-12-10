@@ -6,4 +6,7 @@
   <packaging>pom</packaging>
   <name>PDFBox REST Web Services</name>
   <description>Jersey REST web services wrapping of PDFBox</description>
+  <modules>
+  	<module>pdfbox-rest-api</module>
+  </modules>
 </project>
