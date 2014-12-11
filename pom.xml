@@ -1,14 +1,64 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.verapdf.pdfbox</groupId>
-  <artifactId>pdfbox-rest</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>PDFBox REST Web Services</name>
-  <description>Jersey REST web services wrapping of PDFBox</description>
-  <modules>
-  	<module>pdfbox-rest-api</module>
-  	<module>pdfbox-rest-client</module>
-  	<module>pdfbox-rest-application</module>
-  </modules>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.verapdf.pdfbox</groupId>
+	<artifactId>pdfbox-rest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>PDFBox REST Web Services</name>
+	<description>Jersey REST web services wrapping of PDFBox</description>
+    <developers>
+        <developer>
+            <name>Carl Wilson</name>
+            <email>carl@openpreservation.org</email>
+            <organization>The Open Preservation Foundation</organization>
+        </developer>
+    </developers>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.source.version>1.7</jdk.source.version>
+        <jdk.target.version>1.7</jdk.target.version>
+        <junit.version>4.12</junit.version>
+        <dropwizard.version>0.7.0</dropwizard.version>
+    </properties>
+    <modules>
+        <module>pdfbox-rest-api</module>
+        <module>pdfbox-rest-client</module>
+        <module>pdfbox-rest-application</module>
+    </modules>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${jdk.source.version}</source>
+                    <target>${jdk.target.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+		        <artifactId>dropwizard-core</artifactId>
+		        <version>${dropwizard.version}</version>
+	        </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
