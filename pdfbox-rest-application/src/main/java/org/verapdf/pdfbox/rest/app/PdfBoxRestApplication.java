@@ -7,6 +7,10 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import org.verapdf.pdfbox.rest.resource.AboutResource;
+
+import com.yunspace.dropwizard.xml.XmlBundle;
+
 /**
  * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
@@ -33,15 +37,15 @@ public class PdfBoxRestApplication extends Application<PdfBoxRestConfiguration> 
 
     @Override
     public void initialize(Bootstrap<PdfBoxRestConfiguration> bootstrap) {
-	// nothing happening here yet
-	
+        final XmlBundle xmlBundle = new XmlBundle();
+        bootstrap.addBundle(xmlBundle);
     }
 
     @Override
     public void run(PdfBoxRestConfiguration configuration,
 	    Environment environment) throws Exception {
-	// nothing to do yet
-	
+	final AboutResource resource = new AboutResource();
+	environment.jersey().register(resource);
     }
 
     

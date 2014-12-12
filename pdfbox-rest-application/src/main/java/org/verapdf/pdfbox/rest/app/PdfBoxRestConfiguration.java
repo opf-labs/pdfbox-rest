@@ -3,20 +3,21 @@
  */
 package org.verapdf.pdfbox.rest.app;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import io.dropwizard.Configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import io.dropwizard.Configuration;
 
 /**
  * Configuration object for the Dropwizard app.
  * Reads defaults from configuration YAML file.
+ * This class has to be "mutable" due to Dropwizard requirements.
  * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
  */
 public class PdfBoxRestConfiguration extends Configuration {
-    @NotEmpty
+    //
+    // FIXME: This isn't mapping to the port option from the config
+    //
     private int port;
 
     /**
