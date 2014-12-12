@@ -14,15 +14,10 @@ import org.junit.Test;
 
 
 /**
- * TODO JavaDoc for TestEnvironments
- * TODO Tests for TestEnvironments
- * TODO Implementation for TestEnvironments
- * 
- * @author  <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>
- *          <a href="https://github.com/carlwilson">carlwilson AT github</a>
+ * @author  <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
+ *
  * @version 0.1
  * 
- * Created 27 Jul 2012:13:21:26
  */
 @SuppressWarnings("static-method")
 public class TestEnvironments {
