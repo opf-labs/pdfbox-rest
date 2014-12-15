@@ -1,0 +1,2502 @@
+Instruction manual, part 4: CLASSIFICATION AND CODING INSTRUCTIONS FOR
+DEATH RECORDS, 1999-2001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________________________________________
+
+This instruction manual was prepared by the Division of Vital Statistics.  Questions
+regarding this manual and other related Vital Statistics Cooperative Program activities should
+be directed to the Data Acquisition and Evaluation Branch, Division of Vital Statistics,
+National Center for Health Statistics, P.O. Box 12214, Research Triangle Park, North
+Carolina 27709.  Questions concerning analysis of mortality data should be referred to the
+Mortality Statistics Branch, Division of Vital Statistics, National Center for Health Statistics,
+6525 Belcrest Road, Presidential Building, Room 820, Hyattsville, Maryland 20782.
+
+
+                                CONTENTS
+
+                                                                    Page
+Section I - Introduction . . . . . . . . . . . . . . . . . . . . . . . . . .1
+
+Section II - General Procedures for Electronic Files . . . . . . . . . . .  1
+           Receipts  . . . . . . . . . . . . . . . . . . . . . . . . . . .  1
+           Processing. . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+
+Section III - File Layout and Coding Instructions. . . . . . . . . . . . .  2
+           1999-2001 Mortality-Demographic File Layout . . . . . . . . . . .3
+           Receipt Date  . . . . . . . . . . . . . . . . . . . . . . . . .  4
+           State File Number . . . . . . . . . . . . . . . . . . . . . . . .4
+           Name of Decedent  . . . . . . . . . . . . . . . . . . . . . . . .4
+           Alias or Cross Reference Indicator. . . . . . . . . . . . . . . .7
+           Sex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+           Date of Death . . . . . . . . . . . . . . . . . . . . . . . . .  8
+           Social Security Number  . . . . . . . . . . . . . . . . . . . .  9
+           Age . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+           Date of Birth . . . . . . . . . . . . . . . . . . . . . . . . . 12
+           Decedent's Birthplace . . . . . . . . . . . . . . . . . . . . . 12
+           Type of Place of Death  . . . . . . . . . . . . . . . . . . . . 13
+           Geographic Place of Death . . . . . . . . . . . . . . . . . . . 15
+           Marital Status  . . . . . . . . . . . . . . . . . . . . . . . . 15
+           Occupation of Decedent  . . . . . . . . . . . . . . . . . . . . 16
+           Type of Industry. . . . . . . . . . . . . . . . . . . . . . . . 16
+           Residence of Decedent . . . . . . . . . . . . . . . . . . . . . 17
+           Hispanic Origin of Decedent . . . . . . . . . . . . . . . . . . 24
+           Race  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+           Education of Decedent . . . . . . . . . . . . . . . . . . . . . 30
+           Father's Surname  . . . . . . . . . . . . . . . . . . . . . . . 32
+           Injury at Work. . . . . . . . . . . . . . . . . . . . . . . . . 32
+           Underlying Cause. . . . . . . . . . . . . . . . . . . . . . . . 32
+           Autopsy . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+           Birth Certificate Number. . . . . . . . . . . . . . . . . . . . 32
+           Year of Birth . . . . . . . . . . . . . . . . . . . . . . . . . 33
+           State of Birth. . . . . . . . . . . . . . . . . . . . . . . . . 33
+
+                     Table of Contents - Continued
+
+                                                                    Page
+
+Appendix A - Geographic Codes for State of Death, Residence and Birthplace . . . . . 34
+Appendix B - Other Entries Reported on Records and Code for Race . . . . . 36
+Appendix C - Indian Tribes in the United States, Canada, and Mexico. . . . 41
+Appendix D - List of Major Cities in the United States and the States
+                        in Which They Are Located. . . . . . . . . . . . . 45
+Appendix E - Interpretations of Atlas Notations  . . . . . . . . . . . . . 46
+Appendix F - Largest City and Code By State of Residence . . . . . . . . . 47
+Appendix G - Other Entries Reported on Records and Code for Hispanic Origin. . . . . 49
+Appendix H - Other Entries Reported on Records and Code for Education. . . . . . . . 50
+Appendix I -   Sampling Rate . . . . . . . . . . . . . . . . . . . . . . . 51
+
+Illustration 1 - Certificate of Death. . . . . . . . . . . . . . . . . . . 52
+Vital Statistics Instruction Manuals . . . . . . . . . . . . . . . . . . . 54
+
+
+
+
+                CLASSIFICATION AND CODING INSTRUCTIONS
+                     FOR DEATH RECORDS, 1999-2001
+
+
+
+
+Section I - Introduction
+
+    This manual documents specifications for coding and key entry of statistical items that will
+be tabulated from the death certificate by the National Center for Health Statistics (NCHS). 
+Primarily, these specifications are used by 54 registration areas of the United States (50 states, District of Columbia, New York City, Puerto Rico and The Virgin Islands) that submit 
+data to NCHS in electronic form through the Vital Statistics Cooperative Program (VSCP).  Under
+the terms of the VSCP contracts with NCHS, the registration area must incorporate NCHS
+specifications into their own procedures so that the resultant data files meet the needs of both
+NCHS and the registration area. Changes effective with 1999 are in bold print.
+
+
+Section II - General Procedures for Electronic Files
+
+    A.   Receipts
+
+                  All registration areas provide coded data to NCHS in electronic form (tapes,
+         diskettes and PC to PC).  These files include all of the deaths registered within their
+         jurisdiction for each calendar year.  In general, data are transmitted on a monthly
+         basis (but twice monthly is preferred). Transmittals take place at regular intervals
+         and contain any and all records received and initially processed in the state office
+         since the last transmittal to NCHS regardless of the month of the occurrence of the
+         event.  A record need not be "perfect" to qualify for transmittal.  Each regular data
+         transmittal shall contain all replacement records processed to date incorporating
+         updated information from any source.  For purposes of full utilization and release
+         of the data, states are expected to transmit the majority of records within six months
+         of occurrence and a complete and final version of all records by July 31.
+
+
+
+    B.   Processing
+
+                  As the files are received at NCHS-RTP, they are automatically checked for
+         completeness, individual item code validity, and unacceptable inconsistencies
+         between data items.  The registration area is notified of any problems.  In addition,
+         NCHS staff review the files on an ongoing basis to detect problems in overall
+         quality such as inadequate reporting for certain items, failure to follow NCHS
+         coding rules, and systems and software errors. Traditionally, quality assurance
+         procedures have been limited to review and analysis of differences between the
+         NCHS and registration area code assignments for a small sample of records.  In
+         recent years, this procedure has been augmented by analyses of year to year and
+         area to area variations in the data.  These analyses are based on preliminary
+         tabulations of the data that are cumulated on a year to date basis each month.  All
+         differences that are judged to have consequences for quality and completeness are
+         investigated by NCHS.  In the review process, statistical tests are used to call initial
+         attention to differences for possible follow-up.  As necessary, registration areas are
+         informed of differences encountered in the tables and asked to verify the counts or
+         to determine the nature of the differences.  Missing records (except those
+         permanently voided) and other problems detected by NCHS should be resolved and
+         corrections transmitted to NCHS in the same manner as for those corrections
+         identified by the registration area.
+
+Section III -File Layout and Coding Instructions
+
+    This section provides the code structure, coding instructions, and output file locations for each
+  item in the national data set.  
+
+    Changes were made to the items Date of Death (Year) and Date of Birth (Year) effective in 1999
+  to expand the fields to four digits.  The old locations for the years have been converted to
+  "Filler" and should be blank.
+
+    Changes were also made to the items Linked File Year of Birth and Linked File State of Birth
+  effective in 1999.  The Linked File Year of Birth was expanded to four digits, causing the
+  locations for Linked File State of Birth to change.
+
+
+
+Items                        File       Items                              File
+                             Location                                      Location
+
+Receipt Date (NCHS Use Only)   1 - 4    Education                          96 - 97
+Certificate Number             5 - 10   Father's Surname                   98 - 116
+Name of Decedent                        Injury at Work                     117
+   Last                       11 - 30   Underlying Cause (Deleted          118 -121
+   First                      31 - 45     effective 1994)
+   Middle Initial             46        Autopsy (Deleted Effective 1995)   122
+Alias                         47        Linked File: Birth Certificate     123-128
+Sex                           48        Number
+Date of Death                           Linked File: Year of Birth         129-132
+   Month                      49 - 50   Linked File: State of Birth        133-134
+   Day                        51 - 52   Date of Death Year                 135-138
+Filler                        53 - 54   Date of Birth Year                 139-142
+Social Security No.           55 - 63
+Age 
+   Units                      64
+   Number Units               65 - 66
+Date of Birth
+   Month                      67 - 68
+   Day                        69 - 70
+Filler                        71 - 73
+State of Birth                74 - 75
+Type of Place of Death        76
+Place of Death
+   State                      77 - 78
+   County                     79 - 81
+Marital Status                82
+Occupation of Decedent        83 - 85
+Type of Industry              86 - 88
+Place of Residence
+   State                      89 - 90
+   County/city                91 - 93
+Hispanic Origin               94
+Race                          95
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+RECEIPT DATE     1          January . . . . . . . . . .1  Computer generated.  For NCHS
+                            February. . . . . . . . . .2  use only.
+  Month                     March . . . . . . . . . . .3
+                            April . . . . . . . . . . .4  States submitting data in the NCHS
+                            May . . . . . . . . . . . .5  format should blank NCHS positions
+                            June. . . . . . . . . . . .6  1-4.
+                            July. . . . . . . . . . . .7
+                            August. . . . . . . . . . .8
+                            September . . . . . . . . .9
+                            October . . . . . . . . . .0
+                            November. . . . . . . . . .-
+                            December. . . . . . . . . .&
+
+  Day           2-3         01-31
+
+  Year           4          Last digit     
+
+STATE FILE      5-10                                       Left zero fill
+NUMBER
+
+NAME OF
+DECEDENT 
+(Applicable to
+NDI only)
+
+Last Name      11-30        Alpha, left justified          State record length may vary for
+                                                           name.  If separate fields are not
+First          31-45        Alpha, left justified          provided for components of name,
+                                                           this is acceptable so long as there is
+Middle           46         Alpha or blank                 a defined designation between each
+                                                           component.
+
+                                                           Surnames
+
+                                                           1.  If entire surname will not fit in
+                                                           the field, truncate it.
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+NAME OF                                                   2.  If the surname has space or
+DECEDENT -                                                apostrophes following prefixes, such
+Continued                                                 as Mac Pherson, O'Tolle, O'Mally,
+                                                          McDougal, remove the apostrophes
+                                                          and do not space between the prefix
+                                                          and the name.
+
+                                                          3. If more than one surname
+                                                          given, separated by a space or
+                                                          hyphen, key each name in the
+                                                          surname field, separated by space. 
+                                                          Key a separate cross reference
+                                                          record for each name after the first.
+
+                                                          4. If there appears to be more than
+                                                          one possible spelling of a surname,
+                                                          key the most likely version in the
+                                                          record.
+
+                                                          5. If the maiden name is given in
+                                                          addition to the married surname
+                                                          (Mary Jane Smith - nee Jones), drop
+                                                          the maiden name (Jones).
+
+                                                          6. Suffixes or generation identifiers
+                                                          are to be ignored, e.g., Jr., Sr.,
+                                                          3rd., II.
+
+                                                          7. Religious names, e.g.,
+                                                          Sister Mary Lawrence, should be
+                                                          keyed as follows: 
+                                                          Last Name: Lawrence 
+                                                          First Name:  Sister Mary 
+                                                          Middle Initial:  Blank
+
+                                                          First Name and Middle Initial
+
+                                                          1.  If the entire first name will not fit
+                                                          in the field, truncate it.
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+NAME OF                                                   2. If two first names and a
+DECEDENT -                                                middle name are given, key both
+Continued                                                 first given names (with a space
+                                                          between each name) in the first
+                                                          name field and key the middle initial
+                                                          in the middle initial field.
+
+                                                          Ex.:  Mary Ann Louise Jones
+                                                          Key:  Last Name:  Jones
+                                                                First Name:  Mary Ann
+                                                                Middle Initial:  L
+
+                                                          Ex.:  Mary Ann Jones
+                                                          Key:  Last Name:  Jones
+                                                                First Name:  Mary
+                                                                Middle Initial:  A
+
+                                                          3. If two middle initials are given,
+                                                          key first middle initial and ignore the
+                                                          second initial, e.g., Charles M. L.
+                                                          King; key Charles M King.
+
+                                                          4. Entries of "Baby Girl" or "Baby
+                                                          Boy" are to be keyed in the first
+                                                          name field.
+
+                                                          5. Entries with first initial and
+                                                          middle name, e.g., E. Charles Jones,
+                                                          should be keyed as initial for first
+                                                          name and initial for middle name.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+ALIAS OR         47         1 or blank                    This data element will be
+CROSS                                                     used in the NDI if the State
+REFERENCE                                                 currently has a procedure. 
+INDICATOR                                                 However, if the State does not
+                                                          provide for an alias or cross
+(Applicable to                                            reference in its procedures, this item
+NDI only)                                                 is not required.  When this item is
+                                                          used:
+
+                                                          1. If more than one surname is
+                                                          given, separated by a space or a
+                                                          hyphen, key each name in the
+                                                          surname field separated by a space. 
+                                                          Key a separate record for each name
+                                                          and enter the alias indicator in all
+                                                          records after the first.
+
+                                                          2. If the surname includes an "Also
+                                                          known as...", key a separate cross
+                                                          reference record for each "Also
+                                                          known as" name and enter the alias
+                                                          indicator in each record after the
+                                                          first.
+
+                                                          First Name and Middle Initial
+
+                                                          If the first name includes an "Also
+                                                          known as...", key a separate cross
+                                                          reference record for each "Also
+                                                          known as" name and enter the alias
+                                                          indicator in each record after the
+                                                          first.
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+SEX              48         Male. . . . . . . . . . . .1  If sex is not clearly identified, code
+                            Female. . . . . . . . . . .2  from name.  If name does not
+                            Not classifiable. . . . . .9  establish sex clearly, code "9."
+
+
+
+
+DATE OF DEATH   
+  MONTH        49-50        January . . . . . . . . . 01  If estimated date of death and date
+                            February. . . . . . . . . 02  found are given, both occurring in
+                            March . . . . . . . . . . 03  the same data year, enter estimated
+                            April . . . . . . . . . . 04  date of death.
+                            May . . . . . . . . . . . 05
+                            June. . . . . . . . . . . 06  If data year is different from
+                            July. . . . . . . . . . . 07  estimated date of death and date
+                            August. . . . . . . . . . 08  found, enter the date within the data
+                            September . . . . . . . . 09  year being processed.
+                            October . . . . . . . . . 10
+                            November. . . . . . . . . 11  If "date the person was last seen"
+                            December. . . . . . . . . 12  and the "date found" are given, both
+                            Not Classifiable. . . . . 99  occurring in the same data year,
+                                                          enter the "date the person was last
+  DAYS          1-52        01-31                         seen."
+                            Not Classifiable. . . . . 99
+                                                          If data year is different for the "date
+                                                          the person was last seen" and the
+                                                          "date found," enter the date within
+                                                          the data year being processed.
+
+  YEAR        135-138       Enter four digit year.        Year of death must be reported.
+
+
+
+Filler         53-54        Blank
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+SOCIAL          55-63       Numeric or blank.             1. Must have nine digits.
+SECURITY
+NUMBER                                                    2. If less than nine or partial number,
+                                                          skip the field.
+(Applicable to
+NDI only)                                                 3. If more than nine digits enter the
+                                                          first nine digits.
+
+                                                          4. If more than one Social Security
+                                                          number is reported, enter the first
+                                                          number in the original record.  Key a
+                                                          separate record for each additional
+                                                          SSN and enter the alias indicator in
+                                                          each record after the first.
+
+                                                          5.  If blank, skip.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+AGE
+
+  Unit             64       Years - less                  Enter highest order of age units.
+                            than 100. . . . . . . . . 0
+                            Years - 100 or
+                            more. . . . . . . . . . . 1
+                            Months. . . . . . . . . . 2
+                            Weeks . . . . . . . . . . 3
+                            Days. . . . . . . . . . . 4
+                            Hours . . . . . . . . . . 5
+                            Minutes . . . . . . . . . 6
+                            Not Classifiable. . . . . 9
+
+Number Of Units  65-66      Enter as stated
+                            Not Classifiable. . . . .99   1.  When age is stated as 100 years
+                                                          or more, unit code 1 represents the
+                                                          first digit of the number of units.
+
+                                                          Example:  Age 105 - code 1 for unit
+                                                          and 05 for number of units.
+
+                                                          2.  When age is stated as 12 years or
+                                                          less, compare date of birth and date
+                                                          of death to insure assignment of the
+                                                          correct unit code since months are
+                                                          sometimes erroneously reported as
+                                                          years.
+
+                                                          3. If entries of "few minutes" or
+                                                          "few hours" are given, code to
+                                                          appropriate unit and enter 99 for
+                                                          number of units.
+
+                                                          4.  If age is not stated, derive the
+                                                          age by reference to date of birth and
+                                                          date of death.  If date of birth is not
+                                                          given but unit is indicated as other
+                                                          than years, code the appropriate unit
+                                                          and enter 99 for number of units. If
+                                                          unit is indicated as years, code unit 9
+                                                          and number of units 99.
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+AGE - Cont.
+
+
+                                                          5. If age cannot be determined but
+                                                          entries of "newborn," "infant," etc.,
+                                                          appear on the certificate indicating
+                                                          the decedent was under 1 year old,
+                                                          code unit 5 and number of units 99.
+
+                                                          6. If age is not stated and date of
+                                                          birth and date of death are same,
+                                                          consider decedent under 1 year old
+                                                          and code unit 5 and number of
+                                                          units 99.
+
+                                                          7.  Fractions given in number of
+                                                          units should be ignored.
+
+                                                          8.  If number of units are given with
+                                                          approximately, about, etc., enter as
+                                                          stated.
+
+                                                          9.  If the number of units is given as
+                                                          a range, code the minimum of the
+                                                          range.
+
+                                                          Example:  Age 1-2 hours - code the
+                                                          number of units as 01.
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+DATE OF
+BIRTH
+
+  Month          67-68      January . . . . . . . . . 01  Code as reported.
+                            February. . . . . . . . . 02
+                            March . . . . . . . . . . 03
+                            April . . . . . . . . . . 04
+                            May . . . . . . . . . . . 05
+                            June. . . . . . . . . . . 06
+                            July. . . . . . . . . . . 07
+                            August. . . . . . . . . . 08
+                            September . . . . . . . . 09
+                            October . . . . . . . . . 10
+                            November. . . . . . . . . 11
+                            December. . . . . . . . . 12
+                            Not Classifiable. . . . . 99
+
+  Day            69-70      01-31
+                            Not Classifiable . . . . .99
+
+  Year          139-142     Enter four digit year.
+                            Not Classifiable . . . .9999
+
+
+Filler           71-73      Blank
+
+DECEDENT'S       74-75      State. . . . . . . . . 01-51  Refer to Appendix A for state codes.
+BIRTHPLACE                  Puerto Rico. . . . . . . .52
+(State)                     Virgin Islands . . . . . .53  When a county or city entry is
+                            Guam.. . . . . . . . . . .54  reported and State of Birth is not
+                            Canada . . . . . . . . . .55  specified, refer to the State of
+                            Cuba . . . . . . . . . . .56  occurrence, Part 8 Instruction
+                            Mexico . . . . . . . . . .57  Manual, Vital Records Geographic
+                            Remainder of                  Classification, 1995, and code to
+                            World. . . . . . . . . . .59  State of occurrence if the county or
+                            Not classifiable . . . . .99  city is listed in that State.  If the
+                                                          named city is not listed as an
+                                                          incorporated city for State of
+                                                          Occurrence, refer to the List of
+                                                          Major Cities, Appendix D, and code
+                                                          the State indicated for that city.  If
+                                                          not in List of Major Cities, code the
+                                                          State when the given city makes the
+                                                          State obvious (e.g., Richmond -
+                                                          code Virginia.)
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+TYPE OF          76         Hospital                      1. If the checkbox identity for place
+PLACE OF                    Inpatient. . . . . . . . . 1  of death is not on the certificate,
+DEATH                       Outpatient/ER. . . . . . . 2  determine the type of place of death
+                            DOA. . . . . . . . . . . . 3  using the facility name and patient
+                            Status unknown . . . . . . 4  status information.  Apply the same
+                                                          rules as if the checkbox detail was
+                            Other                         available.
+                            Nursing home . . . . . . . 5
+                            Residence of                  2. If place of death is blank, refer to
+                            Decedent . . . . . . . . . 6  the facility name and code 4 unless
+                            Other. . . . . . . . . . . 7  the facility name identifies the
+                            Not Classifiable . . . . . 9  facility as other than hospital.
+
+                                                          3.  Code 5 if place of death is blank
+                                                          or reported as "other" and the
+                                                          named facility is a long-term care
+                                                          facility that provides patient care
+                                                          such as retirement center, manor,
+                                                          old age home, rest home, restoration
+                                                          center, convalescent home, etc. 
+
+                                                          4.  Code 7 for entries such as
+                                                          doctor's office, orphanage, prison
+                                                          wards, public building, etc.
+
+                                                          5.  Prison hospitals are to be
+                                                          coded "1."
+
+                                                          6.  Code 1 if patient status is
+                                                          reported as "in hospital," "IN." "IH."
+                                                          "nursery," "ICU," "surgery," or
+                                                          "operating room."
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+TYPE OF                                                   7.  Street addresses are to
+PLACE OF                                                  be coded as follows:
+DEATH - Cont.
+                                                             Code 6 if place of death
+                                                             street address and 
+                                                             residence street address
+                                                             is same.
+
+                                                             Code 7 if place of death
+                                                             street address and
+                                                             residence street address
+                                                             is different.
+
+                                                          8.  If "hospice" is specified as
+                                                          "other," refer to facility name.  If
+                                                          facility name identifies hospital,
+                                                          code 1; nursing home or other long
+                                                          term care facility, code 5;
+                                                          otherwise, code 7.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+GEOGRAPHIC
+PLACE OF
+DEATH
+
+  State        77-78        Refer to Appendix A.          Enter appropriate code.
+
+  County       79-81        Refer to Part 8 Instruction
+                            Manual, Vital Records
+                            Geographic Classifi-
+                            cation, 1995.  Use
+                            code designated for
+                            "Balance of County" or
+                            "Entire County."   Code
+                            given for co-extensive or
+                            independent cities is to be
+                            used as county code.
+
+MARITAL          82         Married . . . . . . . . . .1  Other Entries
+STATUS                      Never married,                Annulled. . . . . . . . . . . . .2
+                            Single. . . . . . . . . . .2  Separated . . . . . . . . . . . .1
+                            Widowed . . . . . . . . . .3  Common law marriage . . . . . . .1
+                            Divorced. . . . . . . . . .4  Indian marriage . . . . . . . . .1
+                            Not Classifiable. . . . . .9  Never . . . . . . . . . . . . . .2
+                                                          NM. . . . . . . . . . . . . . . .2
+                                                          No. . . . . . . . . . . . . . . .9
+                                                          None. . . . . . . . . . . . . . .2
+                                                          Not married . . . . . . . . . . .9
+                                                          Unmarried . . . . . . . . . . . .9
+                                                          Yes . . . . . . . . . . . . . . .1
+
+                                                          If marital status is blank and age of
+                                                          decedent is less than 12 years,
+                                                          code "2."
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+OCCUPATION     83-85        See Industry and
+OF DECEDENT                 Occupation Coding for
+                            Death Certificates, Part 19
+                            (1998) and Alphabetical
+                            Index of Industries and
+                            Occupations, Part 19B
+                            (1998)
+
+                            Not Classifiable . . . .999
+
+
+TYPE OF        86-88        Not Classifiable . . . .990
+INDUSTRY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+RESIDENCE OF
+DECEDENT
+
+  State         89-90       Refer to Appendix A.          Enter appropriate code.
+
+  County/City   91-93       Refer to Part 8 Instruction   Rules for use of coding table (pages
+                            Manual, Vital Records         20-23) for Place of Residence of
+                            Geographic Classification,    Decedent.
+                            1995. (Use Section II only
+                            when certificates contain     Apply rules in sequential order. 
+                            no county entry.)          
+                            of table and stop.            If "rural" is entered, code by line 2
+
+                                                          If "rural" is not entered, find line
+                                                          item that fits reporting on certificate
+                                                          and heading that describes reporting
+                                                          in "City Limits Item."  Code
+                                                          according to instructions given when
+                                                          horizontal line and vertical column
+                                                          intersect.
+
+                                                          Example
+
+                                                          City but no county entry and outside
+                                                          of city limits.
+
+                                                          Select line 6A and column(b).
+                                                          Instruction where these intersect is
+                                                          to code "Balance of County 1/."
+
+                                                          Additional instructions:
+
+                                                          Disregard the name of a state,
+                                                          country, or city entered on the
+                                                          address line when an entry is
+                                                          reported in the space provided for
+                                                          these items.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+RESIDENCE OF                                              When the state, county, or city entry
+DECEDENT -                                                has obviously been typed on the
+Cont.                                                     incorrect line, consider the entry
+                                                          when classifying residence.
+
+                                                          If a city entry is reported with
+                                                          North, East, South, or West, check
+                                                          the atlas to determine if it is a
+                                                          separate geographic place or an
+                                                          inclusion of the named city.  If the
+                                                          named place is not listed in the atlas,
+                                                          consider the entry to be an inclusion
+                                                          of the city named (e.g., East Durham
+                                                          is not listed in the atlas, and,
+                                                          therefore, is considered to be an
+                                                          inclusion of the city of Durham).
+
+                                                          If county is reported and two cities
+                                                          are reported on the city line, check
+                                                          atlas to determine if one is an
+                                                          inclusion.  If not, code to city with
+                                                          the larger population.
+
+                                                          If no county entry is reported and
+                                                          the city is not listed in the Part 8
+                                                          Instruction Manual, Vital Records
+                                                          Geographic Classification, 1995,
+                                                          Section II, refer to the atlas to
+                                                          determine county. If atlas indicates
+                                                          city is listed in two counties, refer to
+                                                          the U.S. Census Population 1990,
+                                                          "Number of Inhabitants" and code to
+                                                          the county containing the largest
+                                                          part of the city's population.
+
+                                                          If New York City is reported as
+                                                          place of residence and no borough is
+                                                          reported, code to Manhattan
+                                                          Borough.
+
+
+
+
+
+
+CODING RULES TABLE FOR PLACE OF RESIDENCE OF DECEDENT
+_______________________________________________________________________________________
+                                       (a)                    (b)
+                                Inside City Limits    Inside City Limits
+                                                                      Yes                      No
+
+________________________________________________________________________________________
+1. Blank                      County/City of death 2/ County/City of death 2/
+________________________________________________________________________________________
+2. "Rural" entry                Balance of County     Balance of County
+________________________________________________________________________________________
+3. City listed in Geographic    City                  Balance of County
+   Code Manual (includes
+   independent and coextensive 
+   cities.)
+________________________________________________________________________________________
+4. City not listed in           Balance of County     Balance of County
+   Geographic Code Manual
+________________________________________________________________________________________
+5. County, but no city entry    Balance of County     Balance of County
+________________________________________________________________________________________
+6. State and city but no county
+   entry and State is same as 
+   State of Occurrence.
+   A.   City listed in Geographic         City        Balance of County 1/
+        Code Manual
+________________________________________________________________________________________
+   B.   City not listed in      Balance of County 1/  Balance of County 1/
+        Geographic Code Manual.
+________________________________________________________________________________________
+   C.   Atlas gives 2 or more   County of death         County of death
+        cities by same name in
+        different counties
+________________________________________________________________________________________
+   D.   City not in atlas      County/City of death 2/  County/City of death 2/
+________________________________________________________________________________________
+7. State and city, but no county
+   entry and State is different
+   from State of Occurrence
+   A. City listed in                  City                 Balance of County 1/
+      Geographic Code Manual
+__________________________________________________________________________________________
+
+   1/ Use atlas and other reference aids to establish county and/or population.  See Appendix E for rules on 
+   interpreting atlas notations.
+
+   If independent city or coextensive, use Section II, Part 8 Instruction Manual, Vital 
+   Records Geographic Classification, 1995.
+
+
+CODING RULES TABLE FOR PLACE OF RESIDENCE OF DECEDENT - continued
+_________________________________________________________________________________________
+           (c)                                                 (d)
+   Inside City Limits Item                     Inside City Limits Item
+   Not reported or item not on certificate           Not reported or item not on certificate
+   certificate but street address reported           and no street address reported
+                                                                                                                                                                             
+      County/City of death 2/                     County/City of death 2/
+                                                                                                                                                                              
+   Balance of County                           Balance of County
+_________________________________________________________________________________________
+   Balance of County if indicated as "rural,"        City
+   "RFD," "star route," "rural delivery."
+   All others, code to City.
+_________________________________________________________________________________________
+   Balance of County                           Balance of County
+
+_________________________________________________________________________________________
+   Balance of County                           Balance of County
+_________________________________________________________________________________________
+   Balance of County 1/ if indicated as "rural,"     City
+   "RFD," "star route," "rural delivery."  
+      All others, code to City.
+
+
+_________________________________________________________________________________________
+   Balance of County 1/                        Balance of County 1/
+
+_________________________________________________________________________________________
+
+   County of death                             County of death
+
+_________________________________________________________________________________________
+   County/City of death 2/                     County/City of death 2/
+_________________________________________________________________________________________
+
+   Balance of County 1/ if indicated as              City
+   "rural," "RFD," "star route," "rural 
+   delivery."  All others, code to City.
+
+_________________________________________________________________________________________
+
+2/ Use same rules as coding city and county of residence.
+
+
+CODING RULES TABLE FOR PLACE OF RESIDENCE OF DECEDENT - continued
+____________________________________________________________________________________________
+                                          (a)                    (b)
+                                  Inside City Limits      Inside City Limits
+                                         Yes                     No
+
+____________________________________________________________________________________________
+7.   (Continued)
+
+     B. City not listed in        Balance of County 1/    Balance of County 1/
+     Geographic Code Manual
+____________________________________________________________________________________________
+     C. Atlas gives 2 or more     City with largest       City with largest
+        cities by same name in    population              population
+        different counties
+____________________________________________________________________________________________
+     D. City not in atlas         Largest City of State   Largest City of State
+                                  of Residence 3/         of Residence 3/
+____________________________________________________________________________________________
+8.   State only specified with    County/City of death 2/ County/City of death 2/
+     no city or county entry and 
+     State is same as State
+     of Occurrence
+____________________________________________________________________________________________
+9.   State only specified with no Largest City of State   Largest City of State
+     city or county entry and     of Residence 3/         of Residence 3/
+     State is different from
+     State of Occurrence
+____________________________________________________________________________________________
+10.  A. Foreign Country -         Code in data positions 89-90.  Leave data positions
+                                  91-93 blank.            
+        55 Canada
+        56 Cuba
+        57 Mexico
+        59 Remainder of World
+
+     B. U.S. Possessions -        Code in data positions 89-90.  Leave data positions 
+                                  91-93 blank.
+        52 Puerto Rico
+        53 Virgin Islands
+        54 Guam
+____________________________________________________________________________________________
+11.  Two State entries            County/City of death 2/   County/City of death 2/
+____________________________________________________________________________________________
+12.  City and County entry but no  County/City of death 2/  County/City of death 2/
+     State entry
+____________________________________________________________________________________________
+     1/   Use atlas and other reference aids to establish county and/or population.  See Appendix E for rules on
+     interpreting atlas notations.
+
+     If independent city or coextensive, use Section II, Part 8 Instruction Manual, Vital Records Geographic
+     Classification, 1995.
+
+
+
+CODING RULES TABLE FOR PLACE OF RESIDENCE OF DECEDENT - continued
+_________________________________________________________________________________________
+               (c)                                         (d)
+     Inside City Limits Item                     Inside City Limits Item
+     Not reported or item not on certificate     Not reported or item not on certificate
+     but street address reported                     and no street address reported
+_________________________________________________________________________________________
+      Balance of County 1/                       Balance of County 1/
+
+
+
+_________________________________________________________________________________________
+   City with largest population                    City with largest population
+
+
+_________________________________________________________________________________________
+   Largest City of State of                   Largest City of State of
+   Residence 3/                               Residence 3/
+_________________________________________________________________________________________
+   County/City of death 2/                    County/City of death 2/
+
+
+
+_________________________________________________________________________________________
+   Largest City of State Residence 3/                   Largest City of State of Residence 3/
+
+
+
+_________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+_________________________________________________________________________________________
+   County/City of death 2/                    County/City of death 2/
+_________________________________________________________________________________________
+   County/City of death 2/                    County/City of death 2/
+
+_________________________________________________________________________________________
+2/ Use same rules as coding city and county of residence.
+
+3/ See Appendix F for city.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+HISPANIC         94         Non-Hispanic. . . . . . . .0  When there is neither a "Hispanic
+ORIGIN OF                   Mexican . . . . . . . . . .1  Item" nor an "Ancestry Item" on
+DECEDENT                    Puerto Rican. . . . . . . .2  the certificate then code 9.
+                            Cuban . . . . . . . . . . .3
+                            Central or South              Refer to Appendix G for additional
+                            American (Spanish speaking    Hispanic entries and codes as well
+                            countries only) . . . . . .4  as specific entries for categories 4
+                            Other and unknown             and 5.
+                            Hispanic. . . . . . . . . .5
+                            Not Classifiable. . . . . .9  For registration areas having the
+                                                          "Hispanic" item, follow
+                                                          instructions 1-8:
+
+                                                          1. If "No" is reported with a
+                                                          specified Hispanic entry in
+                                                          Appendix G, code the entry.
+
+                                                          2. If "No" is reported with no
+                                                          specified Hispanic entry in
+                                                          Appendix G, code 0.
+
+                                                          3. If "Yes" is reported with a
+                                                          specified Hispanic entry, assign the
+                                                          appropriate code of 1-5.
+
+                                                          4. If "Yes" is reported with no
+                                                          specified Hispanic entry in
+                                                          Appendix G, and entries for race
+                                                          item are reported as Mexican,
+                                                          Cuban, or Puerto Rican or any
+                                                          other Hispanic entry in
+                                                          Appendix G. assign the appropriate
+                                                          code of 1-5.
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+HISPANIC                                                  5. If "Yes" is reported with no
+ORIGIN OF                                                 specified Hispanic entry in
+DECEDENT -                                                Appendix G and there are no
+Cont.                                                     Hispanic entries in race item, as
+                                                          identified in 4 above, refer to
+                                                          birthplace.  If the birthplace is
+                                                          listed in Appendix G then assign
+                                                          the appropriate code of 1-5.  If
+                                                          birthplace is not listed in
+                                                          Appendix G, code 5. 
+
+
+                                                          6. If more than one entry is
+                                                          reported code first-listed Hispanic
+                                                          entry, e.g., for Mexican-Puerto
+                                                          Rican, code 1.
+
+                                                          7. If blank and entries for
+                                                          race item are reported as
+                                                          Mexican, Cuban, or Puerto 
+                                                          Rican or any Hispanic entries in
+                                                          Appendix G, assign the appropriate
+                                                          code of 1-5.
+
+                                                          8. If blank and there are no
+                                                          Hispanic entries in race item, as
+                                                          identified in 7 above, refer to
+                                                          birthplace.  If the birthplace is
+                                                          listed in Appendix G, then assign
+                                                          the appropriate code of 1-5. 
+                                                          Otherwise, code 9.
+
+                                                          For registration areas having an
+                                                          "ancestry" item, follow instructions
+                                                          9-12:
+
+                                                          9.  For all entries shown in
+                                                          Appendix G, assign the appropriate
+                                                          code of 1-5.  For all other entries 
+                                                          (including American), assign the
+                                                          code to 0.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+HISPANIC                                                  10.  If more than one entry is
+ORIGIN OF                                                 reported, code first  listed Hispanic
+DECEDENT -                                                entry, e.g., for Mexican-Puerto
+Cont.                                                     Rican, code 1; for Irish-Cuban,
+                                                          code 3.
+
+                                                          11.  If blank and entries for the
+                                                          race item are reported as Mexican,
+                                                          Cuban, or Puerto Rican or any
+                                                          Hispanic entry in Appendix G,
+                                                          assign the appropriate code of 1-5.
+
+                                                          12.  If blank and there are no
+                                                          Hispanic entries in the race item, as
+                                                          identified in 11 above, refer to
+                                                          birthplace.  If the birthplace is
+                                                          listed in Appendix G, assign the
+                                                          appropriate code of 1-5. 
+                                                          Otherwise, code 9.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+RACE             95         White                         The expanded Asian and Pacific
+                              includes Mexican,           Islander categories of A, B, C, D,
+                              Puerto Rican, and           and E are required only for the
+                              other Caucasian. . . . . 1  following funded registration areas: 
+                                                          California, Hawaii, Illinois, New
+                            Black. . . . . . . . . . . 2  Jersey, New York State,
+                                                          New York City, Texas and
+                            Indian                        Washington.  The remaining
+                              North American              registration areas may choose to
+                              Central American            use the expanded categories or
+                              South American              continue coding Asian Indian,
+                              Eskimo                      Korean, Samoan, Vietnamese and
+                              Aleut. . . . . . . . . . 3  Guamian to 8.
+
+                            Asian or Pacific Islander     Refer to Appendix B for other
+                              Chinese. . . . . . . . . 4  reported race entries.
+                              Japanese . . . . . . . . 5
+                              Hawaiian (includes          Refer to Appendix C for names of
+                                part-Hawaiian) . . . . 6  Indian tribes in the U.S., Canada,
+                              Filipino . . . . . . . . 7  and Mexico.
+                              Other. . . . . . . . . . 8
+                              Asian Indian . . . . . . A  1. If Hawaiian is reported with any
+                              Korean . . . . . . . . . B  other race, code Hawaiian.
+                              Samoan . . . . . . . . . C
+                              Vietnamese . . . . . . . D  2. If more than one race is reported
+                              Guamian. . . . . . . . . E  (except Hawaiian), code the first
+                                                          race listed.
+                            Multi-racial . . . . . . . F
+                                                          3. If more than one race is reported
+                            Other Entries. . . . . . . 0  with percentages or fractions given
+
+                            Not Reported . . . . . . . 9  (except Hawaiian), code the race
+                                                          having the higher percentage or
+                                                          fraction.  If the percentages or
+                                                          fractions are equal, code the first
+                                                          race listed.
+
+                                                          4. If more than one race is reported
+                                                          with a hyphen but without
+                                                          percentages (except Hawaiian),
+                                                          code the first race listed.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+RACE - Cont.                                              5.  If entry is "Col.,"
+                                                          "N," "Negro," "Color(ed),"
+                                                          "B," "Brown," "A.A." 
+                                                          "Afro-American," or "African
+                                                          American," code 2 (Black).
+
+                                                          6.  If the racial entry is
+                                                          "Asian," "Yellow," "Oriental," or
+                                                          "Mongolian," and birthplace is
+                                                          given as China, Japan, the
+                                                          Philippines, Hawaii, India,
+                                                          Korea, Vietnam, Samoa, or
+                                                          Guam, code to the appropriate
+                                                          group (code 4-7 or A-E if using the
+                                                          expanded code structure or code
+                                                          4-8 if not using the expanded code
+                                                          structure).  If birthplace is not one
+                                                          of these places, code 8 (other
+                                                          Asian or Pacific Islander).
+
+                                                          7.  If the racial entry is "Indian,"
+                                                          and birthplace is not in North,
+                                                          Central, or South America
+                                                          (including Caribbean Islands), code
+                                                          A (Asian Indian) if using the
+                                                          expanded code structure or code 8
+                                                          (other Asian or Pacific Islander) if
+                                                          not using the expanded code
+                                                          structure.
+
+                                                          8.  If "part___," or "1/4, 1/2,
+                                                          3/4____" is given as a single race
+                                                          entry, disregard the prefix and code
+                                                          race as reported.
+
+                                                          9. If a racial entry is reported that
+                                                          cannot be coded 1-8 or A - E,
+                                                          code 0 (Other Entries).
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+RACE - Cont.                                              10. If the item contains an entry of
+                                                          "?", "-", "Unknown" or is left
+                                                          blank, code 9 (Not Reported).
+
+                                                          11. Use code F for entries of
+                                                          "multi-racial," "biracial," "mixed,"
+                                                          and other synonymous terms.  Do
+                                                          not use code F when multiple races
+                                                          are reported.  In such cases, apply
+                                                          rules 2 through 4 above as
+                                                          applicable.
+
+                                                          Note:  States not mandated by law
+                                                          to code multi-racial as a separate
+                                                          category may continue to code
+                                                          these entries as '0'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+EDUCATION      96-97        Elementary Or                 Refer to Appendix H for other
+OF DECEDENT                 Secondary                     entries on records.     
+
+                            00-12                         1. If education is blank, refer to
+                                                          age.  If decedent is less than 4
+                            College
+                                                          years of age, code education "00"
+                            1 year . . . . . . . . . .13  (no education).  If age is 4 years or
+                            2 years. . . . . . . . . .14  more, code education "99" (not
+                            3 years. . . . . . . . . .15  classifiable).
+                            4 years. . . . . . . . . .16
+                            5+ years . . . . . . . . .17  2. Code the highest grade
+                            Not Classifiable . . . . .99  completed.
+
+                                                          3.  If two or more levels of
+                                                          education are reported for the
+                                                          decedent, code the highest level
+                                                          classifiable  to codes other than 99.
+
+                                                          Example:
+
+                                                          Elementary
+                                                             Or
+                                                          Secondary    College      Code
+
+                                                             12             2 yrs. Tech     12
+                                                           Blank          2 yrs. Tech     99
+                                                             12             2 yrs.              14
+
+                                                          4.  If the entry for college is
+                                                          reported as a partial year or
+                                                          indication that a full year has not
+                                                          been completed and no other entry
+                                                          is reported (e.g., one semester, one
+                                                          quarter, two quarters, etc.),
+                                                          code 12.
+
+                                                          5.  If year is reported with a
+                                                          fraction or symbol such as +, -, ?,
+                                                          etc., ignore fraction or other
+                                                          symbol and code year as stated.
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+EDUCATION                                                 6.  If two or three semesters, three
+OF DECEDENT                                               or four quarters, or two or three
+- Cont.                                                   trimesters is the only  entry
+                                                          reported in the college block,
+                                                          code 13.
+
+                                                          7. If entry is reported as "ALL" in
+                                                          elementary/secondary block, code
+                                                          12.  If entry is reported as "ALL"
+                                                          in college block, code 16.
+
+                                                          8.  If entry in college block is
+                                                          "A.A." or "A.S.," code 14. 
+
+                                                          9.  If entry in college block is
+                                                          "B.B.A.," "B.A.," "A.B.," or
+                                                          "B.S.," code 16.
+
+                                                          10.  If entry in college block is
+                                                          "A.M.," "M.A.," "M.Sc.," "M.D.,"
+                                                          "D.V.M.," "D.D.S.," D.D.M.,"
+                                                          "D.O.," L.L.B.," "Ph.D.," or other 
+                                                          advanced degree, code 17.
+
+                                                          11.  When symbols such as "+,"
+                                                          "-," " ?," "/," etc., are reported in
+                                                          either block and no other entry is
+                                                          reported, code 99.  If an entry is
+                                                          reported in either block  with a
+                                                          symbol reported in the other block,
+                                                          disregard symbol and code entry as
+                                                          stated.
+
+                                                          12.  If entry is R.N. or B.S. in
+                                                          Nursing, code as follows:
+
+                                                           R.N . . . . . . . . . . . . . . . .14
+                                                          2 R.N. . . . . . . . . . . . . . . .14
+                                                          3 R.N. . . . . . . . . . . . . . . .15
+                                                          4 R.N. . . . . . . . . . . . . . . .16
+                                                          B.S. in Nursing. . . . . . . . . . .16
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+FATHER'S       98-116      Alpha, left justified or blank. Follow rules for decedent's
+SURNAME                                                    surname.  This item is required for
+(Applicable to                                             females only but is acceptable for
+NDI only)                                                  all decedents.
+
+INJURY AT
+WORK            117         Yes. . . . . . . . . . . . .1  Code as reported without reference
+                            No . . . . . . . . . . . . .2  to other items or information on
+                            Not classifiable . . . . . .9  the certificate.
+
+UNDERLYING    118-121       Item deleted effective 1994    Locations 118-121 should be
+CAUSE                                                      blank.
+
+AUTOPSY         122         Item deleted effective 1995
+
+                                          9                Code 9 for this item.
+
+BIRTH
+CERTIFICATE    123-128      Blank if not infant death.     Left zero fill.
+NUMBER
+
+                                                          Applicable to infant deaths (less
+                                                          than 1 year of age) to produce
+                                                          linked file only.  Use the original
+                                                          certificate number assigned to the
+                                                          matching birth certificate by the
+                                                          State in which the birth occurred.
+
+
+
+
+
+
+
+
+
+Item          Output        Code Structure                Coding Instructions
+              Position(s)
+
+YEAR OF        129-132      Enter four digit year.
+BIRTH
+                            Blank if not infant death.    Applicable to infant deaths (less
+                                                          than 1 year of age) to produce
+                                                          linked file only.  Enter four digit
+                                                          year of birth from matching birth
+                                                          certificate.
+
+STATE OF        133-134     States and 
+BIRTH                       Possessions. . . . . 01-54
+
+                            Canada . . . . . . . . .55
+
+                            Cuba . . . . . . . . . .56
+
+                            Mexico . . . . . . . . .57
+
+                            Remainder of the 
+                            World. . . . . . . . . .59
+
+                            New York City 
+                            (Bronx, Brooklyn,
+                            Manhattan, Queens, Staten
+                            Island). . . . . . . . .60
+
+                            Blank if not infant death.    Applicable to infant deaths (less
+                                                          than 1 year of age) to produce
+                                                          linked file only.  Enter state of birth
+                                                          from matching birth certificate.  If
+                                                          birth occurred in New York City
+                                                          (Bronx, Brooklyn, Manhattan,
+                                                          Queens, Staten Island) then code
+                                                          '60'.  If the state of birth is
+                                                          unknown, code '99'.  Otherwise
+                                                          refer to Appendix A.
+
+
+
+Appendix A
+Geographic Codes for State of Death, Residence, and Birthplace
+
+
+Code    State              Abbrev.    Code   State              Abbrev.
+  01    Alabama             AL         28     Nebraska             NE
+  02    Alaska              AK         29     Nevada               NV
+  03    Arizona             AZ         30     New Hampshire        NH
+  04    Arkansas            AR         31     New Jersey           NJ
+  05    California          CA         32     New Mexico           NM
+  06    Colorado            CO         33     New York             NY
+  07    Connecticut         CT         34     North Carolina       NC
+  08    Delaware            DE         35     North Dakota         ND
+  09   District of Columbia DC         36     Ohio                 OH
+  10    Florida             FL         37     Oklahoma             OK
+  11    Georgia             GA         38     Oregon               OR
+  12    Hawaii              HI         39     Pennsylvania         PA
+  13    Idaho               ID         40     Rhode Island         RI
+  14    Illinois            IL         41     South Carolina       SC
+  15    Indiana             IN         42     South Dakota         SD
+  16    Iowa                IA         43     Tennessee            TN
+  17    Kansas              KS         44     Texas                TX
+  18    Kentucky            KY         45     Utah                 UT
+  19    Louisiana           LA         46     Vermont              VT
+  20    Maine               ME         47     Virginia             VA
+  21    Maryland            MD         48     Washington           WA
+  22    Massachusetts       MA         49     West Virginia        WV
+  23    Michigan            MI         50     Wisconsin            WI
+  24    Minnesota           MN         51     Wyoming              WY
+  25    Mississippi         MS         52     Puerto Rico          PR
+  26    Missouri            MO         53     Virgin Islands       VI
+  27    Montana             MT         54     Guam                 GU
+ 
+
+Geographic Codes for State of Death, Residence, and Birthplace- Continued
+ 
+             55        Canada
+             55        Canadian Provinces
+                       Alberta (Alta.)
+                       British Columbia (B.C.)
+                       Great Northwest Territories (GNWT or NWT)
+                       Manitoba (Man.)
+                       New Brunswick (N.B.)
+                       Newfoundland (Nfld.)
+                       Nova Scotia (N.S.)
+                       Ontario (Ont.)
+                       Prince Edward Island (PEI)
+                       Quebec, Province of Quebec (Que. or P.Q.)
+                       Saskatchewan (Sask.)
+                       Yukon Territory (Y.T.)
+             56        Cuba
+             57        Mexico
+             59        Remainder of World
+ 
+ Note: Remember to distinguish between the Country of Georgia (in former Soviet Union)
+ which is coded to Remainder of World (59) and the State of Georgia which is coded to 11.
+ 
+ 
+Appendix B
+
+Other Entries Reported on Records and Code for Race
+
+The expanded Asian and Pacific Islander categories of A, B, C, D, and E are required only for the
+following funded registration areas:  California, Hawaii, Illinois, New Jersey, New York State, New York
+City, Texas and Washington.  The remaining registration areas may choose to use the expanded categories
+or continue coding Asian Indian,  Korean, Samoan, Vietnamese and Guamian to 8.
+                                     
+ENTRY          CODE      
+Afghanistan . . 1
+African . . 2
+Aleut . . 3
+Algerian. . .1
+Alocona . . 0
+Ameriasian. . .8
+American. . .1
+Amish . . .1
+Anglo-Saxon . . 1
+Arabian . . 1
+Argentinian . . 1
+Armenian. . .1
+Aryan . . 1
+Asian Indian. . .8 or A
+Asiatic . . 8
+Assyrian. . .1
+Athapaskan  . . 3
+Australian. . .1
+Austrian. . .1
+Azores. . .1
+
+
+Bahamian. . .0
+Bangladeshi . . 8
+Basque  . . 1
+Bavarian     1
+Begri . . 0
+Belizian. . .0
+Bilalian. . .2
+Biracial. . .0 or F
+Blanc . . 1
+Bohemian. . .0
+Bolivian. . .1
+Brava (Bravo) . . 1
+Brazilian . . 1
+British Honduran. . .0 
+Burmese . . 8
+
+C . . 0
+Cajun . . .1 
+Cambodian . . 8 
+Canadian. . .1
+Cape Verde. . .2 
+Carib . . 0
+Caucasian . . 1
+Ceylonese . . 8
+Chamorro. . .8 or E
+Chamosso. . .0
+Chicano . . 1
+
+ENTRY       CODE     
+Chinese . . 4
+Chuukese. . .8
+Colestran . . 0
+Colombian . . 1
+Cosmopolitan. . .0
+Costa Rican . . 1
+Creole. . .1
+Crucian . . 1
+Cuban . . 1
+Czechoslovakian . . 1
+
+
+Dominican . . .2
+Dutch East Indian . . 8
+
+
+East Indian . . 8 or A
+East Indies . . .8
+Ebian . . 1
+Ecuadorian. . .1
+Egyptian. . .1
+English . . .1
+English-French. . .1
+English-Irish . . 1
+Eritrean. . .2
+Eskimoan. . .3
+Ethiopia(n) . . .2
+Eurasian. . .8
+European. . .1
+
+Fijian. . .8
+Filipino. . .7
+Finnish . . 1
+French. . .1
+French Canadian . . 1
+French Indian . . .3
+
+
+Georgian. . .1
+German. . .1
+Ghanaian. . .2
+Gilbertese. . .8
+Greek . . 1
+Guam(ian)(ese)  . . 8 or E
+Guatemalan. . .0
+Guyanese. . .0
+Gypsy . . 1 
+
+
+Haitian . . 2
+Hamitic . . 2
+Hawaiian. . .6
+Hebrew. . .1
+Hindu . . 8 or A
+Hispanic. . .1 
+Honduran. . .0
+Hungarian . . 1 
+
+
+ENTRY         CODE
+Icelandic . . 1
+India . . .8 or A
+Indian (North, Central and South  
+   American). . .3
+Indo-Aryan  . . 8 or A
+Indonesian. . .8
+Iran(ian) . . 1
+Iraqi . . 1
+Irish . . 1
+Islamic . . 1 
+Israelite . . 1
+Italian . . 1 
+
+Jackson (Jack) White. . .0
+Jamaican. . .2
+Japanese. . .5
+Java. . .8
+Jew . . 1
+Jordanian . . 1
+
+
+Kenyan. . .2
+Korean. . .8 or B
+Kuwaitian . . 1
+
+
+Ladina (Ladino) . . 1
+Laotian (Asian) . . .8
+Latin American. . .1
+
+
+Latvian . . 1
+Lebanese. . .1
+Liberian. . .2
+Libyan. . .1
+Lithuanian. . .1
+
+Mal.  . . 0
+Malada. . .0
+Malawian. . .2
+Malayan . . 8
+Maltese . . 1
+Maori . . 8
+Marshallese . . 8
+Marshenese. . .1
+Mauritian . . 1
+Mediterranean . . 1
+Melanesian. . .8
+Mestizo . . 0
+Mestizo-Inca. . .0
+Mexican . . 1
+Mexican Indian. . .3
+Micronesian . . 8
+Mixed . . 0 or F
+Mohammedan (Moslem) . . 1
+Moor. . .0
+Moroccan. . .1
+Mosotho . . .0
+Mugandan. . .2
+Mulatto . . 2
+ENTRY             CODE 
+Multi-racial. . .0 or F
+Muslim. . .1
+
+
+N/W . . 0
+Nassau  . . 2
+Native American . . 3
+Nepalese. . .8
+Nicaraguan. . .0
+Nigerian. . .2
+Nipponese (Nipon) . . 5
+Nordic. . .1
+Norwegian . . 1
+Nubian. . .2
+
+
+Occidental. . .1
+Octaroon. . .2
+Okinawan. . .5
+
+
+Pakistani . . 8
+Palauan . . .8
+Panamanian. . .0
+Parsi . . 1
+Persian . . 1
+Peruvian. . .1
+Phoenician. . .0
+Polish. . .1
+Polynesian  . . 8
+Ponapean. . .8
+Portuguese. . .1
+Puerto Rican. . .1
+Punjabi . .  8 or A
+
+Quadroon. . .2
+
+Red . . 3
+Romanian. . .1
+Rotanese. . .8
+Russian . . 1
+Ryukyan . . 5
+
+
+Saipanese . . 8
+Salvadorian . . 0
+Samoa(n)  . . 8 or C
+Santo-Domingo . . .2
+Saudi Arabia(n) . . 1
+Saxon(y). . .1
+Scandinavian  . . 1
+Scotch. . .1
+Selawik . . 3
+Semitic . . 1
+Serbian . . 1
+Servian . . 1
+Seychelloise  . . 2
+ENTRY       CODE
+Siamese . . 8
+Siamsh Am . . 0
+Sicilian. . .1
+Sikh. . .8 or A
+Singhalese. . .8
+Sino Burman . . 4
+Slovakian . . 1
+Soanish . . 0
+South American. . .1
+Spanish . . 1
+Sudanese. . .2
+Sunni . . 1
+Swedish . . 1
+Syrian. . .1
+
+
+Tahitian. . .8
+Taimskin. . .3
+Taiwanese . . 4
+Tamil-Ceylonese . . 8
+Tamil-Malayan . . 8
+Tanzanian . . 2
+Teutonic. . .1
+Thai. . .8
+Tibetan . . 8
+Tongan. . .8
+Trigueno. . .0
+Trinidadian . . 2
+Trukese . . 8
+Tunisian. . .1
+Turk. . .1
+
+Ubontilian. . .8
+Ugandan . . 2
+Ukranian. . .1
+Ulithian. . .0
+Ute . . 3
+
+
+Venezuela(n). . .1
+Vietnam(ese). . .8 or D
+
+
+W . . 1
+Welsh . . 1
+West Indies (Indian)  . . 2
+Wiam (White American) . . 1
+
+
+Yapanes . . 8
+Yemenite. . .1
+Yugoslavian . . 1
+
+
+Zoroastrian . . .1
+
+
+
+Appendix C
+
+Indian Tribes in the United States, Canada, and Mexico
+
+Abnaki
+Absentee-Shawnee
+Acoma
+Ak Chin  
+Alabama-Coushatt
+  Tribes of Texa
+Alsea 
+Apache
+Arapaho 
+Arikara
+Assiniboin      
+Atacapa         
+Athapaskan      
+Atsina          
+Aztec          
+Bear River      
+Beaver          
+Bella Coola     
+Beothuk         
+Blackfoot
+Boold Piegan    
+Blue Lake       
+Brotherton
+Caddo 
+Cakchiquel-lenca
+Calapooya  
+Carrier
+Catawba  
+Cattaraugus
+Cayuga
+Cayuse 
+Chasta Costa
+Chehalis
+Chemehuevi 
+Cherokee
+Chetco
+Cheyenne
+Cheyenne River Sioux
+Chickahominy
+Chickasaw
+Chinook 
+Chipewyan 
+Chippewa 
+Chippewa-Ojibwa
+Chiricahua Apache
+Chitimacha Choctaw
+Chol
+ Chontal
+Chorti
+Chuckchansi
+Chumash
+Clallam
+ Clatsop
+Clackamus
+Clear Lake
+Coast Salish
+Cochimi
+Cochiti
+Cocopa
+ Coeur D'Alene Tribe
+  of Idaho
+Cocopah
+ Columbia
+Colville
+Comox
+Comanche
+Concow
+Conquille
+Coushatta
+Covelo
+Cow Creek
+Cowichan
+Cowlitz
+Coyotero Apache
+Cree
+Creek
+Crow
+Crow Creek Sioux
+Dakota
+Delaware
+Diegueno
+Digger
+Dog Rib
+Duckwater
+Euchi
+Eyak
+Flathead
+Fort Hall Res. Tribe
+  of Idaho
+French Indian
+Gabrieleno
+Galice Creek 
+Gay Head
+Gosiute
+Gros Ventre       
+Haida
+Han
+Hare
+Hat Creek
+Hawasupai
+Hidatsa 
+Hoh
+Hoopa
+Hopi 
+Houma
+Hualapai
+Huastec
+Humboldt Bay
+Hupa
+Huron
+Illinois
+Ingalik
+Iowa
+Iroquois
+Isleta
+Jemez
+Joshua
+Juaneno 
+Jicarilla Apache
+Kaibah 
+Kalispel
+Kanosh Band of Paiutes
+Kansa 
+Karankawa
+Karok  
+Kaska
+Kaw
+Kawai                 
+Keresan Pueblos
+Kern River
+Kichai
+Kickapoo
+Kiowa
+Kiowa Apache 
+Kitamat 
+Klamath
+Klikitat 
+Koasati
+Kootenai Tribe of Idaho
+Kusa
+Kutchin
+Kutenai
+Kwakiutl
+Lac Courte Dreille
+Laguna
+Lakmuit
+Lipan Apache
+Lower Brule Sioux
+Luiseno
+Lummi
+Maidu
+Makah
+Malecite
+Mandan
+Maricopa
+Mary's River
+Mashpee
+Mattaponi
+Maya
+Mayo
+Mdewakanton Sioux
+Menominee
+Menomini
+Mequendodon
+Mescalero Apache
+Miami
+Micmac
+Mission Indians
+Missouri
+Miwok
+Mixe
+Mixtec
+Modoc
+Mohave
+Mohawk
+Mohegan
+Molala
+Monachi
+Mono
+Montagnais
+Montauk
+Muckleshoot
+Munsee
+Nambe
+Namsemond
+Nanticoke      
+Narragansett   
+Naskapi        
+Natchez        
+Navaho         
+Navajo         
+Nez Perce      
+Niantic        
+Nipmuck        
+Nisenan-Patwin 
+Nisqually      
+Nomelaki       
+Nooksak        
+Nootka         
+Northern Paiute
+Oglala Sioux   
+Okanogan       
+Omaha          
+Oneida         
+Onondaga       
+Opata          
+Opato          
+Osage          
+Oto            
+Otoe           
+Otomi
+Ottawa
+Ozette
+Paiute
+Pamunkey
+Panamint
+Papago
+Passamaquoddy
+Patwin         
+Pawnee         
+Pen d'Oreille  
+Penobscot      
+Peoria         
+Pequot         
+Picuris        
+Pima           
+Pit River      
+Pojoaque       
+Pomo           
+Ponca          
+Poosepatuck    
+Potawatomi     
+Potomac
+Powhatan
+Pueblos
+Puyallup
+Quapaw
+Quechan
+Quileute
+Quinaielt
+Quinault
+Rappahannock
+Rogue River
+Rosebud Sioux
+Sac and Fox
+Saginaw
+Salish
+Sandia
+San Felipe
+San Ildefonso
+San Juan
+San Lorenzo
+San Luis Obispo
+San Luiseno
+Sanpoil
+Sanpoil Nespelem
+Sant'ana
+Santa Barbara
+Santa Clara
+Santa Ynez
+Santee
+Santee Sioux
+Santiam
+Sauk and Fox
+Scaticook
+Sekane
+Seminole
+Seneca
+Seri
+Shasta
+Shawnee
+Shinnecock
+Shivwits Band of
+Paiutes
+Shoshone
+Shoshone-Bannock
+Shuswap
+Siouans
+Sioux
+Sisseton
+Sisseton-Wahpeton Sioux 
+Siuslaw                 
+Skagit Suiattle         
+Skokomish               
+Slave                   
+Smith River             
+Snake                   
+Snohomish               
+Snoqualmi               
+Songish Southern Paiute 
+Squaxin                 
+Stockbridge 
+Sumo-Mosquito 
+Suquamish
+Swinomish
+Taimskin
+Tanana 
+Tanoan Pueblos
+Taos
+Tarahumare
+Tarascan 
+Tawakoni 
+Tejon
+Tenino or Warm Springs  
+Tesuque
+Teton 
+Teton Sioux 
+Tillamook 
+Timucua 
+Thlinget 
+Tolowa 
+Tonawanda
+Tonkawa
+Tonto Apache
+Topinish 
+Totonac
+Tsimshian 
+Tulalip
+Tule River Indians      
+Tunica 
+Tuscarora
+Tututni   
+Umatilla 
+Umpqua
+Upper Chinook  
+Ute
+Waca
+Waicuri-Pericue
+Wailaki
+Walapai
+Walla Walla
+Wampanoag
+Wapato
+Warm Springs
+Wasco
+Washo
+Washoe
+Western Apache
+Western Shoshone
+Whilkut
+Wichita
+Wikchamni
+Wind River Shoshone
+Winnebago
+Wintu
+Wintun
+Wishram
+Wyandotte
+Xicaque
+Yahooskin
+Yakima
+Yamel
+Yana
+Yankton
+Yanktonnais Sioux
+Yaqui
+Yaquina
+Yavapai
+Yawilmani
+Yellow Knife
+Yerington Paiute
+Yokuts
+Yokuts-Mono
+Yomba Shoshone
+Yuchi
+Yuki
+Yuma
+Yurok
+Zacatec
+Zapotec
+Zia
+Zoque
+Zuni
+
+
+Appendix D
+
+List of Major Cities in the United States and the States in Which They are Locate
+     
+     Atlanta, Georgia
+     Baltimore, Maryland
+     Boston, Massachusetts
+     Buffalo, New York
+     Chicago, Illinois
+     Cincinnati, Ohio
+     Cleveland, Ohio
+     Dallas, Texas
+     Denver, Colorado
+     Detroit, Michigan
+     Houston, Texas
+     Indianapolis, Indiana
+     Los Angeles, California
+     Memphis, Tennessee
+     Milwaukee, Wisconsin
+     Minneapolis, Minnesota
+     New Orleans, Louisiana
+     New York, New York
+     Philadelphia, Pennsylvania
+     Pittsburgh, Pennsylvania
+     San Antonio, Texas
+     San Diego, California
+     San Francisco, California
+     Seattle, Washington
+     St. Louis, Missouri
+     Washington, District of Columbia
+     
+        
+                                        
+
+Appendix E
+
+Interpretations of Atlas Notations
+
+   1. If the notation "part of _____" or "population included in _____" appears, consider
+   the entry to be an inclusion of the city named and code accordingly.
+
+   2. If the notation "rural" and "mail to _____" or "no pop." appears, code to the balance
+   of the county.
+
+   3. If only the notation "mail to _____" or "population included with _____" appears,
+   code to the balance of the named county.  ("Population included with" refers to an
+   unincorporated place.)
+
+   4. If the notation "Station," "Branch of _____" or "Rural Station" appears, code to the
+   balance of county.
+
+   5. If the notation "Station of _____ P. O." appears, consider the entry to be an 
+   inclusion of the city named and code accordingly.
+
+
+Appendix F
+Largest City and Code by State of Residence
+
+State of Residence                NCHS Code           Largest City
+01    Alabama                        008              Birmingham
+02    Alaska                         001              Anchorage
+03    Arizona                        017              Phoenix
+04    Arkansas                       014              Little Rock
+05    California                     143              Los Angeles
+06    Colorado                       009              Denver
+07    Connecticut                    004              Bridgeport
+08    Delaware                       003              Wilmington
+09    District of Columbia           001              Washington
+10    Florida                        041              Jacksonville
+11    Georgia                        005              Atlanta
+12    Hawaii                         003              Honolulu
+13    Idaho                          001              Boise City
+14    Illinois                       034              Chicago
+15    Indiana                        027              Indianapolis
+16    Iowa                           012              Des Moines
+17    Kansas                         033              Wichita
+18    Kentucky                       017              Louisville
+19    Louisiana                      022              New Orleans
+20    Maine                          006              Portland
+21    Maryland                       003              Baltimore
+22    Massachusetts                  012              Boston
+23    Michigan                       025              Detroit
+24    Minnesota                      041              Minneapolis
+25    Mississippi                    017              Jackson
+26    Missouri                       028              Kansas City
+27    Montana                        002              Billings
+
+
+
+State of Residence                   NCHS Code        Largest City
+28    Nebraska                          011           Omaha
+29    Nevada                            005           Las Vegas
+30    New Hampshire                     008           Manchester
+31    New Jersey                        104           Newark
+32    New Mexico                        002           Albuquerque
+33    New York                          053           New York
+34    North Carolina                    009           Charlotte
+35    North Dakota                      003           Fargo
+36    Ohio                              034           Columbus
+37    Oklahoma                          025           Oklahoma City
+38    Oregon                            027           Portland
+39    Pennsylvania                      092           Philadelphia
+40    Rhode Island                      014           Providence
+41    South Carolina                    007           Columbia
+42    South Dakota                      007           Sioux Falls
+43    Tennessee                         030           Memphis
+44    Texas                             075           Houston
+45    Utah                              020           Salt Lake City
+46    Vermont                           001           Burlington
+47    Virginia                          022           Norfolk
+48    Washington                        034           Seattle
+49    West Virginia                     003           Charleston
+50    Wisconsin                         035           Milwaukee
+51    Wyoming                           002           Cheyenne
+52    Puerto Rico                       765           San Juan
+53    Virgin Islands                    001           Charlotte Amalie
+
+
+Appendix G
+Other Entries Reported on Records and Code for Hispanic Origin
+
+ENTRY                            CODE      
+
+Argentina (Argentino). . . . . . . .4
+ 
+Balearic Islands . . . . . . . . . .5
+Basque . . . . . . . . . . . . . . .5
+Belizian . . . . . . . . . . . . . .4
+Bolivian (Boliviano) . . . . . . . .4
+Boricua (Borinqueno) . . . . . . . .2
+Brazilian. . . . . . . . . . . . . .0
+
+Californio . . . . . . . . . . . . .5
+Canary Islands . . . . . . . . . . .5
+Castilian. . . . . . . . . . . . . .5
+Catalonia. . . . . . . . . . . . . .5
+Centroamericano. . . . . . . . . . .4
+Chicano. . . . . . . . . . . . . . .1
+Chile (Chileno). . . . . . . . . . .4
+Colombia (Colombiano). . . . . . . .4
+Costa Rica (Costarricense) . . . . .4
+Cuban (Cubano) . . . . . . . . . . .3
+
+Dominican Republic (Dominicano). . . . . . .4
+
+Ecuador (Ecuatoriano). . . . . . . .4
+El Salvador. . . . . . . . . . . . .4
+Espana . . . . . . . . . . . . . . .5
+Espanol. . . . . . . . . . . . . . .5
+
+Falkland Island. . . . . . . . . . .4
+Fernando Po. . . . . . . . . . . . .5
+
+Galapagos Islands. . . . . . . . . .4
+Guatemala (Guatemalteco) . . . . . .4
+
+
+Hispano . . 5
+Honduras (Hondureno). . .4
+
+Iberia (Ibero). . .5
+
+La Raza . . 4
+Latin American. . .5
+Latino. . .5
+
+Majorca . . 5
+Mallorca (Mallorquin) . . 5
+Mexican (Mexicano). . .1
+Mexican American. . .1
+
+Nicaragua (Nicaraguense). . .4
+
+Panama (Panameno) . . 4
+Paraguay (Paraguayo). . .4
+Peru (Peruano). . .4
+Puerto Rican (Puertorriqueno) . . 2
+
+Salvadoreno . . 4
+Spain . . 5
+Spaniard. . .5
+
+Uruguay (Uruguayo). . .4
+
+Valencian . . 5
+Venezuela (Venezolano). . .4
+
+                                 
+Appendix H
+Other Entries Reported on Records and Codes for Education
+
+College Entries                                          Code
+
+4 + 2 . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Post graduate . . . . . . . . . . . . . . . . . . . . . . 17
+16 mos. . . . . . . . . . . . . . . . . . . . . . . . . . 13
+         (convert months by dividing by 9) (1 yr. 7 mos.)
+3/4 . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.5 . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+1+1 N.T.. . . . . . . . . . . . . . . . . . . . . . . . . 13
+1500 hrs. . . . . . . . . . . . . . . . . . . . . . . . . 99
+10. . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+P. G. - 4 . . . . . . . . . . . . . . . . . . . . . . . . 99
+In 2nd year . . . . . . . . . . . . . . . . . . . . . . . 13
+B . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+BA with 1 yr. law . . . . . . . . . . . . . . . . . . . . 17
+Senior. . . . . . . . . . . . . . . . . . . . . . . . . . 15
+Soph. . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+College . . . . . . . . . . . . . . . . . . . . . . . . . 16
+University. . . . . . . . . . . . . . . . . . . . . . . . 16
+1 year Prep.  . . . . . . . . . . . . . . . . . . . . . . 99
+Yes . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4 semesters . . . . . . . . . . . . . . . . . . . . . . . 14
+Assoc. degree . . . . . . . . . . . . . . . . . . . . . . 14
+Graduate. . . . . . . . . . . . . . . . . . . . . . . . . 16
+6 months. . . . . . . . . . . . . . . . . . . . . . . . . 12
+2/3 . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Less than 3/4 or less than 9 mos. . . . . . . . . . . . . 12
+Technical or Trade School . . . . . . . . . . . . . . . . 99
+Junior College. . . . . . . . . . . . . . . . . . . . . . 14
+Juris Doctor. . . . . . . . . . . . . . . . . . . . . . . 17
+Masters . . . . . . . . . . . . . . . . . . . . . . . . . 17
+
+Elementary or Secondary Entries                           Code
+
+Kindergarten. . . . . . . . . . . . . . . . . . . . . . . 00
+Finished in service . . . . . . . . . . . . . . . . . . . 12
+G.E.D - Army. . . . . . . . . . . . . . . . . . . . . . . 12
+3 - graduate. . . . . . . . . . . . . . . . . . . . . . . 11
+Senior. . . . . . . . . . . . . . . . . . . . . . . . . . 11
+Soph. . . . . . . . . . . . . . . . . . . . . . . . . . . 09
+High School . . . . . . . . . . . . . . . . . . . . . . . 12
+Yes . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+GED . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Graduate. . . . . . . . . . . . . . . . . . . . . . . . . 12
+Elementary. . . . . . . . . . . . . . . . . . . . . . . . 06
+Secondary . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+                                   
+
+Appendix I
+Sampling Rate    
+                                                   Number of
+        Expected          Sampling  Percent     Sample Records
+  Volume of Records       Rate      Sample     Minimum Maximum
+    
+    Less than 1,200       1 in 1    100.00       -     1,199
+      1,200-  2,999       1 in 2     50.00      600    1,500
+      3,000-  5,999       1 in 5     20.00      600    1,200
+      6,000- 11,999       1 in 10    10.00      600    1,200
+     12,000- 14,999       1 in 20     5.00      600      750
+     15,000- 29,999       1 in 25     4.00      600    1,200
+     30,000- 59,999       1 in 50     2.00      600    1,200
+     60,000- 74,999       1 in 100    1.00      600      750
+     75,000-119,999       1 in 125    0.80      600      960
+    120,000-149,999       1 in 200    0.50      600      750
+    150,000-299,999       1 in 250    0.40      600    1,200
+        300,000 +         1 in 500    0.20      600      -
+            
+http://www.cdc.gov/nchs/data/std-dcrt.pdf
+
+Vital Statistics Instruction Manuals
+
+Part 1      Source Records and Control Specifications (1995)
+Part 2a     Instructions for Classifying the Underlying Cause of Death (1999)
+Part 2b     Instructions for Classifying Multiple Causes of Death (1999)
+Part 2c     ICD-10 ACME Decision Tables for Classifying Underlying Causes of Death (1999)
+Part 2d     NCHS Procedures for Mortality Medical Data System File Preparation and Maintenance
+            (1999)
+Part 2e     Non-Indexed Terms, Standard Abbreviations, and State Geographic Codes Used in Mortality
+            Data Classification (1995)
+Part 2f     ICD-10 TRANSAX Disease Reference Tables for Classifying Multiple Causes-of-Death
+            (1999)
+Part 2g     Data Entry Instructions for the Mortality Medical Indexing, Classification, and Retrieval
+            System (MICAR) (1999)
+Part 2h     Dictionary of Valid Terms for the Mortality Medical Indexing, Classification, and Retrieval
+            System (MICAR) (1992)
+Part 2i     MICAR Quick Reference Guide (1999)
+Part 3a     Classification and Coding Instructions for Live Birth Records (1999)
+Part 3b     Classification and Coding Instructions for Fetal Death Records (1999)
+Part 4 Demographic Classification and Coding Instructions for Death Records (1999)
+Part 5 Data Preparation of the Current Mortality Sample (1995)
+Part 6 Classification and Coding Instructions for Marriage Records (1995)
+Part 7 Classification and Coding Instructions for Divorce Records (1995)
+Part 8 Vital Records Geographic Classification (1995)
+Part 9 ICD-10 Underlying Cause of Death Lists for Tabulating Mortality Statistics (1999)
+Part 10     Classification and Coding Instructions for Induced Termination of Pregnancy Records (1993)
+Part 11     Computer Edits for Mortality Data (1999)
+Part 12     Computer Edits for Natality Data (1993)
+Part 18     Guidelines for Implementing Field and Query Programs for Registration of Births and Deaths
+            (1993)
+Part 19     Industry and Occupation Coding for Death Certificates (1998)
+Part 19B    Alphabetical Index of Industries and Occupations (1998)
+Part 20     Cause-of-Death Query Manual (1985)
+

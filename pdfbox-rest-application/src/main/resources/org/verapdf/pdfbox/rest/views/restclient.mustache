@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VeraPDF | PDFBox REST Client</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- Our theme -->
+    <link rel="stylesheet" href="/css/verapdf.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body role="document">
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>PDFBox Demonstrator</h1>
+            <p>Try the PDFBox REST web services.</p>
+        </div>
+        <div class="page-header">
+            <h1>Upload a PDF File</h1>
+        </div>
+        <form enctype="multipart/form-data">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" name="file">
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly />
+            </div>
+        </form>
+        <span class="help-block">
+            Select a file to upload.
+        </span>
+        <div class="panel  panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Results</h3>
+            </div>
+            <div class="panel-body">
+                <div class="input-group">
+                  <span class="input-group-addon">JS SHA1: </span>
+                  <input id="digest" type="text" class="form-control" placeholder="Javascript calculated hash of file" readonly="">
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">PDF/A Validation Report</h4>
+                        <p class="list-group-item-text"><pre id="results"></pre></p>
+                    </a>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/verapdf.js"></script>
+    <script src="/js/sha1.js"></script>
+</body>
+</html>

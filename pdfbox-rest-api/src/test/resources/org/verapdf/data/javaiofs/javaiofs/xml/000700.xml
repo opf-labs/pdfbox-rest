@@ -1,0 +1,1246 @@
+<?xml version="1.0"?>
+<metadata><Source>http://mercury.bio.uaf.edu/~falk_huettmann/nbii/SeaofOkhotskAvianInfluenzaSampling2008VengerySI_field_MMarkovetsNChernetsovFHuettmann_vers5.xml</Source>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Mikhail Markovets 1, Nikita Chernetsov 1, Falk Huettmann 2, 2008. 1.April-October: Biological Station, Rybachy, Kaliningrad Region, 238535, Russia; November-March: Ornithology lab, Zoological Institute, Russian Academy of Science (RAS), Universitetskaya embankment 1, St. Petersburg, 199034, Russia 2. EWHALE lab, INBRE Program, Biology and Wildlife Dept. Institute of Arctic Biology, University of Alaska Fairbanks.</origin>
+        <pubdate>2008</pubdate>
+        <title>Data from Avian Influenza (AI) Sampling with mistnets and other methods in Vengery estuary, Sakhalin Island, Russian Far East, summer 2008</title>
+        <geoform missing="True">
+        </geoform>
+        <serinfo>
+          <sername>Digital Dataset</sername>
+          <issue>NA</issue>
+        </serinfo>
+        <othercit>NA</othercit>
+        <onlink>na</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data set contains data for birds caught with mistnets and with other means for sampling Avian Influenza (AI). 457 samples were collected for Avian Influenza at Verengery and the fishermen village of Pogranichnoye . Venegery estuary is a large pristine wilderness area located on the Sea of Okhotsk in mid-east of Sakhalin Island, Russian Far East. These data were collected during fall migration in collaboration with the University of Alaska-Fairbanks, USA. It was assumed that some birds in that region link with Alaska. This dataset focuses mainly on seabirds, some passerines, shorebirds and sea lions. Measurements from caught species are reported in the dataset. Avian Influenza analysis of samples is coming forward, and will be published elsewhere. Data include traditional bird banding and opportunistic measurements of birds caught in the framework of the Russian Far East AI sampling campaign 2008. This dataset is part of a coordinated study done during spring and fall migration and with identical methods at the other 6 sites within the wider Sea of Okhotsk region, Russian Far East in 2006, 2007 and 2008. Data from the other study sites are also available online. An analysis of these data is coming forward; for details please contact authors and project collaborators.</abstract>
+      <purpose>These data were collected in order to link the potential occurrence of Avian Influenza in the Russian Far East and Hokkaido/Japan with morphometric measures for the same individuals. Data from this site are compatible with 6 other locations at 2006, 2007 and 2008 and where the same data where collected following an identical protocol. Findings from this study would allow to learn more about state of the birds, subspecies, migration tactics, flyways and Avian Influenza.</purpose>
+      <supplinf>The sampling and banding sites are geo-referenced. The Avian Influenza component of this study is currently in progress and will be reported elsewhere. For details, please contact authors. The Banding Protocol followed the 'revised European African Songbird Migration Network' standards (Bairlein et al. 1995; available online) and used the Kaiser fat score. The suggested field protocol is included in the methods section for transparency. The AI data are coming forward, they can be linked with this data set by the banding and individual id number. The AI data have a database of their own. Fully explained in Methodology; see protocol. The banding data are submitted to the Russian Ringing Center in Moscow. Bird Banding Center is located physically at: Institute of Ecology and Evolution, 33 Leninsky pr., Moscow 119071, electronically at: http://www.sevin.ru/menues1/index_eng.html . For inquiries, please write to its leader Dr. Konstantin Litvin, ring@bird.msk.ru</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>Unknown</begdate>
+          <enddate>Unknown</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>Current for 2006</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned for this dataset 2006</update>
+    </status>
+    <spdom>
+      <descgeog>Vengery River estuary, Sakhalin Region, Sea of Okhotsk, Russian Far East </descgeog>
+      <bounding>
+        <westbc>-158.42303</westbc>
+        <eastbc>-158.40921</eastbc>
+        <northbc>53.15811</northbc>
+        <southbc>53.05768</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Bird migration</themekey>
+        <themekey>Avian Influenza (AI)</themekey>
+        <themekey>Morphometric Data</themekey>
+        <themekey>Bird Banding</themekey>
+        <themekey>Sakhalin Island</themekey>
+        <themekey>Russia</themekey>
+        <themekey>Russian Far East</themekey>
+        <themekey>Alaska</themekey>
+        <themekey>Mistnetting</themekey>
+        <themekey>Flyway study</themekey>
+        <themekey>East Asian Australasian (EAA) Flyway</themekey>
+        <themekey>Vengery River estuary</themekey>
+      </theme>
+      <theme>
+        <themekt>National Park Service Theme Category Thesaurus</themekt>
+        <themekey>Bird migration</themekey>
+        <themekey>Avian Influenza</themekey>
+        <themekey>Russia</themekey>
+        <themekey>Russian Far East</themekey>
+        <themekey>Alaska</themekey>
+        <themekey>Mistnetting</themekey>
+        <themekey>Flyway study</themekey>
+        <themekey>East Asian Australasian (EAA) Flyway</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>Bird migration</themekey>
+        <themekey>Avian Influenza</themekey>
+        <themekey>Russia</themekey>
+        <themekey>Russian Far East</themekey>
+        <themekey>Alaska</themekey>
+        <themekey>Mistnetting</themekey>
+        <themekey>Flyway study</themekey>
+        <themekey>East Asian Australasian (EAA) Flyway</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Russia</placekey>
+        <placekey>Russian Far East</placekey>
+        <placekey>Sea of Okhotsk</placekey>
+        <placekey>Pacific Ocean</placekey>
+        <placekey>Sakhalin</placekey>
+        <placekey>Yushnow-Sakhalin</placekey>
+        <placekey>Coastal</placekey>
+        <placekey>Pogranichnoye</placekey>
+        <placekey>Vengery River estuary</placekey>
+      </place>
+      <place>
+        <placekt>National Park System Unit Name Thesaurus</placekt>
+        <placekey>Russia</placekey>
+        <placekey>Russian Far East</placekey>
+        <placekey>Sea of Okhotsk</placekey>
+        <placekey>Pacific Ocean</placekey>
+        <placekey>Kamchatka</placekey>
+        <placekey>Sakhalin</placekey>
+        <placekey>Yushnow-Sakhalin</placekey>
+        <placekey>Coastal</placekey>
+      </place>
+      <place>
+        <placekt>National Park System Unit Code Thesaurus</placekt>
+        <placekey>Russia</placekey>
+        <placekey>Russian Far East</placekey>
+        <placekey>Sea of Okhotsk</placekey>
+        <placekey>Pacific Ocean</placekey>
+        <placekey>Kamchatka</placekey>
+        <placekey>Sakhalin</placekey>
+        <placekey>Yushnow-Sakhalin</placekey>
+        <placekey>Coastal</placekey>
+      </place>
+    </keywords>
+    <taxonomy>
+      <keywtax>
+        <taxonkt>none. ITIS and Russian Taxonomy was used.</taxonkt>
+        <taxonkey>Eumetopias jubatus</taxonkey>
+        <taxonkey>Uria lomvia</taxonkey>
+        <taxonkey>Rissa tridactyla</taxonkey>
+        <taxonkey>Phylloscopus borealis</taxonkey>
+        <taxonkey>Larus schistisagus</taxonkey>
+        <taxonkey>Larus canus</taxonkey>
+        <taxonkey>Larus ridibundus</taxonkey>
+        <taxonkey>Puffinus tenuirostris</taxonkey>
+        <taxonkey>Cepphus carbo</taxonkey>
+        <taxonkey>Alcedo atthis</taxonkey>
+        <taxonkey>Phalacrocorax pelagicus</taxonkey>
+        <taxonkey>Apus pacificus</taxonkey>
+        <taxonkey>Histrionicus histrionicus</taxonkey>
+        <taxonkey>Actitis hypoleucos</taxonkey>
+        <taxonkey>Haliaeetus pelagicus</taxonkey>
+        <taxonkey>Gallinago stenura</taxonkey>
+        <taxonkey>Charadrius mongolus</taxonkey>
+        <taxonkey>Lanius cristatus</taxonkey>
+        <taxonkey>Sitta europaea</taxonkey>
+        <taxonkey>Dendrocopos minor</taxonkey>
+        <taxonkey>Garrulus glandarius</taxonkey>
+        <taxonkey>Muscicapa latirostris</taxonkey>
+        <taxonkey>Phylloscopus proregulus</taxonkey>
+        <taxonkey>Ficedula mugimaki</taxonkey>
+        <taxonkey>Regulus regulus</taxonkey>
+        <taxonkey>Phylloscopus fuscatus</taxonkey>
+        <taxonkey>Tarsiger cyanurus</taxonkey>
+        <taxonkey>Phylloscopus schwarzi</taxonkey>
+        <taxonkey>Acrocephalus bistrigiceps</taxonkey>
+        <taxonkey>Emberiza spodocephala</taxonkey>
+        <taxonkey>Luscinia calliope</taxonkey>
+        <taxonkey>Luscinia sibilans</taxonkey>
+        <taxonkey>Pyrrhula pyrrhula</taxonkey>
+        <taxonkey>Poecile montanus</taxonkey>
+        <taxonkey>Emberiza variabilis</taxonkey>
+        <taxonkey>Anthus hodgsoni</taxonkey>
+        <taxonkey>Troglodytes troglodytes</taxonkey>
+        <taxonkey>Plecotus austriacus</taxonkey>
+        <taxonkey>Ficedula narcissina</taxonkey>
+        <taxonkey>Motacilla cinerea</taxonkey>
+        <taxonkey>Motacilla taivana</taxonkey>
+        <taxonkey>Locustella fasciolata</taxonkey>
+        <taxonkey>Locustella ochotensis</taxonkey>
+        <taxonkey>Periparus ater</taxonkey>
+        <taxonkey>collection</taxonkey>
+        <taxonkey>single species</taxonkey>
+        <taxonkey>animals</taxonkey>
+        <taxonkey>vertebrates</taxonkey>
+      </keywtax>
+      <taxonsys>
+        <classsys>
+          <classcit>
+            <citeinfo>
+              <origin>Unknown</origin>
+              <pubdate>Unknown</pubdate>
+              <title missing="True">
+              </title>
+              <geoform missing="True">
+              </geoform>
+            </citeinfo>
+          </classcit>
+          <classmod>ITIS</classmod>
+        </classsys>
+        <taxonpro>Bird ID according to Mikhail Markovets and team, using standard Russian references; subspecies are often not well described for this region, and thus no data on this issue are given.</taxonpro>
+        <taxoncom>Species were indentified by Mikael Markovets; some species esacped the nets etc. and were not further recorded.</taxoncom>
+        <vouchers>
+          <specimen>no bird specimens, some feather and blood</specimen>
+          <reposit>
+            <cntinfo>
+              <cntperp>
+                <cntper>Falk Huettmann</cntper>
+                <cntorg>University of Alaska Fairbanks</cntorg>
+              </cntperp>
+              <cntaddr>
+                <addrtype>
+                </addrtype>
+                <address>419 IRVING 1</address>
+                <city>Fairbanks</city>
+                <state>Alaska</state>
+                <postal>99775</postal>
+                <country>USA</country>
+              </cntaddr>
+              <cntvoice>+1 907 474 7882</cntvoice>
+              <cntemail>fffh@uaf.edu</cntemail>
+            </cntinfo>
+          </reposit>
+        </vouchers>
+      </taxonsys>
+      <taxongen>Species were selected for a potential link with Avian Influenza, with Alaska and feasibility. (Note that Motacilla taivana and Muscicapa latirostris are not showing in ITIS and thus are missing from the taxonomic tree in the Metadata.</taxongen>
+      <taxoncl>
+        <taxonrn>Kingdom</taxonrn>
+        <taxonrv>Animalia</taxonrv>
+        <taxoncl>
+          <taxonrn>Phylum</taxonrn>
+          <taxonrv>Chordata</taxonrv>
+          <taxoncl>
+            <taxonrn>Subphylum</taxonrn>
+            <taxonrv>Vertebrata</taxonrv>
+            <taxoncl>
+              <taxonrn>Class</taxonrn>
+              <taxonrv>Aves</taxonrv>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Anseriformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Anatidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Anatinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Histrionicus</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Histrionicus histrionicus</taxonrv>
+                        <common>arlequin plongeur</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Apodiformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Apodidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Apodinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Apus</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Apus pacificus</taxonrv>
+                        <common>Fork-tailed Swift</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Ciconiiformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Accipitridae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Accipitrinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Haliaeetus</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Haliaeetus pelagicus</taxonrv>
+                        <common>Steller's Sea-Eagle</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Alcidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Cepphus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Cepphus carbo</taxonrv>
+                      <common>Spectacled Guillemot</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Uria</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Uria lomvia</taxonrv>
+                      <common>guillemot de Br&amp;#xFC;nnich</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Charadriidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Charadrius</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Charadrius mongolus</taxonrv>
+                      <common>Lesser Sand Plover</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Laridae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Larinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Larus</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Larus canus</taxonrv>
+                        <common>go&amp;#xE9;land cendr&amp;#xE9;</common>
+                      </taxoncl>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Larus ridibundus</taxonrv>
+                        <common>mouette rieuse</common>
+                      </taxoncl>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Larus schistisagus</taxonrv>
+                        <common>Slaty-backed Gull</common>
+                      </taxoncl>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Rissa</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Rissa tridactyla</taxonrv>
+                        <common>mouette tridactyle</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Phalacrocoracidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Phalacrocorax</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Phalacrocorax pelagicus</taxonrv>
+                      <common>Cormor&amp;#xE1;n pel&amp;#xE1;gico</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Procellariidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Puffinus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Puffinus tenuirostris</taxonrv>
+                      <common>Puffin &amp;#xE0; bec gr&amp;#xEA;le</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Scolopacidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Actitis</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Actitis hypoleucos</taxonrv>
+                      <common>Common Sandpiper</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Gallinago</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Gallinago stenura</taxonrv>
+                      <common>Pin-tailed Snipe</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Coraciiformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Alcedinidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Alcedininae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Alcedo</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Alcedo atthis</taxonrv>
+                        <common>Common Kingfisher</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Passeriformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Corvidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Garrulus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Garrulus glandarius</taxonrv>
+                      <common>Eurasian Jay</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Emberizidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Emberiza</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Emberiza spodocephala</taxonrv>
+                      <common>Black-faced Bunting</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Emberiza variabilis</taxonrv>
+                      <common>Grey Bunting</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Fringillidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Carduelinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Pyrrhula</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Pyrrhula pyrrhula</taxonrv>
+                        <common>Eurasian Bullfinch</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Laniidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Lanius</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Lanius cristatus</taxonrv>
+                      <common>Brown Shrike</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Motacillidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Anthus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Anthus hodgsoni</taxonrv>
+                      <common>Olive-backed Pipit</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Motacilla</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Motacilla cinerea</taxonrv>
+                      <common>Grey Wagtail</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Muscicapidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Ficedula</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Ficedula mugimaki</taxonrv>
+                      <common>Mugimaki Flycatcher</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Ficedula narcissina</taxonrv>
+                      <common>Narcissus Flycatcher</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Luscinia</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Luscinia calliope</taxonrv>
+                      <common>Siberian Rubythroat</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Luscinia sibilans</taxonrv>
+                      <common>Rufous-tailed Robin</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Tarsiger</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Tarsiger cyanurus</taxonrv>
+                      <common>Red-flanked Bluetail</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Paridae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Periparus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Periparus ater</taxonrv>
+                      <common>Coal Tit</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Poecile</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Poecile montana</taxonrv>
+                      <common>Willow Tit</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Regulidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Regulus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Regulus regulus</taxonrv>
+                      <common>Goldcrest</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Sittidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Sitta</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Sitta europaea</taxonrv>
+                      <common>Eurasian Nuthatch</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Sylviidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Acrocephalus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Acrocephalus bistrigiceps</taxonrv>
+                      <common>Black-browed Reed Warbler</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Locustella</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Locustella fasciolata</taxonrv>
+                      <common>Gray's Grasshopper Warbler</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Locustella ochotensis</taxonrv>
+                      <common>Middendorff's Grasshopper Warbler</common>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Phylloscopus</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Phylloscopus borealis</taxonrv>
+                      <common>Arctic Warbler</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Phylloscopus fuscatus</taxonrv>
+                      <common>Dusky Warbler</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Phylloscopus proregulus</taxonrv>
+                      <common>Pallas's Leaf Warbler</common>
+                    </taxoncl>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Phylloscopus schwarzi</taxonrv>
+                      <common>Radde's Warbler</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Troglodytidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Genus</taxonrn>
+                    <taxonrv>Troglodytes</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Species</taxonrn>
+                      <taxonrv>Troglodytes troglodytes</taxonrv>
+                      <common>troglodyte mignon</common>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+              <taxoncl>
+                <taxonrn>Order</taxonrn>
+                <taxonrv>Piciformes</taxonrv>
+                <taxoncl>
+                  <taxonrn>Family</taxonrn>
+                  <taxonrv>Picidae</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Subfamily</taxonrn>
+                    <taxonrv>Picinae</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Genus</taxonrn>
+                      <taxonrv>Dendrocopos</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Species</taxonrn>
+                        <taxonrv>Dendrocopos minor</taxonrv>
+                        <common>Lesser Spotted Woodpecker</common>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+            <taxoncl>
+              <taxonrn>Class</taxonrn>
+              <taxonrv>Mammalia</taxonrv>
+              <taxoncl>
+                <taxonrn>Subclass</taxonrn>
+                <taxonrv>Theria</taxonrv>
+                <taxoncl>
+                  <taxonrn>Infraclass</taxonrn>
+                  <taxonrv>Eutheria</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Order</taxonrn>
+                    <taxonrv>Carnivora</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Suborder</taxonrn>
+                      <taxonrv>Caniformia</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Family</taxonrn>
+                        <taxonrv>Otariidae</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Genus</taxonrn>
+                          <taxonrv>Eumetopias</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Species</taxonrn>
+                            <taxonrv>Eumetopias jubatus</taxonrv>
+                            <common>northern sea lion</common>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                  <taxoncl>
+                    <taxonrn>Order</taxonrn>
+                    <taxonrv>Chiroptera</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Suborder</taxonrn>
+                      <taxonrv>Microchiroptera</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Family</taxonrn>
+                        <taxonrv>Vespertilionidae</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Subfamily</taxonrn>
+                          <taxonrv>Vespertilioninae</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Genus</taxonrn>
+                            <taxonrv>Plecotus</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Species</taxonrn>
+                              <taxonrv>Plecotus austriacus</taxonrv>
+                              <common>gray big-eared bat</common>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+          </taxoncl>
+        </taxoncl>
+      </taxoncl>
+    </taxonomy>
+    <accconst>The authors and INBRE/UAF remain the owners of this dataset. However, this data can be distributed or utilized by interested parties.</accconst>
+    <useconst>The authors and INBRE/UAF remain the owners of this dataset. This data can be distributed or utilized by interested parties. However, it is important to interprete the data and findings in the context of the overall study and the methods outlined. Please refer to &amp;#x201C;Citation&amp;#x201D; for directions on how to cite when using the data.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Mikhail Markovets, Nikita Chernetsov and Falk Huettmann</cntper>
+          <cntorg>April-October: Biological Station, Rybachy, ; November-March: Ornithology lab, Zoological Institute, Russian Academy of Science (RAS)</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>
+          </addrtype>
+          <address>April-October: Biological Station, Rybachy, ; November-March: Universitetskaya embankment 1</address>
+          <city>April-October: Rybachy; November-March: St. Petersburg</city>
+          <state>April-October: Kaliningrad Region; November-March: Leningrad region</state>
+          <postal>April-October: 238535; November-March: 199034</postal>
+          <country>Russia</country>
+        </cntaddr>
+        <cntvoice missing="True"></cntvoice>
+        <cntemail>markovets@mail.ru; fffh@uaf.edu</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>This study was primarily funded by INBRE/UAF</datacred>
+    <native>Excel, PC IBM</native>
+    <crossref>
+      <citeinfo>
+        <origin>Same authors, </origin>
+        <origin>check for 2006 data (field and laboratory)</origin>
+        <origin>Check for UAF study of AI in Russia, Alaska and elsewhere</origin>
+        <pubdate>Unknown</pubdate>
+        <title missing="True">
+        </title>
+        <geoform missing="True">
+        </geoform>
+        <serinfo>
+          <sername>NA</sername>
+          <issue>NA</issue>
+        </serinfo>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Consistent methods were used; see protocol</attraccr>
+    </attracc>
+    <logic>Consistent methods were used; see protocol</logic>
+    <complete>Dataset is complete for the 2008 AI field campaign</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>GPS accuracy</horizpar>
+        <qhorizpa>
+          <horizpav>0.00</horizpav>
+          <horizpae>GPS accuracy</horizpae>
+        </qhorizpa>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <method>
+        <methtype>Field &amp; GIS</methtype>
+        <methodid>
+          <methkt>None</methkt>
+          <methkey>UAF protocol</methkey>
+        </methodid>
+        <methdesc>Field: Sakhalin Island sites were sampled. We used a protocol that is viryually identical with the 'revised African-European Songbird Migration Network' banding scheme. Lab: Data were cleaned and worked up in EXCEL. The detailed protocol is the following: Bird Banding Protocol, Summer/Fall Season 2006 (version 2: Fairbanks 10th July 2006) Bird Bands are provided by the local contractors for each of the birds caught and swaped for this project (457; this includes passerines, shorebirds, gulls and waterfowl). AI codes and Bird Band Numbers are used as a reference for linking AI swap samples stored in tubes. Bird Data to be collected (and as taken from the protocol): Full Name of Collector (full name, no abbreviations) Location of Sample Collection (local name, English and Russian) Coordinates of Sample (latitude and longitude; use GPS if possible) Net Number where sample was caught/collected (if possible, provide map/sketch of net setup) Date of Sample Collection (day day, month month, year year year year) Time of Sample Collection (local time 00.00 - 24.00h) Species Name 1 (English name; subspecies if possible) Species Name 2 (Scientific name only if appropriate) Bird Band Number (if collected; assumes Russian banding scheme. Mark if from dropping or dead bird) Wing length (in millimeters, flattened and unflattened for international compatibility and science reasons) Head to Beak (maximum in millimeters; not used for passerines) (Tarsus and Beak Length is not measured; can be done voluntarily by the bander. Document method used) Age (follow EURING standards; see Manual enclosed) Sex (where possible; document method used to determine) Primaries (BTO Moult Score Card; see Manual enclosed) Body Moult (Beginning, Middle, End judged by expert knowledge =majority of feathers) Body Fat (Kaiser Scale; see reference enclosed) Weight (in grams; to the nearest 0.1 g for birds weighing &lt;200 g) Feather Samples (5 each: Growing Feathers, Body, Secondary, Tail Central: plug not cut. For Primaries, please use one from outer 10th) Blood samples (usually not taken, unless for specific species and numbers and when Falk Huettmann is around; consult with Falk Huettmann for details) Photo taken ? (usually not taken, unless for specific species of interest (e.g. document outliers) or when Falk Huettmann is around; consult with Falk Huettmann for details; document the film role and/or digital camera) Comments: Anything relevant to understand, analyze and interprete the sample and data DIGITAL DATA: Please make sure that the Banding Data as well as the AI Sampling Data are keyed in, and provided, as an EXCEL sheet according to the data scheme above (see Excel template enclosed). Metadata will be created as well (see Word template enclosed).</methdesc>
+        <methcite>
+          <citeinfo>
+            <origin>Bairlein et al.</origin>
+            <pubdate>1995</pubdate>
+            <title>revised African-European Songbird Migration Network scheme</title>
+            <edition>revised</edition>
+            <geoform missing="True">
+            </geoform>
+            <othercit>Kaiser Fat Score</othercit>
+          </citeinfo>
+        </methcite>
+        <methcite>
+          <citeinfo>
+            <origin>Falk Huettmann</origin>
+            <pubdate>2006</pubdate>
+            <title>Bird Banding Protocol, Summer/Fall Season 2006</title>
+            <geoform>GPS</geoform>
+            <othercit>INBRE/UAF</othercit>
+          </citeinfo>
+        </methcite>
+      </method>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Falk Huettmann, INBRE</origin>
+            <pubdate>2006</pubdate>
+            <title>AI Sampling Campaign 2006</title>
+            <geoform missing="True">
+            </geoform>
+          </citeinfo>
+        </srccite>
+        <typesrc>
+        </typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>20062207</begdate>
+              <enddate>20061009</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>
+          </srccurr>
+        </srctime>
+        <srccitea>
+        </srccitea>
+        <srccontr>
+        </srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Fully explained in Methodology; see protocol. The banding data are submitted to the Russian Ringing Center in Moscow. Bird Banding Center is located physically at: Institute of Ecology and Evolution, 33 Leninsky pr., Moscow 119071, electronically at: http://www.sevin.ru/menues1/index_eng.html . For inquiries, please write to its leader Dr. Konstantin Litvin, bird.ring.rus@gmail.com .For AI, the following species were sampled: Steller Sea Lion Eumetopias jubatus Thick-billed Murre Uria lomvia Black-legged Kittiwake Rissa tridactyla Arctic Warbler Phylloscopus borealis Slaty-backed Gull Larus schistisagus Mew Gull Larus canus Black-headed Gull Larus ridibundus Short-tailed Shearwater Puffinus tenuirostris Spectacled Guillemot Cepphus carbo Common Kingfisher Alcedo atthis Pelagic Cormorant Phalacrocorax pelagicus Pacific Swift Apus pacificus Harlequin Duck Histrionicus histrionicus Common Sandpiper Actitis hypoleucos Steller's Sea Eagle Haliaeetus pelagicus Pintail Snipe Gallinago stenura Mongolian Plover Charadrius mongolus</procdesc>
+        <procdate>Unknown</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>same as authors</cntper>
+            </cntperp>
+            <cntaddr>
+              <addrtype missing="True"></addrtype>
+              <city missing="True"></city>
+              <state missing="True"></state>
+              <postal missing="True"></postal>
+            </cntaddr>
+            <cntvoice missing="True"></cntvoice>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <indspref>GPS, map</indspref>
+    <direct>Point</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>0.001</latres>
+        <longres>0.001</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>World Geodetic System of 1984</horizdn>
+        <ellips>World Geodetic System of 1984</ellips>
+        <semiaxis>6378137</semiaxis>
+        <denflat>298.25722210088</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>SakhalinAIfield_2008_DrwCr08_FHVers2.xls</enttypl>
+        <enttypd>This data set is a flat XML file with a work sheets: Sakhalin Island, derived from a standard Excel file provided to the field team</enttypd>
+        <enttypds>University of Alaska</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Collector</attrlabl>
+        <attrdef>Full name of the data collector</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Location</attrlabl>
+        <attrdef>Verbal description of name where catching takes place.
+For number code see below:
+
+Kamchatka
+1) Avacha vally, near Elizovo
+2) Starichkov Island, Pasific Ocean
+3) Khlamovitskoe Boloto (Bog)
+
+Sakhalin
+1) East cost of Aniva Bay, 5 km to south from Korsakov, SI
+2) Cottages (Dachi), Dal'nee, Yu.Sakhalinsk, SI</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Lat GPS Coordinate</attrlabl>
+        <attrdef>Latitude 4 decimals GPS reading</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Long GPS Coordinate</attrlabl>
+        <attrdef>Longitude 4 decimals GPS reading</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Net Number</attrlabl>
+        <attrdef>Number of the mist net where animal was caught</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Year</attrlabl>
+        <attrdef>Year when animal was caught, four digits,
+e.g. 2008</attrdef>
+        <attrdefs>LANL and University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Time</attrlabl>
+        <attrdef>Local time 0-24 hours</attrdef>
+        <attrdefs>University of Alaska and LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Species Common Name</attrlabl>
+        <attrdef>English name; subspecies if possible. Follow ITIS is possible</attrdef>
+        <attrdefs>University of Alaska.</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Species Name Scientific</attrlabl>
+        <attrdef>Scientific name only if appropriate, use ITIS</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Bird Band Number</attrlabl>
+        <attrdef>If collected; assumes Russian banding scheme. Marked if from dropping or dead bird</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Wing length flat</attrlabl>
+        <attrdef>in millimeters</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Wing length unflattened</attrlabl>
+        <attrdef>in millimeters</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Head to Beak</attrlabl>
+        <attrdef>Max in millimeters</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>(Tarsus)</attrlabl>
+        <attrdef>Voluntary, measure of tarsus length</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>(Beak Length)</attrlabl>
+        <attrdef>Voluntary, measure of beak length</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Age Group</attrlabl>
+        <attrdef>Standards of African-European Songbird Migration Network</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Sex</attrlabl>
+        <attrdef>Gender of bird when possible to determine</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Primaries Moult</attrlabl>
+        <attrdef>Taken from BTO Moult Score Card</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Body Moult</attrlabl>
+        <attrdef>Beginning, Middle, End</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Body Fat</attrlabl>
+        <attrdef>Kaiser Scale</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Weight</attrlabl>
+        <attrdef>Body weight in grams</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Feather Sample ID</attrlabl>
+        <attrdef>taken yes/no; label number (only done for few selected species)</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Blood Sample ID</attrlabl>
+        <attrdef>taken yes/no; label number (only done for few selected species)</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Photo taken</attrlabl>
+        <attrdef>taken yes/no; label number (only done for few selected species)</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Notes</attrlabl>
+        <attrdef>Notes and comments regarding data collected for this speciemn/sample</attrdef>
+        <attrdefs>University of Alaska</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>AI</attrlabl>
+        <attrdef>Code of Avian Influenza Sample</attrdef>
+        <attrdefs>Mikhail Markovets</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Submitter Name</attrlabl>
+        <attrdef>Name of person submitting the data</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Submitter Organisation</attrlabl>
+        <attrdef>Organisation who submitted data</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Submitter Phone</attrlabl>
+        <attrdef>Phone of person who submitted data</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Submitter Email</attrlabl>
+        <attrdef>Email of data submitting person</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Batch ID</attrlabl>
+        <attrdef>Identification of Batch submitted</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collector Organization</attrlabl>
+        <attrdef>Collector Organization</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collector Phone</attrlabl>
+        <attrdef>Phone of Data ollector</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collector Fax</attrlabl>
+        <attrdef>Collector Fax</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Country</attrlabl>
+        <attrdef>Country where data were collected</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Location Habitat Info</attrlabl>
+        <attrdef>Habitat description where sampling took place</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Month</attrlabl>
+        <attrdef>Month of colelction, 2 digits, e.g. 12</attrdef>
+        <attrdefs>LANL and UAF</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Collection Day</attrlabl>
+        <attrdef>Day of data collection, 2 digits</attrdef>
+        <attrdefs>LANL UAF</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Capture Status</attrlabl>
+        <attrdef>Status of Caught Animal</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Bird Behaviour</attrlabl>
+        <attrdef>Behaviour of bird while sampled</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Domestic Bird Characterization</attrlabl>
+        <attrdef>Domestic Bird Characterization</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Cloacal Sample Id</attrlabl>
+        <attrdef>Cloacal Sample Id</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Cloacal Sample Active</attrlabl>
+        <attrdef>Cloacal Sample Active</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Cloacal Sample Transport Media</attrlabl>
+        <attrdef>Cloacal Sample Transport Media</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Tracheal Sample Id</attrlabl>
+        <attrdef>Tracheal Sample Id</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Tracheal Sample Transport Media</attrlabl>
+        <attrdef>Tracheal Sample Transport Media</attrdef>
+        <attrdefs>LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Banding Protocol</attrlabl>
+        <attrdef>Protocol name for bird banding</attrdef>
+        <attrdefs>UAF</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Band Agency</attrlabl>
+        <attrdef>Bird Banding Agency that delivered the bands and receives retrap information</attrdef>
+        <attrdefs>UAF and LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Trapping Status</attrlabl>
+        <attrdef>Trapping Status of bird and sample collected</attrdef>
+        <attrdefs>LANL and UAF</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Primaries Moult Schema</attrlabl>
+        <attrdef>Moult Schema of Primaries</attrdef>
+        <attrdefs>UAF LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Body Moult Schema</attrlabl>
+        <attrdef>Schema used to describe Body Moult</attrdef>
+        <attrdefs>LANL and UAF</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Intensity</attrlabl>
+        <attrdef>Intensity of Moult according to protocol</attrdef>
+        <attrdefs>UAF and LANL</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>Bird Condition</attrlabl>
+        <attrdef>Condition of Bird</attrdef>
+        <attrdefs>UAF and LANL</attrdefs>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Mikhail Markovets</cntper>
+          <cntorg>April-October: Biological Station, Novemner-Mach: Ornithology lab, Zoological Institute, Russian Academy of Sciences (RAS)</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>
+          </addrtype>
+          <address>April-October: Biological Station Rybachy; November-March: Universitetskaya Embankment 1</address>
+          <city>April-October: Rybachy; November-March: St Petersburg</city>
+          <state>April-October: Kaliningrad region; November-March: Leningrad region</state>
+          <postal>April-October: 238535; November-March: 199034</postal>
+          <country>Russia</country>
+        </cntaddr>
+        <cntvoice>NA</cntvoice>
+      </cntinfo>
+    </distrib>
+    <distliab>The authors shall not be held liable for improper or incorrect use of the data described and/or contained herein. These data and related graphics (i.e. GIF or JPG format files) are not legal documents and are not intended to be used as such. The information contained in these data is dynamic and may change over time. The data are not better than the original sources from which they were derived. It is the responsibility of the data user to use the data appropriately and consistent within the limitations of geospatial data in general and these data in particular. The related graphics are intended to aid the data user in acquiring relevant data; it is not appropriate to use the related graphics as data. The authors give no warranty, expressed or implied, as to the accuracy, reliability, or completeness of these data. It is strongly recommended that these data are directly acquired from an project server and not indirectly through other sources which may have changed the data in some way. Although these data have been processed successfully on computer systems at the University, no warranty expressed or implied is made regarding the utility of the data on other systems for general or scientific purposes, nor shall the act of distribution constitute any such warranty. This disclaimer applies both to individual use of the data and aggregate use with other data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>EXCEL IBM PC</formname>
+          <asciistr>
+            <numheadl>
+            </numheadl>
+            <orienta>
+            </orienta>
+            <casesens>false</casesens>
+          </asciistr>
+        </digtinfo>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20070311</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Falk Huettmann, Mikhail Markovets</cntper>
+          <cntorg>INBRE, University of Alaska, Fairbanks</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>
+          </addrtype>
+          <address>419 Irving 1, EWHALE lab, Inst. of Arctic Biology, Biology &amp; Wildlife Dept., University of Alaska-Fairbanks 99775 USA</address>
+          <city>
+          </city>
+          <state>
+          </state>
+          <postal>
+          </postal>
+        </cntaddr>
+        <cntvoice>1 907 4747882</cntvoice>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

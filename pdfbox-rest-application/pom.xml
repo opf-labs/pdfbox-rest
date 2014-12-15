@@ -52,6 +52,18 @@
             <artifactId>dropwizard-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-assets</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-views</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-views-mustache</artifactId>
+        </dependency>
+        <dependency>
 	        <groupId>org.verapdf.pdfbox</groupId>
 	        <artifactId>pdfbox-rest-api</artifactId>
 	        <version>0.0.1-SNAPSHOT</version>
@@ -61,6 +73,11 @@
 		    <artifactId>dropwizard-xml</artifactId>
 		    <version>0.7.1-2</version>
 		    <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>1.18.1</version>
 		</dependency>
     </dependencies>
 </project>
