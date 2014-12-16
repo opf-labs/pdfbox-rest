@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- FontAwesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Our theme -->
     <link rel="stylesheet" href="/css/verapdf.css">
 
@@ -22,45 +24,63 @@
     <![endif]-->
 </head>
 <body role="document">
+        <div class="jumbotron" role="header">
+            <div class="container theme-showcase" role="header">
+                <h1>Preflight PDF/A Validation</h1>
+                <p>
+                    Client for prototype REST PDFBox Preflight PDF/A-1b validation web service.
+                    The emphasis is on prototype right now, so there's no guarantees.
+                </p>
+            </div>
+        </div>
     <div class="container theme-showcase" role="main">
-        <div class="jumbotron">
-            <h1>PDFBox Demonstrator</h1>
-            <p>Try the PDFBox REST web services.</p>
-        </div>
-        <div class="page-header">
-            <h1>Upload a PDF File</h1>
-        </div>
+        <h4>
+            Use the green Browse button below to upload a PDF file,
+            the generated report will appear below. The REST service
+            currently serves <a href="http://www.w3schools.com/html/">HTML</a>,
+            <a href="http://www.w3schools.com/xml/">XML</a>, &amp;
+            <a href="http://www.json.org/">JSON</a> representations.
+            You can switch between them using the buttons,
+            but currently that repeats the service call.
+        </h4>
         <form enctype="multipart/form-data">
             <div class="input-group">
                 <span class="input-group-btn">
-                    <span class="btn btn-primary btn-file">
+                    <span class="btn btn-success btn-file">
                         Browse&hellip; <input type="file" name="file">
                     </span>
                 </span>
-                <input type="text" class="form-control" readonly />
+                <input id="filename" type="text" class="form-control" placeholder="Select a file to upload." readonly />
+            </div>
+            <div class="input-group voffset2">
+                <span class="input-group-addon">JS SHA1: </span>
+                <input id="digest" type="text" class="form-control" placeholder="Javascript calculated hash of file." readonly />
             </div>
         </form>
-        <span class="help-block">
-            Select a file to upload.
-        </span>
-        <div class="panel  panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Results</h3>
-            </div>
-            <div class="panel-body">
-                <div class="input-group">
-                  <span class="input-group-addon">JS SHA1: </span>
-                  <input id="digest" type="text" class="form-control" placeholder="Javascript calculated hash of file" readonly="">
+        <div class="list-group voffset2">
+            <a href="#" class="list-group-item active">
+                <h2 class="list-group-item-heading">PDF/A Validation Report</h2>
+                <p class="list-group-item-text">The results of preflight validation will be shown below, this is a prototype so no guarantees.</p>
+                <div id="type-requested">
+                    <h5>Choose report representation format:</h5>
+                    <button type="button" class="btn btn-success" name="html">HTML</button>
+                    <button type="button" class="btn btn-default" name="xml">XML</button>
+                    <button type="button" class="btn btn-default" name="json">JSON</button>
                 </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h4 class="list-group-item-heading">PDF/A Validation Report</h4>
-                        <p class="list-group-item-text"><pre id="results"></pre></p>
-                    </a>
-                </div>                
-            </div>
+            </a>
+            <div id="results"></div>
         </div>
     </div>
+    <script id="error-template" type="text/html">
+        <div class="alert alert-danger" role="alert">
+            <p class="text-center"><span class="fa fa-warning fa-2x"> Sorry, it's embarrasing when things go wrong, did we mention that it's a prototype.</span></p>
+        </div>
+    </script>
+    <script id="spinner-template" type="text/html">
+        <div class="alert alert-info" role="alert">
+            <p class="text-center"><span class="fa fa-refresh fa-spin fa-2x"></span> Uploading and validating.</p>
+        </div>
+    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
