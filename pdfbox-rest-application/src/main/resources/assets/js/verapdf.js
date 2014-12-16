@@ -52,7 +52,7 @@ function callPreflightService() {
     var spinHtml = $("#spinner-template").html();
     $("#results").html(spinHtml);
     $.ajax({
-        url:   'http://localhost:8080/pdfbox/validate',
+        url:   '/pdfbox/validate',
         type:  'POST',
         data:  formData,
         dataType: getRequestDataType(),
