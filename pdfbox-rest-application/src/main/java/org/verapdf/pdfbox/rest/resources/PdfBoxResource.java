@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import org.verapdf.pdfa.metadata.DocumentMetadata;
 import org.verapdf.pdfa.metadata.Metadata;
 import org.verapdf.pdfa.metadata.ValidationReport;
+import org.verapdf.pdfbox.rest.views.ReportView;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
@@ -77,5 +78,26 @@ public class PdfBoxResource {
                 .fromPdfStream(uploadedInputStream);
         uploadedInputStream.close();
         return result;// return
+    }
+
+    /**
+     * @param uploadedInputStream
+     * @return the java environment representation
+     * @throws IOException
+     * 
+     */
+    @SuppressWarnings("static-method")
+    @POST
+    @Path("/validate")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces({ MediaType.TEXT_HTML })
+    public ReportView validateHTML(
+            @FormDataParam("file") InputStream uploadedInputStream,
+            @FormDataParam("file") final FormDataContentDisposition contentDispositionHeader)
+            throws IOException {
+        ValidationReport result = ValidationReport
+                .fromPdfStream(uploadedInputStream);
+        uploadedInputStream.close();
+        return new ReportView(result);// return
     }
 }
