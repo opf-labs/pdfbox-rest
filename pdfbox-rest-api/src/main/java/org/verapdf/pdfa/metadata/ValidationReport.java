@@ -47,7 +47,6 @@ public class ValidationReport {
     
     public final static ValidationReport fromPdfStream(InputStream pdfStream) throws IOException {
         DataSource source = new ByteArrayDataSource(pdfStream);
-        Log.getLog().warn(source.getContentType());
         PreflightParser parser = new PreflightParser(source);
         parser.parse();
         DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser.getPDDocument());
