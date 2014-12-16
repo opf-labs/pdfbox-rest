@@ -23,35 +23,58 @@ $(document).ready( function() {
         } else {
             if( log ) alert(log);
         }
-        
+        getRequestDataType();
         $("#digest").val(digest);
-        var formData = new FormData($('form')[0]);
+        callPreflightService();
+    });
+});
 
-        $.ajax({
-            url:   'http://localhost:8080/pdfbox/validate',
-            type:  'POST',
-            data:  formData,
-            dataType: "xml",
-            contentType: false,
-            processData: false,
+$(document).on('click', "#type-requested > button", function() {
+    var input = $(this);
+    // Do nothing if the active view
+    if (input.hasClass("btn-success")) return;
+    // select the new button
+    $("#type-requested > button.btn-success").removeClass("btn-success").addClass("btn-default");
+    input.addClass("btn-success");
+    // return if no file selected
+    if ($("#filename").val()) callPreflightService();
+
+});
+
+function getRequestDataType() {
+    return($("#type-requested > button.btn-success").attr("name"));
+}
+
+function callPreflightService() {
+    var formData = new FormData($('form')[0]);
+
+    $("#results").empty();
+    var spinHtml = $("#spinner-template").html();
+    $("#results").html(spinHtml);
+    $.ajax({
+        url:   'http://localhost:8080/pdfbox/validate',
+        type:  'POST',
+        data:  formData,
+        dataType: getRequestDataType(),
+        contentType: false,
+        processData: false,
         success : function (data, textStatus, jqXHR) {
-            console.log(jqXHR);
            $("#results").empty();
-           $("#results").text(jqXHR.responseText);
-           $("#results").append('<br>');
-           $("#results").append(digest);
+           if (getRequestDataType() != "html") {
+                var preBlock = $("<pre>").text(jqXHR.responseText);
+                $("#results").append(preBlock);
+           } else {
+                $("#results").html(jqXHR.responseText);
+           }
         },
         error : function (jqXHR, textStatus, errorThrown) {
+            $("#results").empty();
+            var tempHtml = $("#error-template").html();
+            $("#results").html(tempHtml);
             console.log('uploadAttachment error: ' + textStatus + errorThrown);
             console.log(jqXHR);
             console.log('uploadAttachment error: ' + textStatus + errorThrown);
 
         }
-        });
     });
-});
-
-
-function successHandler(data, status, jqXhr) {
-    alert(status);
 }
