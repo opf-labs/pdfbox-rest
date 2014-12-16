@@ -1,0 +1,67 @@
+<div id="validation">
+{{#report.docInfo}}
+    <h3>Validation Result</h3>
+    {{#report.validationData.result.compliant}}
+    <a class="btn btn-lg btn-success" href="#"><i class="fa fa-file-pdf-o fa-2x pull-left"></i> Validation succeeded<br>{{report.validationData.flavour.name}}</a>
+    {{/report.validationData.result.compliant}}
+    {{^report.validationData.result.compliant}}
+    <a class="btn btn-lg btn-danger" href="#"><i class="fa fa-warning fa-2x pull-left"></i> Validation failed<br>{{report.validationData.flavour.name}}</a>
+    {{/report.validationData.result.compliant}}
+    <h3>PDF DocInfo</h3>
+    <div class="input-group">
+        <span class="input-group-addon">Title: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.title}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Author: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.author}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Subject: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.subject}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Keywords: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.keywords}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Created: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.creationDate}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Modified: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.modificationDate}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Creator: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.creator}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Producer: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.producer}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">PDF Version: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.version}}">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Pages: </span>
+        <input type="text" class="form-control" readonly value="{{report.docInfo.pageCount}}">
+    </div>
+{{/report.docInfo}}
+{{#report.validationData}}
+    {{^report.validationData.result.compliant}}
+    <h4>{{report.validationData.result.summary.failedChecks}} failed checks</h4>
+    {{#report.validationData.result.checkAudits}}
+    {{#results}}
+    <div class="panel panel-danger">
+        <div class="panel-heading"><span class="fa fa-warning">Check ID: {{check.id}}</span></div>
+        <div class="panel-body">
+            {{cause}}
+        </div>
+    </div>
+    {{/results}}
+     {{/report.validationData.result.checkAudits}}
+    {{/report.validationData.result.compliant}}
+{{/report.validationData}}
+</div>
