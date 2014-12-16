@@ -36,13 +36,13 @@ public enum PdfaFlavour {
     private final Version version;
     private final Level level;
     private final String code;
-    private final String fullName;
+    private final String name;
 
     PdfaFlavour(final Version version, final Level level) {
         this.version = version;
         this.level = level;
         this.code = version.getCode() + level.getCode();
-        this.fullName = PDFA_STRING + version.toString()
+        this.name = PDFA_STRING + version.toString()
                 + " " + level.toString(); //$NON-NLS-1$
     }
 
@@ -70,9 +70,17 @@ public enum PdfaFlavour {
         return this.code;
     }
 
+    /**
+     * @return the name
+     */
+    @JsonProperty
+    public final String getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
-        return this.fullName;
+        return this.name;
     }
 
     /**
