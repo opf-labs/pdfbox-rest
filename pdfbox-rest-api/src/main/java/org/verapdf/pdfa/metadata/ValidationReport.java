@@ -11,7 +11,6 @@ import javax.activation.DataSource;
 import org.apache.pdfbox.preflight.PreflightDocument;
 import org.apache.pdfbox.preflight.parser.PreflightParser;
 import org.apache.pdfbox.preflight.utils.ByteArrayDataSource;
-import org.eclipse.jetty.util.log.Log;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -50,10 +49,10 @@ public class ValidationReport {
         PreflightParser parser = new PreflightParser(source);
         parser.parse();
         DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser.getPDDocument());
-        PreflightDocument document = parser.getPreflightDocument();
-        document.validate();
-        ValidationResult result =  ValidationResult.fromPreflightValidationResult(document.getResult());
-        document.close();
-        return new ValidationReport(docMd, ValidationMetadata.fromValues(PdfaFlavour.PDFA_1_B, result));
+        try (PreflightDocument document = parser.getPreflightDocument()) {
+            document.validate();
+            ValidationResult result =  ValidationResult.fromPreflightValidationResult(document.getResult());
+            return new ValidationReport(docMd, ValidationMetadata.fromValues(PdfaFlavour.PDFA_1_B, result));
+        }
     }
 }

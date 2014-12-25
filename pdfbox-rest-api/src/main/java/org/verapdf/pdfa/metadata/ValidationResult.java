@@ -122,10 +122,10 @@ public class ValidationResult {
         Log.getLog().warn(source.getContentType());
         PreflightParser parser = new PreflightParser(source);
         parser.parse();
-        PreflightDocument document = parser.getPreflightDocument();
-        document.validate();
-        ValidationResult result =  fromPreflightValidationResult(document.getResult());
-        document.close();
-        return result;
+        try (PreflightDocument document = parser.getPreflightDocument()) {
+            document.validate();
+            ValidationResult result =  fromPreflightValidationResult(document.getResult());
+            return result;
+        }
     }
 }
