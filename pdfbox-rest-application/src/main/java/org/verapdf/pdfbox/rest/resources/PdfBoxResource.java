@@ -21,20 +21,34 @@ import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
 /**
+ * The REST resource definition for PDFBox services, these are JERSEY
+ * REST services and it's the annotations that perform the magic of
+ * handling content types and serialisation.
+ * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
- *
  */
 @Path("/pdfbox")
 public class PdfBoxResource {
+    /**
+     * 
+     */
     public PdfBoxResource() {
 
     }
 
     /**
-     * @param uploadedInputStream
-     * @return the java environment representation
-     * @throws IOException
+     * POST method that consumes a file upload from a multi-part form. The
+     * uploaded stream is expected to be a PDF, and is used to create a
+     * {@link org.verapdf.pdfa.metadata.DocumentMetadata} object populated using
+     * a PDF Box parser.
      * 
+     * @param uploadedInputStream
+     *            InputStream for the uploaded file
+     * @param contentDispositionHeader
+     *            extra info about the uploaded file, currently unused.
+     * @return a serialized version of a
+     *         {@link org.verapdf.pdfa.metadata.DocumentMetadata} instance
+     *         either as XML or JSON depending upon the content type requested.
      */
     @SuppressWarnings("static-method")
     @POST
@@ -60,6 +74,9 @@ public class PdfBoxResource {
 
     /**
      * @param uploadedInputStream
+     *            InputStream for the uploaded file
+     * @param contentDispositionHeader
+     *            extra info about the uploaded file, currently unused.
      * @return the java environment representation
      * @throws IOException
      * 
@@ -82,6 +99,9 @@ public class PdfBoxResource {
 
     /**
      * @param uploadedInputStream
+     *            InputStream for the uploaded file
+     * @param contentDispositionHeader
+     *            extra info about the uploaded file, currently unused.
      * @return the java environment representation
      * @throws IOException
      * 

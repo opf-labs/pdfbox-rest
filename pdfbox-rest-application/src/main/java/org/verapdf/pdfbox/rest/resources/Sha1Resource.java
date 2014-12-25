@@ -20,22 +20,29 @@ import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
 /**
+ * The REST resource definition for byte stream identification services, these
+ * are JERSEY REST services and it's the annotations that perform the magic of
+ * handling content types and serialisation.
+ * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
- *
  */
-@Path("/sha1")
+@Path("/byteid")
 public class Sha1Resource {
     /**
-     * 
+     * Default public constructor required by Jersey / Dropwizard
      */
     public Sha1Resource() {
+        /** Intentionally blank */
     }
 
     /**
      * @param uploadedInputStream
-     * @return the java environment representation
-     * @throws IOException
-     * 
+     *            InputStream for the uploaded file
+     * @param contentDispositionHeader
+     *            extra info about the uploaded file, currently unused.
+     * @return the {@link org.verapdf.pdfa.metadata.bytestream.ByteStreamId} of
+     *         the uploaded file's byte stream serialised according to requested
+     *         content type.
      */
     @SuppressWarnings("static-method")
     @POST
@@ -53,13 +60,13 @@ public class Sha1Resource {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return ByteStreams.nullByteStreamId();// return
-                                              // ByteStreams.nullByteStreamId();
+        return ByteStreams.nullByteStreamId();
     }
 
     /**
-     * @return the java environment representation
-     * 
+     * @return the {@link org.verapdf.pdfa.metadata.bytestream.ByteStreamId} of
+     *         an empty (0 byte) byte stream serialised according to requested
+     *         content type.
      */
     @SuppressWarnings("static-method")
     @GET
