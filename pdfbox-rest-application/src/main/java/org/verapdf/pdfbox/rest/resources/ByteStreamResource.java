@@ -27,11 +27,11 @@ import com.sun.jersey.multipart.FormDataParam;
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
  */
 @Path("/byteid")
-public class Sha1Resource {
+public class ByteStreamResource {
     /**
      * Default public constructor required by Jersey / Dropwizard
      */
-    public Sha1Resource() {
+    public ByteStreamResource() {
         /** Intentionally blank */
     }
 
