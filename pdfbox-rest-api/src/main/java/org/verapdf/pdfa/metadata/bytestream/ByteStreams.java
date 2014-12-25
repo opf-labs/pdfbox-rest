@@ -180,6 +180,6 @@ public final class ByteStreams {
 		int exp = (int) (Math.log(bytes) / Math.log(unit));
 		String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) //$NON-NLS-1$ //$NON-NLS-2$
 				+ (si ? "" : "i"); //$NON-NLS-1$ //$NON-NLS-2$
-		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre); //$NON-NLS-1$
+		return String.format("%.1f %sB", Double.valueOf(bytes / Math.pow(unit, exp)), pre); //$NON-NLS-1$
 	}
 }
