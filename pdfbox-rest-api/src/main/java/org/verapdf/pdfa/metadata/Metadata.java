@@ -50,10 +50,10 @@ public class Metadata {
      */
     public final static DocumentMetadata fromInputStream(final InputStream input)
             throws IOException {
-        PDDocument pdDoc = PDDocument.load(input);
-        DocumentMetadata docMd = fromPdfBoxDocInfo(pdDoc);
-        pdDoc.close();
-        return docMd;
+        try (PDDocument pdDoc = PDDocument.load(input)) {
+            DocumentMetadata docMd = fromPdfBoxDocInfo(pdDoc);
+            return docMd;
+        }
     }
 
     /**
