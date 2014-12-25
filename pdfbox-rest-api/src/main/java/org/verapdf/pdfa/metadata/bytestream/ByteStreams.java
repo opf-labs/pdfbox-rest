@@ -148,14 +148,10 @@ public final class ByteStreams {
 			throw new IllegalArgumentException("file == null"); //$NON-NLS-1$
 		if (file.isDirectory())
 			throw new IllegalArgumentException("file.isDirectory() == true"); //$NON-NLS-1$
-		InputStream inStream = new FileInputStream(file);
-		ByteStreamId bs = idFromStream(inStream);
-		try {
-			inStream.close();
-		} catch (IOException excep) {
-			// Do nothing here, it just won't close
+		try (InputStream inStream = new FileInputStream(file)) {
+	        ByteStreamId bs = idFromStream(inStream);
+	        return bs;
 		}
-		return bs;
 	}
 
 	/**
