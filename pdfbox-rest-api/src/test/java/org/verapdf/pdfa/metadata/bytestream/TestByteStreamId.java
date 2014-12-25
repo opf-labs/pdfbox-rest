@@ -174,27 +174,17 @@ public class TestByteStreamId {
 	@Test
 	public void testFromInputStream() {
 		// Create a null item from an empty file
-		FileInputStream fis = null;
-		try {
-			fis = new FileInputStream(AllByteStreamTests.getEmptyFile());
+		try (FileInputStream fis = new FileInputStream(AllByteStreamTests.getEmptyFile())){
+	        ByteStreamId nullStreamId = null;
+            nullStreamId = ByteStreams.idFromStream(fis);
+            assertEquals("nullStream != NULL_STREAM_ID", nullStreamId, ByteStreams.nullByteStreamId());
 		} catch (FileNotFoundException excep) {
 			fail("Can't find empty file.");
 		} catch (URISyntaxException excep) {
 			fail("URI Exception for empty file resource.");
-		}
-		ByteStreamId nullStream = null;
-		try {
-			nullStream = ByteStreams.idFromStream(fis);
-		} catch (IOException excep) {
-			fail("Can't  open empty file");
-		} finally {
-			try {
-				fis.close();
-			} catch (IOException excep) {
-				// DO NOTHING
-			}
-		}
-		assertEquals("nullStream != NULL_STREAM_ID", nullStream, ByteStreams.nullByteStreamId());
+		} catch (IOException e) {
+            fail("IOException for empty file resource.");
+        }
 		Set<ByteStreamId> details = new HashSet<>();
 		for (File rawFile : AllByteStreamTests.getRawFiles()) {
 			try {
@@ -281,17 +271,10 @@ public class TestByteStreamId {
 	public static final ByteStreamId createByteStreamUsingCommonsCodec(
 			File file) throws IOException {
 		long length = file.length();
-		FileInputStream fis = new FileInputStream(file);
-		String hexSHA1 = null;
-		try {
-			hexSHA1 = DigestUtils.shaHex(fis);
-		} finally {
-			try {
-				fis.close();
-			} catch (IOException excep) {
-				// DO NOTHING
-			}
+		try (FileInputStream fis = new FileInputStream(file)) {
+	        String hexSHA1 = null;
+            hexSHA1 = DigestUtils.shaHex(fis);
+	        return ByteStreams.idFromValues(length, hexSHA1);
 		}
-		return ByteStreams.idFromValues(length, hexSHA1);
 	}
 }
