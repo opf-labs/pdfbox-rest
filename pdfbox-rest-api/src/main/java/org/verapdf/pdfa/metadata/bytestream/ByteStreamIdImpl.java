@@ -5,10 +5,7 @@ package org.verapdf.pdfa.metadata.bytestream;
 
 
 /**
- * TODO: Beter JavaDoc for ByteStreamIdImpl.
- * <p/>
- * Immutable implementation of the Byte Sequence interface, reference
- * implementation of {@link ByteStreamId}.
+ * Straightforward immutable implementation of the {@link ByteStreamId} interface. 
  * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a> <a
  */
@@ -50,7 +47,7 @@ final class ByteStreamIdImpl implements ByteStreamId, Comparable<ByteStreamId> {
 	}
 
 	/**
-	 * @see org.verapdf.pdfa.metadata.bytestream.ByteStreamId#getLength()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public final long getLength() {
@@ -58,24 +55,24 @@ final class ByteStreamIdImpl implements ByteStreamId, Comparable<ByteStreamId> {
 	}
 
 	/**
-	 * @see org.verapdf.pdfa.metadata.bytestream.ByteStreamId#getHexSHA1()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public final String getHexSHA1() {
 		return this.hexSHA1;
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public String toString() {
 		return "{\"ByteStreamId\":{\"hexSHA1\":\"" + this.hexSHA1 + "\",\"length\":" + this.length + " bytes}}"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
-	/**
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public final boolean equals(final Object obj) {
 		if (this == obj)
@@ -93,9 +90,9 @@ final class ByteStreamIdImpl implements ByteStreamId, Comparable<ByteStreamId> {
 		return true;
 	}
 
-	/**
-	 * @see java.lang.Object#hashCode()
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public final int hashCode() {
 		final int prime = 31;
@@ -106,6 +103,9 @@ final class ByteStreamIdImpl implements ByteStreamId, Comparable<ByteStreamId> {
 		return result;
 	}
 
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public final int compareTo(final ByteStreamId other) {
 		long lengthDiff = this.length - other.getLength();
