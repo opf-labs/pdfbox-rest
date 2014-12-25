@@ -27,7 +27,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
  *
  */
 public class ValidationResult {
-    public final static String DEFAULT_STATEMENT = "unknown";
+    /** Default statement for a validation result */
+    public final static String DEFAULT_STATEMENT = "unknown"; //$NON-NLS-1$
     private final static ValidationResult DEFAULT_INSTANCE = new ValidationResult();
     private final boolean isCompliant;
     private final String statement;
