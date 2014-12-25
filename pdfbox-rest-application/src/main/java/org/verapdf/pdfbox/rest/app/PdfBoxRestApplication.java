@@ -17,7 +17,7 @@ import javax.servlet.FilterRegistration;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.verapdf.pdfbox.rest.resources.ApplicationResource;
 import org.verapdf.pdfbox.rest.resources.PdfBoxResource;
-import org.verapdf.pdfbox.rest.resources.Sha1Resource;
+import org.verapdf.pdfbox.rest.resources.ByteStreamResource;
 
 import com.yunspace.dropwizard.xml.XmlBundle;
 
@@ -65,8 +65,8 @@ public class PdfBoxRestApplication extends Application<PdfBoxRestConfiguration> 
         // Create & register our REST resources
         final ApplicationResource about = new ApplicationResource();
         environment.jersey().register(about);
-        final Sha1Resource sha1 = new Sha1Resource();
-        environment.jersey().register(sha1);
+        final ByteStreamResource byteStream = new ByteStreamResource();
+        environment.jersey().register(byteStream);
         final PdfBoxResource pdfbox = new PdfBoxResource();
         environment.jersey().register(pdfbox);
         // Set up cross domain REST
