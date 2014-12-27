@@ -21,9 +21,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ValidationReport {
     private final DocumentMetadata docInfo;
     private final ValidationMetadata validationData;
-    
+
     private ValidationReport(final DocumentMetadata docInfo,
-    final ValidationMetadata validationData) {
+            final ValidationMetadata validationData) {
         this.docInfo = docInfo;
         this.validationData = validationData;
     }
@@ -43,16 +43,30 @@ public class ValidationReport {
     public final ValidationMetadata getValidationData() {
         return this.validationData;
     }
-    
-    public final static ValidationReport fromPdfStream(InputStream pdfStream) throws IOException {
+
+    /**
+     * Creates a ValidationReport instance from a PDF format InputStream.
+     * 
+     * @param pdfStream
+     *            InputStream of PDF format to validate
+     * @return a ValidationReport containing details of the PDF/A Validation
+     *         process
+     * @throws IOException
+     *             when there's a problem reading the PDF input stream
+     */
+    public final static ValidationReport fromPdfStream(InputStream pdfStream)
+            throws IOException {
         DataSource source = new ByteArrayDataSource(pdfStream);
         PreflightParser parser = new PreflightParser(source);
         parser.parse();
-        DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser.getPDDocument());
+        DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser
+                .getPDDocument());
         try (PreflightDocument document = parser.getPreflightDocument()) {
             document.validate();
-            ValidationResult result =  ValidationResult.fromPreflightValidationResult(document.getResult());
-            return new ValidationReport(docMd, ValidationMetadata.fromValues(PdfaFlavour.PDFA_1_B, result));
+            ValidationResult result = ValidationResult
+                    .fromPreflightValidationResult(document.getResult());
+            return new ValidationReport(docMd, ValidationMetadata.fromValues(
+                    PdfaFlavour.PDFA_1_B, result));
         }
     }
 }
