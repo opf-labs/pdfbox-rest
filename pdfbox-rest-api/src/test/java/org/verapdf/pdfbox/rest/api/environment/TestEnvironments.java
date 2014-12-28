@@ -21,6 +21,7 @@ import org.junit.Test;
  */
 @SuppressWarnings("static-method")
 public class TestEnvironments {
+    private static Environment TEST_ENV = Environments.getEnvironment();
 
 	/**
 	 * Just compare to the property for now
@@ -29,8 +30,8 @@ public class TestEnvironments {
 	@Test
 	public void testGetHostName() {
 		try {
-			assertEquals("Host name inconsistent.", Environments.getHostName(), InetAddress.getLocalHost().getHostName()); //$NON-NLS-1$
-			assertFalse("Environments.getHostName().isEmpty() == true", Environments.getHostName().isEmpty()); //$NON-NLS-1$
+			assertEquals("Host name inconsistent.", TEST_ENV.getServer().getHostName(), InetAddress.getLocalHost().getHostName()); //$NON-NLS-1$
+			assertFalse("Environments.getHostName().isEmpty() == true", TEST_ENV.getServer().getHostName().isEmpty()); //$NON-NLS-1$
 		} catch (UnknownHostException excep) {
 			excep.printStackTrace();
 			fail("Illegal length IP address, check your setup: " + excep.getMessage()); //$NON-NLS-1$
@@ -59,8 +60,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetJavaArch() {
-		assertEquals("Inconsistent Java Arch", "x" + System.getProperty(Environments.JAVA_ARCH_PROP), Environments.getJavaArch()); //$NON-NLS-1$ //$NON-NLS-2$
-		assertFalse("Environments.getJavaArch().isEmpty() == true", Environments.getJavaArch().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent Java Arch", "x" + System.getProperty(Environments.JAVA_ARCH_PROP), TEST_ENV.getJava().getArchitecture()); //$NON-NLS-1$ //$NON-NLS-2$
+		assertFalse("Environments.getJavaArch().isEmpty() == true", TEST_ENV.getJava().getArchitecture().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -68,8 +69,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetJavaVendor() {
-		assertEquals("Inconsistent Java Vendor", System.getProperty(Environments.JAVA_VM_VENDOR_PROP), Environments.getJavaVendor()); //$NON-NLS-1$
-		assertFalse("Environments.getJavaVendor().isEmpty() == true", Environments.getJavaVendor().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent Java Vendor", System.getProperty(Environments.JAVA_VM_VENDOR_PROP), TEST_ENV.getJava().getVendor()); //$NON-NLS-1$
+		assertFalse("Environments.getJavaVendor().isEmpty() == true", TEST_ENV.getJava().getVendor().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -77,8 +78,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetJavaVersion() {
-		assertEquals("Inconsistent Java Version", System.getProperty(Environments.JAVA_VERSION_PROP), Environments.getJavaVersion()); //$NON-NLS-1$
-		assertFalse("Environments.getJavaVersion().isEmpty() == true", Environments.getJavaVersion().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent Java Version", System.getProperty(Environments.JAVA_VERSION_PROP), TEST_ENV.getJava().getVersion()); //$NON-NLS-1$
+		assertFalse("Environments.getJavaVersion().isEmpty() == true", TEST_ENV.getJava().getVersion().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -86,8 +87,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetJavaHome() {
-		assertEquals("Inconsistent Java Home", System.getProperty(Environments.JAVA_HOME_PROP), Environments.getJavaHome()); //$NON-NLS-1$
-		assertFalse("Environments.getJavaHome().isEmpty() == true", Environments.getJavaHome().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent Java Home", System.getProperty(Environments.JAVA_HOME_PROP), TEST_ENV.getJava().getHome()); //$NON-NLS-1$
+		assertFalse("Environments.getJavaHome().isEmpty() == true", TEST_ENV.getJava().getHome().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -147,8 +148,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetOSName() {
-		assertEquals("Inconsistent OS Name", System.getProperty(Environments.OS_NAME_PROP), Environments.getOSName()); //$NON-NLS-1$
-		assertFalse("Environments.getOSName().isEmpty() == true", Environments.getOSName().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent OS Name", System.getProperty(Environments.OS_NAME_PROP), TEST_ENV.getOS().getName()); //$NON-NLS-1$
+		assertFalse("Environments.getOSName().isEmpty() == true", TEST_ENV.getOS().getName().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -156,8 +157,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetOSVersion() {
-		assertEquals("Inconsistent OS Version", System.getProperty(Environments.OS_VERSION_PROP), Environments.getOSVersion()); //$NON-NLS-1$
-		assertFalse("Environments.getOSVersion().isEmpty() == true", Environments.getOSVersion().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent OS Version", System.getProperty(Environments.OS_VERSION_PROP), TEST_ENV.getOS().getVersion()); //$NON-NLS-1$
+		assertFalse("Environments.getOSVersion().isEmpty() == true", TEST_ENV.getOS().getVersion().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
@@ -165,8 +166,8 @@ public class TestEnvironments {
 	 */
 	@Test
 	public void testGetOSArch() {
-		assertEquals("Inconsistent OS Arch", System.getProperty(Environments.OS_ARCH_PROP), Environments.getOSArch()); //$NON-NLS-1$
-		assertFalse("Environments.getOSArch().isEmpty() == true", Environments.getOSArch().isEmpty()); //$NON-NLS-1$
+		assertEquals("Inconsistent OS Arch", System.getProperty(Environments.OS_ARCH_PROP), TEST_ENV.getOS().getArchitecture()); //$NON-NLS-1$
+		assertFalse("Environments.getOSArch().isEmpty() == true", TEST_ENV.getOS().getArchitecture().isEmpty()); //$NON-NLS-1$
 	}
 
 	/**
