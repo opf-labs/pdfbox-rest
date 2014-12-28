@@ -261,7 +261,7 @@ public class TestByteStreamId {
 	 * Test compareTo method
 	 */
 	@Test
-	public void TestCompareTo() {
+	public void testCompareTo() {
 		// Create from value entries from the current map and fill a set
 		Set<ByteStreamId> details = new HashSet<>();
 		for (ByteStreamId detailId : RAW_DETAILS) {
