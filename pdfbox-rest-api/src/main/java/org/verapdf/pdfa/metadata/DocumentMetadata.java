@@ -105,7 +105,7 @@ public class DocumentMetadata {
     @JsonProperty
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="", timezone="UTC")
     public final Date getCreationDate() {
-        return this.creationDate;
+        return new Date(this.creationDate.getTime());
     }
 
     /**
@@ -114,7 +114,7 @@ public class DocumentMetadata {
     @JsonProperty
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="", timezone="UTC")
     public final Date getModificationDate() {
-        return this.modificationDate;
+        return new Date(this.modificationDate.getTime());
     }
 
     /**
