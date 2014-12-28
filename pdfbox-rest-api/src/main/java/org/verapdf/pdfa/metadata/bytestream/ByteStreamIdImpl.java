@@ -31,13 +31,13 @@ final class ByteStreamIdImpl implements ByteStreamId, Comparable<ByteStreamId> {
 		if (length < 1L)
 			throw new IllegalArgumentException("(length " + length //$NON-NLS-1$
 					+ " < 1) == true"); //$NON-NLS-1$
+        if ((sha1 == null) || (sha1.isEmpty()))
+            throw new IllegalArgumentException(
+                    "((sha1 == null) || (sha1.isEmpty())) == true"); //$NON-NLS-1$
 		if (!ByteStreams.isHexSHA1(sha1))
 			throw new IllegalArgumentException(
 					"ByteStreams.isHexSHA1(sha1) != true, regex used: " //$NON-NLS-1$
 							+ ByteStreams.HEX_SHA1_REGEX);
-		if ((sha1 == null) || (sha1.isEmpty()))
-			throw new IllegalArgumentException(
-					"((sha1 == null) || (sha1.isEmpty())) == true"); //$NON-NLS-1$
 		// This is the only route to the constructor, lower case the hash values
 		// to prevent
 		// case sensitivity ruining equals and hashCode. Upper and lower case

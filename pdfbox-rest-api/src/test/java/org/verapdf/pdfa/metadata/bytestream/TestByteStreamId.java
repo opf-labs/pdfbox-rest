@@ -85,10 +85,10 @@ public class TestByteStreamId {
 	/**
 	 * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromValues(long, String)}.
 	 */
-	@Test(expected=IllegalArgumentException.class)
+    @Test(expected=IllegalArgumentException.class)
 	public void testFromValuesEmptySHA1() {
 		// Try creating a byte stream with an empty sha value
-		ByteStreams.idFromValues(0L, "");
+		ByteStreams.idFromValues(1L, "");
 	}
 	
 	/**
@@ -97,7 +97,7 @@ public class TestByteStreamId {
 	@Test(expected=IllegalArgumentException.class)
 	public void testFromValuesNullSHA() {
 		// Try creating a byte stream with a null sha value
-		ByteStreams.idFromValues(0L, null);
+		ByteStreams.idFromValues(1L, null);
 	}
 	
 	/**
@@ -106,7 +106,7 @@ public class TestByteStreamId {
 	@Test(expected=IllegalArgumentException.class)
 	public void testFromValuesWrongLengthSHA1() {
 		// Try creating a byte stream with an over long md5 value
-		ByteStreams.idFromValues(0L, ByteStreams.NULL_SHA1);
+		ByteStreams.idFromValues(1L, ByteStreams.NULL_SHA1 + "a");
 	}
 	
 	/**
@@ -115,7 +115,7 @@ public class TestByteStreamId {
 	@Test(expected=IllegalArgumentException.class)
 	public void testFromValuesNonHexSHA1() {
 		// Try creating a byte stream with a non hex sha value
-		ByteStreams.idFromValues(0L, "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdeX");
+		ByteStreams.idFromValues(1L, "1234567890abcdef1234567890abcdef123456X");
 	}
 	
 	/**
@@ -157,16 +157,28 @@ public class TestByteStreamId {
 		}
 	}
 	
-	/**
-	 * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromFile(File)}.
-	 * @throws IOException 
-	 * @throws FileNotFoundException 
-	 */
-	@Test(expected=IllegalArgumentException.class)
-	public void testFromFileNullFile() throws FileNotFoundException, IOException {
-		// OK try a null file for the exception
-		ByteStreams.idFromFile(null);
-	}
+    /**
+     * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromFile(File)}.
+     * @throws IOException 
+     * @throws FileNotFoundException 
+     */
+    @Test(expected=IllegalArgumentException.class)
+    public void testFromFileNullFile() throws FileNotFoundException, IOException {
+        // OK try a null file for the exception
+        ByteStreams.idFromFile(null);
+    }
+
+    /**
+     * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromFile(File)}.
+     * @throws IOException 
+     * @throws FileNotFoundException 
+     * @throws URISyntaxException 
+     */
+    @Test(expected=IllegalArgumentException.class)
+    public void testFromFileIsDirectory() throws FileNotFoundException, IOException, URISyntaxException {
+        // OK try a null file for the exception
+        ByteStreams.idFromFile(AllByteStreamTests.getEmptyFile().getParentFile());
+    }
 
 	/**
 	 * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromStream(java.io.InputStream)}.
@@ -205,16 +217,38 @@ public class TestByteStreamId {
 		}
 	}
 
-	/**
-	 * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromStream(java.io.InputStream)}.
-	 * @throws IOException 
-	 */
-	@Test(expected=IllegalArgumentException.class)
-	public void testFromInputStreamNullStream() throws IOException {
-		// OK try a null file for the exception
-		ByteStreams.idFromStream(null);
-	}
+    /**
+     * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#idFromStream(java.io.InputStream)}.
+     * @throws IOException 
+     */
+    @Test(expected=IllegalArgumentException.class)
+    public void testFromInputStreamNullStream() throws IOException {
+        // OK try a null file for the exception
+        ByteStreams.idFromStream(null);
+    }
 
+    /**
+     * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#isHexSHA1(java.lang.String)}.
+     */
+    @Test(expected=IllegalArgumentException.class)
+    public void testIsHexSha1NullString() {
+        // OK try a null file for the exception
+        ByteStreams.isHexSHA1(null);
+    }
+
+    /**
+     * Test method for {@link org.verapdf.pdfa.metadata.bytestream.ByteStreams#humanReadableByteCount(long, boolean)}.
+     */
+    @Test
+    public void testHumanReadableByteCount() {
+        String siBytes = ByteStreams.humanReadableByteCount(1000, true);
+        String csBytes = ByteStreams.humanReadableByteCount(1024, false);
+        assertTrue(siBytes + " != " + csBytes, siBytes.equalsIgnoreCase(csBytes.replace("i", "")));
+        siBytes = ByteStreams.humanReadableByteCount(500, true);
+        csBytes = ByteStreams.humanReadableByteCount(500, false);
+        assertTrue(siBytes + " != " + csBytes, siBytes.equalsIgnoreCase(csBytes.replace("i", "")));
+    }
+    
 	/**
 	 * Test the hash and equals contract for the class using EqualsVerifier
 	 */
