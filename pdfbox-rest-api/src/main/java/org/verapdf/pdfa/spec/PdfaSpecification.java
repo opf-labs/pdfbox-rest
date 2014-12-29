@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  */
-public enum PdfaFlavour {
+public enum PdfaSpecification {
     /** PDF Version 1 Level A */
     PDFA_1_A(Version.VERSION_1, Level.LEVEL_A),
     /** PDF Version 1 Level B */
@@ -38,7 +38,7 @@ public enum PdfaFlavour {
     private final String code;
     private final String name;
 
-    PdfaFlavour(final Version version, final Level level) {
+    PdfaSpecification(final Version version, final Level level) {
         this.version = version;
         this.level = level;
         this.code = version.getCode() + level.getCode();

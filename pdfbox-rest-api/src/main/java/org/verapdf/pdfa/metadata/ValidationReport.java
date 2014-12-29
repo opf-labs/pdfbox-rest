@@ -11,7 +11,7 @@ import javax.activation.DataSource;
 import org.apache.pdfbox.preflight.PreflightDocument;
 import org.apache.pdfbox.preflight.parser.PreflightParser;
 import org.apache.pdfbox.preflight.utils.ByteArrayDataSource;
-import org.verapdf.pdfa.spec.PdfaFlavour;
+import org.verapdf.pdfa.spec.PdfaSpecification;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -67,7 +67,7 @@ public class ValidationReport {
             ValidationResult result = ValidationResult
                     .fromPreflightValidationResult(document.getResult());
             return new ValidationReport(docMd, ValidationMetadata.fromValues(
-                    PdfaFlavour.PDFA_1_B, result));
+                    PdfaSpecification.PDFA_1_B, result));
         }
     }
 }
