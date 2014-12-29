@@ -12,46 +12,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum PdfaSpecification {
     /** PDF Version 1 Level A */
-    PDFA_1_A(Version.VERSION_1, Level.LEVEL_A),
+    PDFA_1(IsoStandard.ISO_19005_1, Level.LEVEL_A),
     /** PDF Version 1 Level B */
-    PDFA_1_B(Version.VERSION_1, Level.LEVEL_B),
+    PDFA_1_B(IsoStandard.ISO_19005_1, Level.LEVEL_A),
     /** PDF Version 2 Level A */
-    PDFA_2_A(Version.VERSION_2, Level.LEVEL_A),
+    PDFA_2_A(IsoStandard.ISO_19005_2, Level.LEVEL_A),
     /** PDF Version 2 Level B */
-    PDFA_2_B(Version.VERSION_2, Level.LEVEL_B),
+    PDFA_2_B(IsoStandard.ISO_19005_2, Level.LEVEL_B),
     /** PDF Version 3 Level A */
-    PDFA_3_A(Version.VERSION_3, Level.LEVEL_A),
+    PDFA_3_A(IsoStandard.ISO_19005_3, Level.LEVEL_A),
     /** PDF Version 3 Level B */
-    PDFA_3_B(Version.VERSION_3, Level.LEVEL_B),
+    PDFA_3_B(IsoStandard.ISO_19005_3, Level.LEVEL_B),
     /** PDF Version 3 Level U */
-    PDFA_3_U(Version.VERSION_3, Level.LEVEL_U);
-    final static String PDFA_STRING = "PDF/A-       "; //$NON-NLS-1$
-    /** ISO Standard name for PDF/A 1 */
-    public final static String ISO_19005_1 = "ISO 19005-1:2005"; //$NON-NLS-1$
-    /** ISO Standard name for PDF/A 2 */
-    public final static String ISO_19005_2 = "ISO 19005-2:2011"; //$NON-NLS-1$
-    /** ISO Standard name for PDF/A 3 */
-    public final static String ISO_19005_3 = "ISO 19005-3:2012"; //$NON-NLS-1$
+    PDFA_3_U(IsoStandard.ISO_19005_3, Level.LEVEL_U);
 
-    private final Version version;
+    private final IsoStandard part;
     private final Level level;
-    private final String code;
-    private final String name;
 
-    PdfaSpecification(final Version version, final Level level) {
-        this.version = version;
+    PdfaSpecification(final IsoStandard part, final Level level) {
+        this.part = part;
         this.level = level;
-        this.code = version.getCode() + level.getCode();
-        this.name = PDFA_STRING + version.toString()
-                + " " + level.toString(); //$NON-NLS-1$
     }
 
     /**
-     * @return the version
+     * @return the specification part
      */
     @JsonProperty
-    public final Version getVersion() {
-        return this.version;
+    public final IsoStandard getPart() {
+        return this.part;
     }
 
     /**
@@ -63,80 +51,81 @@ public enum PdfaSpecification {
     }
 
     /**
-     * @return the code
-     */
-    @JsonProperty
-    public final String getCode() {
-        return this.code;
-    }
-
-    /**
-     * @return the name
-     */
-    @JsonProperty
-    public final String getName() {
-        return this.name;
-    }
-
-    @Override
-    public String toString() {
-        return this.name;
-    }
-
-    /**
-     * Enumeration of PDF/A levels, 1-3
+     * Enumeration of PDF/A Specification Parts, 1-3
      * 
      * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
      */
-    public static enum Version {
+    public static enum IsoStandard {
         /** PDF/A Version 1 */
-        VERSION_1(1, ISO_19005_1),
+        ISO_19005_1(IsoStandardSeries.ISO_19005, PdfaSpecifications.ISO_19005_1_PART,
+                PdfaSpecifications.ISO_19005_1_YEAR,
+                PdfaSpecifications.ISO_19005_1_DESCRIPTION),
         /** PDF/A Version 2 */
-        VERSION_2(2, ISO_19005_2),
+        ISO_19005_2(IsoStandardSeries.ISO_19005, PdfaSpecifications.ISO_19005_2_PART,
+                PdfaSpecifications.ISO_19005_2_YEAR,
+                PdfaSpecifications.ISO_19005_2_DESCRIPTION),
         /** PDF/A Version 3 */
-        VERSION_3(3, ISO_19005_3);
+        ISO_19005_3(IsoStandardSeries.ISO_19005, PdfaSpecifications.ISO_19005_3_PART,
+                PdfaSpecifications.ISO_19005_3_YEAR,
+                PdfaSpecifications.ISO_19005_3_DESCRIPTION);
 
-        static final String VERSION_STRING = "Version "; //$NON-NLS-1$
+        private final IsoStandardSeries series;
+        private final int partNumber;
+        private final String id;
+        private final String year;
+        private final String name;
+        private final String description;
 
-        private final int id;
-        private final String code;
-        private final String specification;
-        private final String fullName;
-
-        Version(final int id, final String specification) {
-            this.id = id;
-            this.code = String.valueOf(id);
-            this.specification = specification;
-            this.fullName = VERSION_STRING + this.code;
+        IsoStandard(final IsoStandardSeries series, final int partNumber, final String year, final String description) {
+            this.series = series;
+            this.partNumber = partNumber;
+            this.year = year;
+            this.description = description;
+            this.id = this.series.getName() + "-" + String.valueOf(this.partNumber) + ":" + this.year;  //$NON-NLS-1$//$NON-NLS-2$
+            this.name = PdfaSpecifications.PDFA_STRING_PREFIX + String.valueOf(this.partNumber);
         }
 
         /**
-         * @return the version id as an integer
+         * @return the part number as an int
          */
         @JsonProperty
-        public final int getId() {
+        public final int getPartNumber() {
+            return this.partNumber;
+        }
+
+        /**
+         * @return the standard part id as a String
+         */
+        public final String getId() {
             return this.id;
         }
 
         /**
-         * @return the version code ("1", "2", or "3")
+         * @return the year for the standard part
          */
         @JsonProperty
-        public final String getCode() {
-            return this.code;
+        public final String getYear() {
+            return this.year;
         }
 
         /**
-         * @return the ISO standard name for the PDF/A Version
+         * @return the name for the standard part
          */
         @JsonProperty
-        public final String getSpecification() {
-            return this.specification;
+        public final String getName() {
+            return this.name;
+        }
+
+        /**
+         * @return the description
+         */
+        public String getDescription() {
+            return this.description;
         }
 
         @Override
         public String toString() {
-            return this.fullName;
+            return String.format("%s %s -- %s", this.id, this.series.getDescription(), this.getDescription()); //$NON-NLS-1$
         }
     }
 
@@ -174,6 +163,53 @@ public enum PdfaSpecification {
         @Override
         public String toString() {
             return this.fullName;
+        }
+    }
+
+    /**
+     * Enum to for ISO standard identifiers
+     */
+    public enum IsoStandardSeries {
+        /** Identifier for PDF/A ISO Standard */
+        ISO_19005(PdfaSpecifications.ISO_19005_ID,
+                PdfaSpecifications.ISO_19005_DESCRIPTION),
+        /** Identifier for PDF 1.7 ISO Standard */
+        ISO_32000(PdfaSpecifications.ISO_32000_ID,
+                PdfaSpecifications.ISO_32000_DESCRIPTION);
+        private final int id;
+        private final String name;
+        private final String description;
+
+        IsoStandardSeries(final int id, final String description) {
+            this.id = id;
+            this.name = PdfaSpecifications.ISO_PREFIX + this.id;
+            this.description = description;
+        }
+
+        /**
+         * @return the id
+         */
+        public int getId() {
+            return this.id;
+        }
+
+        /**
+         * @return the name
+         */
+        public String getName() {
+            return this.name;
+        }
+
+        /**
+         * @return the description
+         */
+        public String getDescription() {
+            return this.description;
+        }
+
+        @Override
+        public String toString() {
+            return this.getName() + " " + this.getDescription(); //$NON-NLS-1$
         }
     }
 }
