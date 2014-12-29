@@ -7,6 +7,6 @@
  * a set of enums that create a hierarchical tree structure from specification
  * down to numbered sub-section.
  * 
- * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
+ * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  */
 package org.verapdf.pdfa.spec;

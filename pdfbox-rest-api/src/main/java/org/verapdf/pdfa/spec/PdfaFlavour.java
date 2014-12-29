@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Enumeration for PDF/A flavours, composed of version and level.
  *
- * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
+ * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  */
 public enum PdfaFlavour {
     /** PDF Version 1 Level A */
