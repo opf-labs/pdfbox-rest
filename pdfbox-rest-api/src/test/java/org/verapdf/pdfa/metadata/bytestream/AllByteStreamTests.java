@@ -4,13 +4,13 @@ import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.verapdf.AllTests;
 
 /**
  * @author  <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
@@ -50,8 +50,8 @@ public class AllByteStreamTests {
 
 	private final static List<File> getResourceFiles(String resName,
 			boolean recurse) throws URISyntaxException {
-		File root = getResourceAsFile(resName);
-		return getFileChildren(root, recurse);
+		File root = AllTests.getResourceAsFile(resName);
+		return AllTests.getFileChildren(root, recurse);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class AllByteStreamTests {
 	 * @throws URISyntaxException
 	 */
 	public final static File getEmptyDir() throws URISyntaxException {
-		return new File(getResourceAsFile(EMPTY_FILE).getParentFile()
+		return new File(AllTests.getResourceAsFile(EMPTY_FILE).getParentFile()
 				.getAbsolutePath() + EMPTY_DIR);
 	}
 
@@ -68,7 +68,7 @@ public class AllByteStreamTests {
 	 * @throws URISyntaxException
 	 */
 	public final static File getEmptyFile() throws URISyntaxException {
-		return getResourceAsFile(EMPTY_FILE);
+		return AllTests.getResourceAsFile(EMPTY_FILE);
 	}
 
 	/**
@@ -76,31 +76,6 @@ public class AllByteStreamTests {
 	 * @throws URISyntaxException
 	 */
 	public final static File getJavaIORootFile() throws URISyntaxException {
-		return getResourceAsFile(JAVAIO_ROOT);
-	}
-
-
-	/**
-	 * @param resName
-	 *            the name of the resource to retrieve a file for
-	 * @return the java.io.File for the named resource
-	 * @throws URISyntaxException
-	 *             if the named resource can't be converted to a URI
-	 */
-	public final static File getResourceAsFile(String resName)
-			throws URISyntaxException {
-		return new File(ClassLoader.getSystemResource(resName).toURI());
-	}
-
-	private final static List<File> getFileChildren(File root, boolean recurse) {
-		List<File> children = new ArrayList<>();
-		for (File file : root.listFiles()) {
-			if (file.isDirectory() && !file.isHidden() && recurse) {
-				children.addAll(getFileChildren(file, recurse));
-			} else if (file.isFile() && !file.isHidden()) {
-				children.add(file);
-			}
-		}
-		return children;
+		return AllTests.getResourceAsFile(JAVAIO_ROOT);
 	}
 }
