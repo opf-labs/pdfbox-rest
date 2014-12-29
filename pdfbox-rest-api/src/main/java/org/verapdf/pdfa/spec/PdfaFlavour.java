@@ -26,11 +26,11 @@ public enum PdfaFlavour {
     /** PDF Version 3 Level U */
     PDFA_3_U(IsoStandard.ISO_19005_3, Level.LEVEL_U);
 
-    private final IsoStandard part;
+    private final IsoStandard standard;
     private final Level level;
 
-    PdfaFlavour(final IsoStandard part, final Level level) {
-        this.part = part;
+    PdfaFlavour(final IsoStandard standard, final Level level) {
+        this.standard = standard;
         this.level = level;
     }
 
@@ -38,8 +38,8 @@ public enum PdfaFlavour {
      * @return the specification part
      */
     @JsonProperty
-    public final IsoStandard getPart() {
-        return this.part;
+    public final IsoStandard getStandard() {
+        return this.standard;
     }
 
     /**
