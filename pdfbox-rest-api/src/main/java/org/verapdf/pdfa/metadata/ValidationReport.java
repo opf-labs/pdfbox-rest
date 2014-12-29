@@ -11,6 +11,7 @@ import javax.activation.DataSource;
 import org.apache.pdfbox.preflight.PreflightDocument;
 import org.apache.pdfbox.preflight.parser.PreflightParser;
 import org.apache.pdfbox.preflight.utils.ByteArrayDataSource;
+import org.verapdf.pdfa.spec.PdfaFlavour;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

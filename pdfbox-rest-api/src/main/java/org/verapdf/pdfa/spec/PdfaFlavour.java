@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.verapdf.pdfa.metadata;
+package org.verapdf.pdfa.spec;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

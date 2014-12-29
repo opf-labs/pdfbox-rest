@@ -3,6 +3,8 @@
  */
 package org.verapdf.pdfa.metadata;
 
+import org.verapdf.pdfa.spec.PdfaFlavour;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
