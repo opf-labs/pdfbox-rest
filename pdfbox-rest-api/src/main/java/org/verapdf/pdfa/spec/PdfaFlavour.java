@@ -49,7 +49,11 @@ public enum PdfaFlavour {
     public final Level getLevel() {
         return this.level;
     }
-
+    
+    @Override
+    public String toString() {
+        return this.standard.toString() + " " + this.level.toString(); //$NON-NLS-1$
+    }
     /**
      * Enumeration of PDF/A Specification Parts, 1-3
      * 
@@ -125,7 +129,7 @@ public enum PdfaFlavour {
 
         @Override
         public String toString() {
-            return String.format("%s %s -- %s", this.id, this.series.getDescription(), this.getDescription()); //$NON-NLS-1$
+            return String.format("%s %s -- %s %s", this.id, this.series.getDescription(), this.getDescription(), this.getName()); //$NON-NLS-1$
         }
     }
 
