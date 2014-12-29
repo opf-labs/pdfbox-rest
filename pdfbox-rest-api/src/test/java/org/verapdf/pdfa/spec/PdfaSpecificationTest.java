@@ -47,7 +47,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#PdfaSpecification(org.verapdf.pdfa.spec.PdfaSpecification.Part, org.verapdf.pdfa.spec.PdfaSpecification.Level)}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#PdfaSpecification(org.verapdf.pdfa.spec.PdfaFlavour.Part, org.verapdf.pdfa.spec.PdfaFlavour.Level)}.
      */
     @Test
     public final void testPdfaSpecification() {
@@ -55,7 +55,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#getVersion()}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getVersion()}.
      */
     @Test
     public final void testGetVersion() {
@@ -63,7 +63,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#getLevel()}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getLevel()}.
      */
     @Test
     public final void testGetLevel() {
@@ -71,7 +71,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#getCode()}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getCode()}.
      */
     @Test
     public final void testGetCode() {
@@ -79,7 +79,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#getName()}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getName()}.
      */
     @Test
     public final void testGetName() {
@@ -87,7 +87,7 @@ public class PdfaSpecificationTest {
     }
 
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecification#toString()}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#toString()}.
      */
     @Test
     public final void testToString() {

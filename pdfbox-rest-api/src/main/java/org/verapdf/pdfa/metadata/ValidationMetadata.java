@@ -3,7 +3,7 @@
  */
 package org.verapdf.pdfa.metadata;
 
-import org.verapdf.pdfa.spec.PdfaSpecification;
+import org.verapdf.pdfa.spec.PdfaFlavour;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 public class ValidationMetadata {
-    private final PdfaSpecification flavour;
+    private final PdfaFlavour flavour;
     private final ValidationResult result;
     
-    private ValidationMetadata(PdfaSpecification flavour, ValidationResult result) {
+    private ValidationMetadata(PdfaFlavour flavour, ValidationResult result) {
         this.flavour = flavour;
         this.result = result;
     }
@@ -24,7 +24,7 @@ public class ValidationMetadata {
      * @return the flavour
      */
     @JsonProperty
-    public final PdfaSpecification getFlavour() {
+    public final PdfaFlavour getFlavour() {
         return this.flavour;
     }
 
@@ -41,7 +41,7 @@ public class ValidationMetadata {
      * @param result
      * @return
      */
-    public final static ValidationMetadata fromValues(PdfaSpecification flavour, ValidationResult result) {
+    public final static ValidationMetadata fromValues(PdfaFlavour flavour, ValidationResult result) {
         return new ValidationMetadata(flavour, result);
     }
 }

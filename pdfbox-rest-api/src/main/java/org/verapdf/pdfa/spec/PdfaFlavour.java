@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  */
-public enum PdfaSpecification {
+public enum PdfaFlavour {
     /** PDF Version 1 Level A */
     PDFA_1(IsoStandard.ISO_19005_1, Level.LEVEL_A),
     /** PDF Version 1 Level B */
@@ -29,7 +29,7 @@ public enum PdfaSpecification {
     private final IsoStandard part;
     private final Level level;
 
-    PdfaSpecification(final IsoStandard part, final Level level) {
+    PdfaFlavour(final IsoStandard part, final Level level) {
         this.part = part;
         this.level = level;
     }
