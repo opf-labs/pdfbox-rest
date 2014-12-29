@@ -25,6 +25,11 @@ public class PdfaSpecifications {
     final static String ISO_19005_3_YEAR = "2012"; //$NON-NLS-1$
     final static String ISO_19005_3_DESCRIPTION = "Use of ISO 32000-1 with support for embedded files"; //$NON-NLS-1$
     final static String ISO_REFERENCE_SUFFIX = "(E)"; //$NON-NLS-1$
+    final static String LEVEL_PREFIX = "Level "; //$NON-NLS-1$
+    final static String LEVEL_A_CODE = "a "; //$NON-NLS-1$
+    final static String LEVEL_B_CODE = "b "; //$NON-NLS-1$
+    static final String LEVEL_U_CODE = "u"; //$NON-NLS-1$
+
     
     private PdfaSpecifications() {
         throw new AssertionError("Should never enter utility class constructor."); //$NON-NLS-1$

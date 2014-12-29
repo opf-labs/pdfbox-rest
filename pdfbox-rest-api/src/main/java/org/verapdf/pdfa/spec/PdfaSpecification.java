@@ -136,20 +136,18 @@ public enum PdfaSpecification {
      */
     public static enum Level {
         /** Level A */
-        LEVEL_A("a"), //$NON-NLS-1$
+        LEVEL_A(PdfaSpecifications.LEVEL_A_CODE), 
         /** Level B */
-        LEVEL_B("b"), //$NON-NLS-1$
+        LEVEL_B(PdfaSpecifications.LEVEL_B_CODE), 
         /** Level U */
-        LEVEL_U("u"); //$NON-NLS-1$
-
-        static final String LEVEL_STRING = "Level "; //$NON-NLS-1$
+        LEVEL_U(PdfaSpecifications.LEVEL_U_CODE); 
 
         private final String code;
         private final String fullName;
 
         Level(final String code) {
             this.code = code;
-            this.fullName = LEVEL_STRING + code;
+            this.fullName = PdfaSpecifications.LEVEL_PREFIX + code;
         }
 
         /**
