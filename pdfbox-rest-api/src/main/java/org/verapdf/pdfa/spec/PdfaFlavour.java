@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum PdfaFlavour {
     /** PDF Version 1 Level A */
-    PDFA_1(IsoStandard.ISO_19005_1, Level.LEVEL_A),
+    PDFA_1_A(IsoStandard.ISO_19005_1, Level.LEVEL_A),
     /** PDF Version 1 Level B */
     PDFA_1_B(IsoStandard.ISO_19005_1, Level.LEVEL_A),
     /** PDF Version 2 Level A */
