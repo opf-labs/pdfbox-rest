@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.verapdf.pdfa.metadata.bytestream.AllByteStreamTests;
+import org.verapdf.pdfa.spec.AllSpecificationTests;
 import org.verapdf.pdfbox.rest.api.environment.TestEnvironments;
 
 /**
@@ -17,7 +18,7 @@ import org.verapdf.pdfbox.rest.api.environment.TestEnvironments;
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
  */
 @RunWith(Suite.class)
-@SuiteClasses({ TestEnvironments.class, AllByteStreamTests.class })
+@SuiteClasses({ TestEnvironments.class, AllByteStreamTests.class, AllSpecificationTests.class })
 public class AllTests {
 	/**
 	 * @param resName
