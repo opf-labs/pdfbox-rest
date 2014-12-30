@@ -96,7 +96,23 @@ public final class SectionImpl implements Section {
      * { @inheritDoc }
      */
     @Override
-    public Set<Section> getSubSections() {
+    public boolean isParentOf(Id isChild) {
+        return this.isChildOfThis(isChild, false);
+    }
+
+    /**
+     * { @inheritDoc }
+     */
+    @Override
+    public boolean isAncestorOf(Id isDescendant) {
+        return this.isChildOfThis(isDescendant, true);
+    }
+
+    /**
+     * { @inheritDoc }
+     */
+    @Override
+    public SortedSet<Section> getSubSections() {
         return Collections.unmodifiableSortedSet(this.subSections);
     }
 
@@ -106,6 +122,15 @@ public final class SectionImpl implements Section {
     @Override
     public boolean addSubSection(Section subSection) {
         return this.subSections.add(subSection);
+    }
+
+
+    /**
+     * { @inheritDoc }
+     */
+    @Override
+    public Section getSubSection(Id toFind) {
+        return this.getSubSectionById(toFind);
     }
 
     /**
@@ -177,6 +202,39 @@ public final class SectionImpl implements Section {
             }
         }
         return false;
+    }
+
+    private boolean isChildOfThis(Id toTest, boolean recurse) {
+        if (this.getId().equals(toTest)) {
+            return false;
+        }
+        for (Section subSection : this.getSubSections()) {
+            if (subSection.getId().equals(toTest)) {
+                return true;
+            }
+            if (recurse && subSection.isAncestorOf(toTest)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Section getSubSectionById(Id toFind) {
+        if (this.getId().equals(toFind)) {
+            return this;
+        }
+        if  (!this.isAncestorOf(toFind)) {
+            return null;
+        }
+        for (Section subSection : this.getSubSections()) {
+            if (subSection.getId().equals(toFind)) {
+                return subSection;
+            }
+            Section test = subSection.getSubSection(toFind);
+            if (test != null)
+                return test;
+        }
+        return null;
     }
 
     /**
