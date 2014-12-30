@@ -13,7 +13,7 @@ import org.junit.Test;
  *
  */
 @SuppressWarnings({"nls", "static-method"})
-public class PdfaSpecificationTest {
+public class TestPdfaSpecification {
 
     /**
      * Test the hash and equals contract for the class using EqualsVerifier
