@@ -4,6 +4,7 @@
 package org.verapdf.pdfa.spec;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -114,6 +115,7 @@ public class TestSection {
         assertTrue(root.equals(sectionBuilder.build()));
         assertTrue(root.isRoot());
         assertFalse(root.isAncestorOf(root));
+        assertTrue(root.getSubSection(root.getId()).equals(root));
         List<Section> subSections = new ArrayList<>();
         for (int index = starter; index < 10; index++) {
             sectionBuilder = Builder.fromValues(index, root.getName() + SectionImpl.SEPARATOR + index, root);
@@ -122,8 +124,10 @@ public class TestSection {
             subSections.add(subSection);
             assertTrue(root.isParentOf(subSection));
             assertTrue(root.isAncestorOf(subSection));
+            assertTrue(root.getSubSection(subSection.getId()).equals(subSection));
             assertFalse(subSection.isRoot());
             assertFalse(subSection.isAncestorOf(subSection));
+            assertNull(subSection.getSubSection(root.getId()));
         }
         
         Section lesser = root;
@@ -140,7 +144,11 @@ public class TestSection {
         parent.addSubSection(greater);
         assertTrue(parent.isParentOf(greater));
         assertTrue(parent.isAncestorOf(greater));
+        assertTrue(parent.getSubSection(greater.getId()).equals(greater));
+        assertNull(greater.getSubSection(parent.getId()));
         assertTrue(root.isAncestorOf(greater));
+        assertTrue(root.getSubSection(greater.getId()).equals(greater));
+        assertNull(greater.getSubSection(root.getId()));
         compareSections(lesser, greater);
         lesser = subSections.get(1);
         parent = subSections.get(2);
@@ -148,7 +156,11 @@ public class TestSection {
         greater = sectionBuilder.build();
         assertTrue(parent.isParentOf(greater));
         assertTrue(parent.isAncestorOf(greater));
+        assertTrue(parent.getSubSection(greater.getId()).equals(greater));
+        assertNull(greater.getSubSection(parent.getId()));
         assertTrue(root.isAncestorOf(greater));
+        assertTrue(root.getSubSection(greater.getId()).equals(greater));
+        assertNull(greater.getSubSection(root.getId()));
         compareSections(lesser, greater);
 }
 

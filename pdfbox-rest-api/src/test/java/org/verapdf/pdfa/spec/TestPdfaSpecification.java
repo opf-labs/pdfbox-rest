@@ -3,7 +3,7 @@
  */
 package org.verapdf.pdfa.spec;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNotNull;
 import nl.jqno.equalsverifier.EqualsVerifier;
 
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *
  */
-@SuppressWarnings({"nls", "static-method"})
+@SuppressWarnings({"static-method"})
 public class TestPdfaSpecification {
 
     /**
@@ -21,6 +21,38 @@ public class TestPdfaSpecification {
     @Test
     public void testFlavourEqualsContract() {
         EqualsVerifier.forClass(PdfaFlavour.class).verify();
+    }
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testLevelEqualsContract() {
+        EqualsVerifier.forClass(PdfaFlavour.Level.class).verify();
+    }
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testStandardEqualsContract() {
+        EqualsVerifier.forClass(PdfaFlavour.IsoStandard.class).verify();
+    }
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testStandardSeriesEqualsContract() {
+        EqualsVerifier.forClass(PdfaFlavour.IsoStandardSeries.class).verify();
+    }
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testSpecificationEqualsContract() {
+        EqualsVerifier.forClass(PdfaSpecificationImpl.class).verify();
     }
 
 
@@ -67,43 +99,13 @@ public class TestPdfaSpecification {
 
     
     /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#PdfaSpecification(org.verapdf.pdfa.spec.PdfaFlavour., org.verapdf.pdfa.spec.PdfaFlavour.Level)}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaSpecifications#byFlavour(PdfaFlavour)}.
      */
     @Test
     public final void testPdfaSpecification() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getVersion()}.
-     */
-    @Test
-    public final void testGetVersion() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getLevel()}.
-     */
-    @Test
-    public final void testGetLevel() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getCode()}.
-     */
-    @Test
-    public final void testGetCode() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#getName()}.
-     */
-    @Test
-    public final void testGetName() {
-        fail("Not yet implemented"); // TODO
+        PdfaSpecification spec = PdfaSpecifications.byFlavour(PdfaFlavour.PDFA_1_B);
+        assertNotNull(spec);
+        System.out.println(spec.toString());
     }
 
     /**
@@ -111,7 +113,7 @@ public class TestPdfaSpecification {
      */
     @Test
     public final void testToString() {
-        fail("Not yet implemented"); // TODO
+        PdfaSpecificationImpl.DEFAULT_INSTANCE.toString();
     }
 
 }

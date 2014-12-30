@@ -14,5 +14,5 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ TestPdfaSpecification.class, TestSection.class })
 public class AllSpecificationTests {
-
+    // Intentionally blank
 }
