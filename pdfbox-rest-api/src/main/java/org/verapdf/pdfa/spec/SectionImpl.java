@@ -329,7 +329,7 @@ public final class SectionImpl implements Section {
             return DEFAULT_ID;
         }
 
-        static IdImpl fromValues(final int ordinal) {
+        public static IdImpl fromValues(final int ordinal) {
             return new IdImpl(Integer.valueOf(ordinal));
         }
 
@@ -337,7 +337,7 @@ public final class SectionImpl implements Section {
             return new IdImpl(ordinal);
         }
 
-        static IdImpl fromValues(final int ordinal, final Id id) {
+        public static IdImpl fromValues(final int ordinal, final Id id) {
             return new IdImpl(Integer.valueOf(ordinal), id);
         }
 
