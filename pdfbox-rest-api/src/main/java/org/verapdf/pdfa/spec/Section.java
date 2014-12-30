@@ -3,7 +3,7 @@
  */
 package org.verapdf.pdfa.spec;
 
-import java.util.Set;
+import java.util.SortedSet;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -55,15 +55,39 @@ public interface Section extends Comparable<Section> {
     public boolean isAncestorOf(Section isDescendant);
 
     /**
+     * @param isChild
+     *            Section object to be checked to see if it's a sub-section of
+     *            this section
+     * 
+     * @return true if isChild is a direct child of this Section
+     */
+    public boolean isParentOf(Id isChild);
+
+    /**
+     * @param isDescendant
+     *            Section object to be checked to see if it's in the descendants
+     *            tree at all
+     * @return true if isDescendant is a sub-section of this section or its
+     *         sub-sections
+     */
+    public boolean isAncestorOf(Id isDescendant);
+
+    /**
      * @return any child sub-sections
      */
-    public Set<Section> getSubSections();
+    public SortedSet<Section> getSubSections();
     
     /**
      * @param subSection adds the subsection in natural ordering
      * @return true if sub-section added successfully
      */
     public boolean addSubSection(Section subSection);
+    
+    /**
+     * @param toFind
+     * @return
+     */
+    public Section getSubSection(Id toFind);
     
     /**
      *
