@@ -52,7 +52,7 @@ public enum PdfaFlavour {
     
     @Override
     public String toString() {
-        return this.standard.toString() + " " + this.level.toString(); //$NON-NLS-1$
+        return this.getStandard().toString() + " " + this.getLevel().toString(); //$NON-NLS-1$
     }
     /**
      * Enumeration of PDF/A Specification Parts, 1-3
@@ -85,8 +85,8 @@ public enum PdfaFlavour {
             this.partNumber = partNumber;
             this.year = year;
             this.description = description;
-            this.id = this.series.getName() + "-" + String.valueOf(this.partNumber) + ":" + this.year;  //$NON-NLS-1$//$NON-NLS-2$
-            this.name = PdfaSpecifications.PDFA_STRING_PREFIX + String.valueOf(this.partNumber);
+            this.id = this.series.getName() + "-" + String.valueOf(this.getPartNumber()) + ":" + this.getYear();  //$NON-NLS-1$//$NON-NLS-2$
+            this.name = PdfaSpecifications.PDFA_STRING_PREFIX + String.valueOf(this.getPartNumber());
         }
 
         /**
@@ -129,7 +129,7 @@ public enum PdfaFlavour {
 
         @Override
         public String toString() {
-            return String.format("%s %s -- %s %s", this.id, this.series.getDescription(), this.getDescription(), this.getName()); //$NON-NLS-1$
+            return String.format("%s %s -- %s %s", this.getId(), this.series.getDescription(), this.getDescription(), this.getName()); //$NON-NLS-1$
         }
     }
 
@@ -151,7 +151,7 @@ public enum PdfaFlavour {
 
         Level(final String code) {
             this.code = code;
-            this.fullName = PdfaSpecifications.LEVEL_PREFIX + code;
+            this.fullName = PdfaSpecifications.LEVEL_PREFIX + this.getCode();
         }
 
         /**
@@ -184,7 +184,7 @@ public enum PdfaFlavour {
 
         IsoStandardSeries(final int id, final String description) {
             this.id = id;
-            this.name = PdfaSpecifications.ISO_PREFIX + this.id;
+            this.name = PdfaSpecifications.ISO_PREFIX + this.getId();
             this.description = description;
         }
 
