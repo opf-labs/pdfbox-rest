@@ -3,12 +3,9 @@
  */
 package org.verapdf.pdfa.spec;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -19,35 +16,58 @@ import org.junit.Test;
 public class PdfaSpecificationTest {
 
     /**
-     * @throws java.lang.Exception
+     * Test the hash and equals contract for the class using EqualsVerifier
      */
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    @Test
+    public void testFlavourEqualsContract() {
+        EqualsVerifier.forClass(PdfaFlavour.class).verify();
+    }
+
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testFlavourToString() {
+        for (PdfaFlavour flavour : PdfaFlavour.values()) {
+            System.out.println(flavour.toString());
+        }
+    }
+
+
+    /**
+     * Test the hash and equals contract for the class using EqualsVerifier
+     */
+    @Test
+    public void testLevelToString() {
+        for (PdfaFlavour.Level level : PdfaFlavour.Level.values()) {
+            System.out.println(level.toString());
+        }
     }
 
     /**
-     * @throws java.lang.Exception
+     * Test the hash and equals contract for the class using EqualsVerifier
      */
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    @Test
+    public void testStandardToString() {
+        for (PdfaFlavour.IsoStandard standard : PdfaFlavour.IsoStandard.values()) {
+            System.out.println(standard.toString());
+        }
     }
 
     /**
-     * @throws java.lang.Exception
+     * Test the hash and equals contract for the class using EqualsVerifier
      */
-    @Before
-    public void setUp() throws Exception {
+    @Test
+    public void testStandardSeriesToString() {
+        for (PdfaFlavour.IsoStandardSeries series : PdfaFlavour.IsoStandardSeries.values()) {
+            System.out.println(series.toString());
+        }
     }
 
+    
     /**
-     * @throws java.lang.Exception
-     */
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#PdfaSpecification(org.verapdf.pdfa.spec.PdfaFlavour.Part, org.verapdf.pdfa.spec.PdfaFlavour.Level)}.
+     * Test method for {@link org.verapdf.pdfa.spec.PdfaFlavour#PdfaSpecification(org.verapdf.pdfa.spec.PdfaFlavour., org.verapdf.pdfa.spec.PdfaFlavour.Level)}.
      */
     @Test
     public final void testPdfaSpecification() {
