@@ -6,7 +6,9 @@ package org.verapdf.pdfa.spec;
 import static org.junit.Assert.assertNotNull;
 import nl.jqno.equalsverifier.EqualsVerifier;
 
+import org.apache.pdfbox.preflight.PreflightConstants;
 import org.junit.Test;
+import org.verapdf.pdfa.metadata.PdboxErrorMapper;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -116,4 +118,11 @@ public class TestPdfaSpecification {
         PdfaSpecificationImpl.DEFAULT_INSTANCE.toString();
     }
 
+    /**
+     * 
+     */
+    @Test
+    public final void testMapper() {
+        assertNotNull(PdboxErrorMapper.getMappedSectionId(PreflightConstants.ERROR_SYNTAX_OBJ_DELIMITER));
+    }
 }
