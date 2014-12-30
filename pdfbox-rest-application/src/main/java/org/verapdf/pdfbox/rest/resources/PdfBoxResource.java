@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.verapdf.pdfa.metadata.DocumentMetadata;
 import org.verapdf.pdfa.metadata.Metadata;
-import org.verapdf.pdfa.metadata.ValidationReport;
+import org.verapdf.pdfa.reports.ValidationReport;
 import org.verapdf.pdfbox.rest.views.ReportView;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;

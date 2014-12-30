@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.verapdf.pdfa.metadata;
+package org.verapdf.pdfa.reports;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +11,10 @@ import javax.activation.DataSource;
 import org.apache.pdfbox.preflight.PreflightDocument;
 import org.apache.pdfbox.preflight.parser.PreflightParser;
 import org.apache.pdfbox.preflight.utils.ByteArrayDataSource;
+import org.verapdf.pdfa.metadata.DocumentMetadata;
+import org.verapdf.pdfa.metadata.Metadata;
+import org.verapdf.pdfa.metadata.ValidationMetadata;
+import org.verapdf.pdfa.metadata.ValidationResult;
 import org.verapdf.pdfa.spec.PdfaFlavour;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

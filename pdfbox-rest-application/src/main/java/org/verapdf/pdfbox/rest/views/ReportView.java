@@ -5,11 +5,11 @@ package org.verapdf.pdfbox.rest.views;
 
 import io.dropwizard.views.View;
 
-import org.verapdf.pdfa.metadata.ValidationReport;
+import org.verapdf.pdfa.reports.ValidationReport;
 
 /**
  * Dropwizard {@link io.dropwizard.views.View View} to generate an HTML
- * representation of a {@link org.verapdf.pdfa.metadata.ValidationReport PDF/A
+ * representation of a {@link org.verapdf.pdfa.reports.ValidationReport PDF/A
  * validation report}. This uses the mustache template reportfragment.mustache
  * mapped from the main resources folder matching the View's package in this
  * case org.verapdf.pdfbox.rest.views.
@@ -22,7 +22,7 @@ public class ReportView extends View {
 
     /**
      * @param report
-     *            the {@link org.verapdf.pdfa.metadata.ValidationReport
+     *            the {@link org.verapdf.pdfa.reports.ValidationReport
      *            ValidationReport} to display as HTML
      */
     public ReportView(ValidationReport report) {
@@ -31,7 +31,7 @@ public class ReportView extends View {
     }
 
     /**
-     * @return the {@link org.verapdf.pdfa.metadata.ValidationReport
+     * @return the {@link org.verapdf.pdfa.reports.ValidationReport
      *         ValidationReport}, required by mustache to access report data in
      *         template
      */
