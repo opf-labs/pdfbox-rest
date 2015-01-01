@@ -76,19 +76,21 @@ public interface Section extends Comparable<Section> {
      * @return any child sub-sections
      */
     public SortedSet<Section> getSubSections();
-    
+
     /**
-     * @param subSection adds the subsection in natural ordering
+     * @param subSection
+     *            adds the subsection in natural ordering
      * @return true if sub-section added successfully
      */
     public boolean addSubSection(Section subSection);
-    
+
     /**
      * @param toFind
-     * @return
+     * @return the sub-section with id equal to find or null if no succh
+     *         subsection exists
      */
     public Section getSubSection(Id toFind);
-    
+
     /**
      *
      */

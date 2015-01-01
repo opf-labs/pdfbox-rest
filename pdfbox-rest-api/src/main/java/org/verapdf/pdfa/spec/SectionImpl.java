@@ -329,6 +329,10 @@ public final class SectionImpl implements Section {
             return DEFAULT_ID;
         }
 
+        /**
+         * @param ordinal
+         * @return
+         */
         public static IdImpl fromValues(final int ordinal) {
             return new IdImpl(Integer.valueOf(ordinal));
         }
