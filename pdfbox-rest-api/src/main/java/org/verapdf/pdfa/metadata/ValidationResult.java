@@ -101,7 +101,7 @@ public class ValidationResult {
         for (ValidationError preflightError : preflightResult.getErrorsList()) {
             List<CheckResult> results = new ArrayList<>();
             Check check = Check.fromPreflightError(preflightError);
-            CheckResult result = CheckResult.fromValues(Status.FAILED, Location.fromValues(0), preflightError.getDetails());
+            CheckResult result = CheckResult.fromValues(Status.FAILED, Location.fromValues(preflightError.getPageNumber().intValue()), preflightError.getDetails());
             if (preflightError.isWarning()) {
                 summariser.warning();
             } else {
