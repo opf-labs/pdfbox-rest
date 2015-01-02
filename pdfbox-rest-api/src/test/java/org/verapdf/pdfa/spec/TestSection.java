@@ -29,6 +29,7 @@ public class TestSection {
      */
     @Test
     public void testIdEqualsContract() {
+    	// Run equals verifier on the IdImpl class
         EqualsVerifier.forClass(IdImpl.class).verify();
     }
 
@@ -37,8 +38,8 @@ public class TestSection {
      */
     @Test
     public final void testDefaultIdInstance() {
-    	// Check that the default instance is always the same instance
         Id defaultId = IdImpl.defaultInstance();
+    	// Check that the default instance is always the same instance
         assertTrue(defaultId == IdImpl.defaultInstance());
     }
     /**
@@ -46,10 +47,11 @@ public class TestSection {
      */
     @Test
     public final void testIdfromInt() {
-    	// Check that the default instance isn't the same instance as zero value, but it IS equal
     	Id defaultId = IdImpl.defaultInstance();
     	Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
+    	// Check that the default instance isn't the same instance as zero value
         assertFalse(defaultId == zeroId);
+        // Not the same instance so see of equals is associative, it should be
         assertTrue(defaultId.toString() + ".equals(" + zeroId.toString() + ") == false", defaultId.equals(zeroId));
         assertTrue(zeroId.toString() + ".equals(" + defaultId.toString() + ") == false", zeroId.equals(defaultId));
     }
@@ -59,6 +61,7 @@ public class TestSection {
      */
     @Test(expected = IllegalArgumentException.class)
     public final void testIdfromIntNegativeInt() {
+    	// We're not allowed values less than 1
     	IdImpl.fromValues(-1);
     }
 
@@ -79,7 +82,7 @@ public class TestSection {
      */
     @Test(expected = IllegalArgumentException.class)
     public final void testIdfromIntAndIdNegativeInt() {
-    	// Check that a parent and child id aren't equal
+    	// We want a legal potential parent, but an illegal ordinal value
         Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
         IdImpl.fromValues(-1, zeroId);
     }
@@ -88,7 +91,8 @@ public class TestSection {
      * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int, Id)}.
      */
     @Test(expected = NullPointerException.class)
-    public final void testIdfromIntAndIdnullId() {
+    public final void testIdfromIntAndIdNullId() {
+    	// This time a legal ordinal and null parent
         IdImpl.fromValues(IdImpl.DEFAULT_VALUE, null);
     }
     
@@ -97,6 +101,7 @@ public class TestSection {
      */
     @Test
     public final void testIsRoot() {
+    	// Default should be root
     	Id defId = IdImpl.defaultInstance();
     	assertTrue(defId.isRoot());
     	Id root = IdImpl.fromValues(1);
