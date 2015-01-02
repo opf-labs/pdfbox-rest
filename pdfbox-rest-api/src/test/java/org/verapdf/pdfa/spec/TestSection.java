@@ -33,18 +33,121 @@ public class TestSection {
     }
 
     /**
-     * 
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#defaultInstance()}.
      */
     @Test
-    public final void testIdImplConstructors() {
-        IdImpl defaultId = IdImpl.defaultInstance();
-        IdImpl zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
-        IdImpl zeroChild = IdImpl.fromValues(IdImpl.DEFAULT_VALUE, zeroId);
+    public final void testDefaultIdInstance() {
+    	// Check that the default instance is always the same instance
+        Id defaultId = IdImpl.defaultInstance();
+        assertTrue(defaultId == IdImpl.defaultInstance());
+    }
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int)}.
+     */
+    @Test
+    public final void testIdfromInt() {
+    	// Check that the default instance isn't the same instance as zero value, but it IS equal
+    	Id defaultId = IdImpl.defaultInstance();
+    	Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
+        assertFalse(defaultId == zeroId);
         assertTrue(defaultId.toString() + ".equals(" + zeroId.toString() + ") == false", defaultId.equals(zeroId));
-        assertFalse(defaultId.toString() + ".equals(" + zeroChild.toString() + ") == true", defaultId.equals(zeroChild));
-        assertFalse(zeroId.toString() + ".equals(" + zeroChild.toString() + ") == true", zeroId.equals(zeroChild));
+        assertTrue(zeroId.toString() + ".equals(" + defaultId.toString() + ") == false", zeroId.equals(defaultId));
     }
 
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int)}.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public final void testIdfromIntNegativeInt() {
+    	IdImpl.fromValues(-1);
+    }
+
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int, Id)}.
+     */
+    @Test
+    public final void testIdfromIntAndId() {
+    	// Check that a parent and child id aren't equal
+    	Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
+    	Id zeroChild = IdImpl.fromValues(IdImpl.DEFAULT_VALUE, zeroId);
+        assertFalse(zeroId.toString() + ".equals(" + zeroChild.toString() + ") == true", zeroId.equals(zeroChild));
+        assertFalse(zeroChild.toString() + ".equals(" + zeroId.toString() + ") == true", zeroChild.equals(zeroId));
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int, Id)}.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public final void testIdfromIntAndIdNegativeInt() {
+    	// Check that a parent and child id aren't equal
+        Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
+        IdImpl.fromValues(-1, zeroId);
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#fromValues(int, Id)}.
+     */
+    @Test(expected = NullPointerException.class)
+    public final void testIdfromIntAndIdnullId() {
+        IdImpl.fromValues(IdImpl.DEFAULT_VALUE, null);
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#isRoot()}.
+     */
+    @Test
+    public final void testIsRoot() {
+    	Id defId = IdImpl.defaultInstance();
+    	assertTrue(defId.isRoot());
+    	Id root = IdImpl.fromValues(1);
+    	assertTrue(root.isRoot());
+    	Id nonRoot = IdImpl.fromValues(1, root);
+    	assertFalse(nonRoot.isRoot());
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#getParentId() }.
+     */
+    @Test
+    public final void testGetParentId() {
+    	Id root = IdImpl.fromValues(1);
+    	Id child = IdImpl.fromValues(1, root);
+    	Id parentId = child.getParentId();
+    	assertTrue(root.equals(parentId));
+    	assertTrue(parentId.equals(root));
+    	assertFalse(root.equals(child));
+    	assertFalse(parentId.equals(child));
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#isParentOf(Id) }.
+     */
+    @Test
+    public final void testIsParentOf() {
+    	Id parent = IdImpl.fromValues(1);
+    	Id child = IdImpl.fromValues(1, parent);
+    	assertTrue(parent.isParentOf(child));
+    	assertFalse(child.isParentOf(parent));
+    	assertFalse(child.isParentOf(child));
+    	assertFalse(parent.isParentOf(parent));
+    }
+    
+    /**
+     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#isAncestorOf(Id) }.
+     */
+    @Test
+    public final void testIsAncestorOf() {
+    	Id parent = IdImpl.fromValues(1);
+    	Id child = parent.createChildId(1);
+    	Id grandChild = child.createChildId(1);
+    	assertTrue(parent.isAncestorOf(child));
+    	assertFalse(child.isAncestorOf(parent));
+    	assertFalse(child.isAncestorOf(child));
+    	assertFalse(parent.isAncestorOf(parent));
+    	assertTrue(parent.isAncestorOf(grandChild));
+    	assertTrue(child.isAncestorOf(grandChild));
+    }
+    
     /**
      * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#compareTo(org.verapdf.pdfa.spec.Section.Id)}.
      */
@@ -61,24 +164,30 @@ public class TestSection {
      */
     @Test
     public final void testIdCompareTo() {
+    	// Parent for a bunch of ids
         int starter = 1;
         IdImpl topParent = IdImpl.fromValues(starter);
-        List<IdImpl> childIds = new ArrayList<>();
-        for (int index = starter; index < 10; index++) {
-            childIds.add(IdImpl.fromValues(index, topParent));
+        // List of children & grandchildren
+        List<Id> children = new ArrayList<>();
+        
+        for (int index = starter; index < 20; index++) {
+            children.add(topParent.createChildId(index));
+            for (int index2 = 0; index2 < (index - 1); index2++) {
+            	compareIds(children.get(index2), children.get(index - 1));
+            }
         }
         
         Id lesser = topParent;
-        for (Id greater : childIds) {
+        for (Id greater : children) {
             compareIds(lesser, greater);
             lesser = greater;
         }
         
-        lesser = childIds.get(0);
-        Id greater = IdImpl.fromValues(starter, childIds.get(1));
+        lesser = children.get(0);
+        Id greater = IdImpl.fromValues(starter, children.get(1));
         compareIds(lesser, greater);
-        lesser = childIds.get(1);
-        greater = IdImpl.fromValues(starter, childIds.get(2));
+        lesser = children.get(1);
+        greater = IdImpl.fromValues(starter, children.get(2));
         compareIds(lesser, greater);
     }
 
@@ -97,7 +206,7 @@ public class TestSection {
     public final void testSectionCompareToNull() {
         int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        sectionBuilder.id(IdImpl.fromValues(Integer.valueOf(starter))).name("Section:" + starter);
+        sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter);
         Section parent = sectionBuilder.build();
         parent.compareTo(null);
         fail("Should never reach here.");
@@ -109,7 +218,7 @@ public class TestSection {
     public final void testSectionCompareTo() {
         int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        sectionBuilder.id(IdImpl.fromValues(Integer.valueOf(starter))).name("Section:" + starter);
+        sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter);
         Section root = sectionBuilder.build();
         sectionBuilder = Builder.fromSection(root);
         assertTrue(root.equals(sectionBuilder.build()));
@@ -118,7 +227,7 @@ public class TestSection {
         assertTrue(root.getSubSection(root.getId()).equals(root));
         List<Section> subSections = new ArrayList<>();
         for (int index = starter; index < 10; index++) {
-            sectionBuilder = Builder.fromValues(index, root.getName() + SectionImpl.SEPARATOR + index, root);
+            sectionBuilder = Builder.fromValues(index, root.getName() + IdImpl.SEPARATOR + index, root);
             Section subSection = sectionBuilder.build();
             root.addSubSection(subSection);
             subSections.add(subSection);
@@ -139,7 +248,7 @@ public class TestSection {
         
         lesser = subSections.get(0);
         Section parent = subSections.get(1);
-        sectionBuilder = Builder.fromValues(1, parent.getName() + SectionImpl.SEPARATOR + 1, parent);
+        sectionBuilder = Builder.fromValues(1, parent.getName() + IdImpl.SEPARATOR + 1, parent);
         Section greater = sectionBuilder.build();
         parent.addSubSection(greater);
         assertTrue(parent.isParentOf(greater));
@@ -152,7 +261,7 @@ public class TestSection {
         compareSections(lesser, greater);
         lesser = subSections.get(1);
         parent = subSections.get(2);
-        sectionBuilder = Builder.fromValues(2, parent.getName() + SectionImpl.SEPARATOR + 1, parent);
+        sectionBuilder = Builder.fromValues(2, parent.getName() + IdImpl.SEPARATOR + 1, parent);
         greater = sectionBuilder.build();
         assertTrue(parent.isParentOf(greater));
         assertTrue(parent.isAncestorOf(greater));
@@ -171,7 +280,7 @@ public class TestSection {
     public final void testGetTitle() {
         int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        Section section = sectionBuilder.id(IdImpl.fromValues(Integer.valueOf(starter))).name("Section:" + starter).build();
+        Section section = sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter).build();
         assertTrue(section.getTitle().contains(section.getName()));
     }
 
