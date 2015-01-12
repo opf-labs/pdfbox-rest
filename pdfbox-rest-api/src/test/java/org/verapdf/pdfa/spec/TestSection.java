@@ -47,13 +47,18 @@ public class TestSection {
      */
     @Test
     public final void testIdfromInt() {
-    	Id defaultId = IdImpl.defaultInstance();
-    	Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
-    	// Check that the default instance isn't the same instance as zero value
-        assertFalse(defaultId == zeroId);
-        // Not the same instance so see of equals is associative, it should be
-        assertTrue(defaultId.toString() + ".equals(" + zeroId.toString() + ") == false", defaultId.equals(zeroId));
-        assertTrue(zeroId.toString() + ".equals(" + defaultId.toString() + ") == false", zeroId.equals(defaultId));
+    	Id minId = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	// Check that the default instance isn't the same instance as min value
+        assertFalse(IdImpl.defaultInstance() == minId);
+        // Not the same instance so see if not equals is associative, it should be
+        assertFalse(IdImpl.defaultInstance().equals(minId));
+        assertFalse(minId.equals(IdImpl.defaultInstance()));
+    	Id minIdCopy = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	// Check that min value copy isn't the same instance as min value
+        assertFalse(minIdCopy == minId);
+        // Not the same instance but see of equals is associative, it should be
+        assertTrue(minIdCopy.equals(minId));
+        assertTrue(minId.equals(minIdCopy));
     }
 
     /**
@@ -62,7 +67,7 @@ public class TestSection {
     @Test(expected = IllegalArgumentException.class)
     public final void testIdfromIntNegativeInt() {
     	// We're not allowed values less than 1
-    	IdImpl.fromValues(-1);
+    	IdImpl.fromValues(IdImpl.MINIMUM_VALUE - 1);
     }
 
     /**
@@ -71,8 +76,8 @@ public class TestSection {
     @Test
     public final void testIdfromIntAndId() {
     	// Check that a parent and child id aren't equal
-    	Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
-    	Id zeroChild = IdImpl.fromValues(IdImpl.DEFAULT_VALUE, zeroId);
+    	Id zeroId = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	Id zeroChild = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, zeroId);
         assertFalse(zeroId.toString() + ".equals(" + zeroChild.toString() + ") == true", zeroId.equals(zeroChild));
         assertFalse(zeroChild.toString() + ".equals(" + zeroId.toString() + ") == true", zeroChild.equals(zeroId));
     }
@@ -83,8 +88,8 @@ public class TestSection {
     @Test(expected = IllegalArgumentException.class)
     public final void testIdfromIntAndIdNegativeInt() {
     	// We want a legal potential parent, but an illegal ordinal value
-        Id zeroId = IdImpl.fromValues(IdImpl.DEFAULT_VALUE);
-        IdImpl.fromValues(-1, zeroId);
+        Id zeroId = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+        IdImpl.fromValues(IdImpl.MINIMUM_VALUE - 1, zeroId);
     }
     
     /**
@@ -93,7 +98,7 @@ public class TestSection {
     @Test(expected = NullPointerException.class)
     public final void testIdfromIntAndIdNullId() {
     	// This time a legal ordinal and null parent
-        IdImpl.fromValues(IdImpl.DEFAULT_VALUE, null);
+        IdImpl.fromValues(IdImpl.MINIMUM_VALUE, null);
     }
     
     /**
@@ -101,27 +106,10 @@ public class TestSection {
      */
     @Test
     public final void testIsRoot() {
-    	// Default should be root
-    	Id defId = IdImpl.defaultInstance();
-    	assertTrue(defId.isRoot());
-    	Id root = IdImpl.fromValues(1);
-    	assertTrue(root.isRoot());
-    	Id nonRoot = IdImpl.fromValues(1, root);
-    	assertFalse(nonRoot.isRoot());
-    }
-    
-    /**
-     * Test method for {@link org.verapdf.pdfa.spec.SectionImpl.IdImpl#getParentId() }.
-     */
-    @Test
-    public final void testGetParentId() {
-    	Id root = IdImpl.fromValues(1);
-    	Id child = IdImpl.fromValues(1, root);
-    	Id parentId = child.getParentId();
-    	assertTrue(root.equals(parentId));
-    	assertTrue(parentId.equals(root));
-    	assertFalse(root.equals(child));
-    	assertFalse(parentId.equals(child));
+    	// Only default should be root
+    	assertTrue(IdImpl.defaultInstance().isRoot());
+    	Id notRoot = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	assertFalse(notRoot.isRoot());
     }
     
     /**
@@ -129,12 +117,22 @@ public class TestSection {
      */
     @Test
     public final void testIsParentOf() {
-    	Id parent = IdImpl.fromValues(1);
-    	Id child = IdImpl.fromValues(1, parent);
+    	// Three generations to test
+    	Id parent = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	Id child = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, parent);
+    	Id grandChild = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, child);
+    	// Parent is the parent of child
     	assertTrue(parent.isParentOf(child));
+    	// Parent is not a child of child
     	assertFalse(child.isParentOf(parent));
+    	// Child is not a child of itself
     	assertFalse(child.isParentOf(child));
+    	// Parent is not a child of itself
     	assertFalse(parent.isParentOf(parent));
+    	// Child is parent of grandChild
+    	assertTrue(child.isParentOf(grandChild));
+    	// Parent is NOT parent of grandChild
+    	assertFalse(parent.isParentOf(grandChild));
     }
     
     /**
@@ -142,14 +140,20 @@ public class TestSection {
      */
     @Test
     public final void testIsAncestorOf() {
-    	Id parent = IdImpl.fromValues(1);
-    	Id child = parent.createChildId(1);
-    	Id grandChild = child.createChildId(1);
+    	Id parent = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+    	Id child = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, parent);
+    	Id grandChild = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, child);
+    	// Parent is an ancestor of parent
     	assertTrue(parent.isAncestorOf(child));
+    	// Child is not an ancestor of parent
     	assertFalse(child.isAncestorOf(parent));
+    	// Child is not an ancestor of child
     	assertFalse(child.isAncestorOf(child));
+    	// Parent is not an ancestor of parent
     	assertFalse(parent.isAncestorOf(parent));
+    	// Parent is ancestor of grandChild
     	assertTrue(parent.isAncestorOf(grandChild));
+    	// Child is ancestor of grandChild
     	assertTrue(child.isAncestorOf(grandChild));
     }
     
@@ -158,10 +162,9 @@ public class TestSection {
      */
     @Test(expected = NullPointerException.class)
     public final void testIdCompareToNull() {
-        int starter = 1;
-        IdImpl parent = IdImpl.fromValues(starter);
+        IdImpl parent = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
+        // Expect compareTo(null) to throw null exception
         parent.compareTo(null);
-        fail("Should never reach here.");
     }
 
     /**
@@ -170,13 +173,14 @@ public class TestSection {
     @Test
     public final void testIdCompareTo() {
     	// Parent for a bunch of ids
-        int starter = 1;
-        IdImpl topParent = IdImpl.fromValues(starter);
+        IdImpl topParent = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
         // List of children & grandchildren
         List<Id> children = new ArrayList<>();
+        List<Id> grandChildren = new ArrayList<>();
         
-        for (int index = starter; index < 20; index++) {
-            children.add(topParent.createChildId(index));
+        // Populate children and test them
+        for (int index = IdImpl.MINIMUM_VALUE; index < 20; index++) {
+            children.add(IdImpl.fromValues(index, topParent));
             for (int index2 = 0; index2 < (index - 1); index2++) {
             	compareIds(children.get(index2), children.get(index - 1));
             }
@@ -189,10 +193,10 @@ public class TestSection {
         }
         
         lesser = children.get(0);
-        Id greater = IdImpl.fromValues(starter, children.get(1));
+        Id greater = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, children.get(1));
         compareIds(lesser, greater);
         lesser = children.get(1);
-        greater = IdImpl.fromValues(starter, children.get(2));
+        greater = IdImpl.fromValues(IdImpl.MINIMUM_VALUE, children.get(2));
         compareIds(lesser, greater);
     }
 
@@ -209,9 +213,8 @@ public class TestSection {
      */
     @Test(expected = NullPointerException.class)
     public final void testSectionCompareToNull() {
-        int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter);
+        sectionBuilder.id(IdImpl.fromValues(IdImpl.MINIMUM_VALUE)).name("Section:" + IdImpl.MINIMUM_VALUE);
         Section parent = sectionBuilder.build();
         parent.compareTo(null);
         fail("Should never reach here.");
@@ -221,9 +224,8 @@ public class TestSection {
      */
     @Test
     public final void testSectionCompareTo() {
-        int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter);
+        sectionBuilder.id(IdImpl.fromValues(IdImpl.MINIMUM_VALUE)).name("Section:" + IdImpl.MINIMUM_VALUE);
         Section root = sectionBuilder.build();
         sectionBuilder = Builder.fromSection(root);
         assertTrue(root.equals(sectionBuilder.build()));
@@ -231,8 +233,8 @@ public class TestSection {
         assertFalse(root.isAncestorOf(root));
         assertTrue(root.getSubSection(root.getId()).equals(root));
         List<Section> subSections = new ArrayList<>();
-        for (int index = starter; index < 10; index++) {
-            sectionBuilder = Builder.fromValues(index, root.getName() + IdImpl.SEPARATOR + index, root);
+        for (int index = IdImpl.MINIMUM_VALUE; index < 10; index++) {
+            sectionBuilder = Builder.fromValues(index, root.getName() + IdImpl.DEFAULT_SEPARATOR + index, root);
             Section subSection = sectionBuilder.build();
             root.addSubSection(subSection);
             subSections.add(subSection);
@@ -252,8 +254,8 @@ public class TestSection {
 
         
         lesser = subSections.get(0);
-        Section parent = subSections.get(1);
-        sectionBuilder = Builder.fromValues(1, parent.getName() + IdImpl.SEPARATOR + 1, parent);
+        Section parent = subSections.get(IdImpl.MINIMUM_VALUE);
+        sectionBuilder = Builder.fromValues(IdImpl.MINIMUM_VALUE, parent.getName() + IdImpl.DEFAULT_SEPARATOR + 1, parent);
         Section greater = sectionBuilder.build();
         parent.addSubSection(greater);
         assertTrue(parent.isParentOf(greater));
@@ -266,7 +268,7 @@ public class TestSection {
         compareSections(lesser, greater);
         lesser = subSections.get(1);
         parent = subSections.get(2);
-        sectionBuilder = Builder.fromValues(2, parent.getName() + IdImpl.SEPARATOR + 1, parent);
+        sectionBuilder = Builder.fromValues(2, parent.getName() + IdImpl.DEFAULT_SEPARATOR + 1, parent);
         greater = sectionBuilder.build();
         assertTrue(parent.isParentOf(greater));
         assertTrue(parent.isAncestorOf(greater));
@@ -283,9 +285,8 @@ public class TestSection {
      */
     @Test
     public final void testGetTitle() {
-        int starter = 1;
         Builder sectionBuilder = Builder.defaultInstance();
-        Section section = sectionBuilder.id(IdImpl.fromValues(starter)).name("Section:" + starter).build();
+        Section section = sectionBuilder.id(IdImpl.fromValues(IdImpl.MINIMUM_VALUE)).name("Section:" + IdImpl.MINIMUM_VALUE).build();
         assertTrue(section.getTitle().contains(section.getName()));
     }
 
