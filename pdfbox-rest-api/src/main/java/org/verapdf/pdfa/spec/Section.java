@@ -114,18 +114,5 @@ public interface Section extends Comparable<Section> {
 		 * @return true if isDescendant is a decendant of this id
 		 */
 		public boolean isAncestorOf(Id isDescendant);
-
-		/**
-		 * @return the Parent ID of this ID or itself if this is a root id
-		 */
-		public Id getParentId();
-
-		/**
-		 * @param ordinal
-		 *            the int ordingal for the new id
-		 * @return a new Id that is a child of this one, i.e. the new id is
-		 *         parent.id + ',' + ordinal
-		 */
-		public Id createChildId(int ordinal);
 	}
 }
