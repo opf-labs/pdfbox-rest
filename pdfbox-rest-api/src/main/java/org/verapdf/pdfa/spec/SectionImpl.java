@@ -196,14 +196,14 @@ public final class SectionImpl implements Section {
      */
 	public static final class IdImpl implements Id {
 		/** String separator for Section and Sub-Section */
-		public final static char SEPARATOR = '.';
-		final static int DEFAULT_VALUE = 0;
+		public final static char DEFAULT_SEPARATOR = '.';
+		final static int MINIMUM_VALUE = 1;
 		final static IdImpl DEFAULT_ID = new IdImpl();
 		private final int[] idStack;
 		private final String value;
 
 		private IdImpl() {
-			this(DEFAULT_VALUE);
+			this(new int[0]);
 		}
 
 		private IdImpl(final int ordinal) {
@@ -212,11 +212,12 @@ public final class SectionImpl implements Section {
 
 		private IdImpl(final int[] idStack) {
 			this.idStack = idStack.clone();
-			this.value = joinArray(idStack, SEPARATOR);
+			this.value = joinArray(idStack, DEFAULT_SEPARATOR);
 		}
 
 		@Override
 		public int[] getIntParts() {
+			if (this.idStack == null) return null;
 			return this.idStack.clone();
 		}
 
@@ -234,24 +235,7 @@ public final class SectionImpl implements Section {
 		 */
 		@Override
 		public boolean isRoot() {
-			return this.getIntParts().length == 1;
-		}
-
-		/**
-		 * { @inheritDoc }
-		 */
-		@Override
-		public Id getParentId() {
-			return new IdImpl(Arrays.copyOf(this.getIntParts(),
-					this.getIntParts().length - 1));
-		}
-
-		/**
-		 * { @inheritDoc }
-		 */
-		@Override
-		public Id createChildId(int ordinal) {
-			return fromValues(ordinal, this);
+			return this.getIntParts().length == 0;
 		}
 
 		/**
@@ -286,8 +270,14 @@ public final class SectionImpl implements Section {
 			if (o == null) {
 				throw new NullPointerException("Passed Section parm o == null"); //$NON-NLS-1$
 			}
-			return this.value.compareTo(o.getValue());
-		}
+			int minLength = (o.getIntParts().length > this.getIntParts().length) ? this.getIntParts().length : o.getIntParts().length;
+			for (int index = 0; index < minLength; index++) {
+				if (this.getIntParts()[index] != o.getIntParts()[index]) {
+					return this.getIntParts()[index] - o.getIntParts()[index];
+				}
+			}
+			return (this.getIntParts().length - o.getIntParts().length);
+		} 
 
 		/**
 		 * { @inheritDoc }
@@ -296,8 +286,7 @@ public final class SectionImpl implements Section {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result
-					+ ((this.value == null) ? 0 : this.value.hashCode());
+			result = prime * result + Arrays.hashCode(this.idStack);
 			return result;
 		}
 
@@ -305,22 +294,18 @@ public final class SectionImpl implements Section {
 		 * { @inheritDoc }
 		 */
 		@Override
-		public boolean equals(final Object obj) {
+		public boolean equals(Object obj) {
 			if (this == obj) {
 				return true;
 			}
 			if (obj == null) {
 				return false;
 			}
-			if (!(obj instanceof IdImpl)) {
+			if (!(obj instanceof Id)) {
 				return false;
 			}
-			IdImpl other = (IdImpl) obj;
-			if (this.value == null) {
-				if (other.value != null) {
-					return false;
-				}
-			} else if (!this.value.equals(other.value)) {
+			Id other = (Id) obj;
+			if (!Arrays.equals(this.getIntParts(), other.getIntParts())) {
 				return false;
 			}
 			return true;
@@ -364,7 +349,7 @@ public final class SectionImpl implements Section {
 		 * @return an id created from the passed integer value
 		 */
 		public static IdImpl fromValues(final int ordinal) {
-			Preconditions.checkArgument(ordinal >= DEFAULT_VALUE);
+			Preconditions.checkArgument(ordinal >= MINIMUM_VALUE);
 			return new IdImpl(ordinal);
 		}
 
@@ -374,7 +359,7 @@ public final class SectionImpl implements Section {
 		 * @return a new ID created as a child of the parent with a new ordinal.
 		 */
 		public static IdImpl fromValues(final int ordinal, final Id parentId) {
-			Preconditions.checkArgument(ordinal >= DEFAULT_VALUE);
+			Preconditions.checkArgument(ordinal >= MINIMUM_VALUE);
 			Preconditions.checkNotNull(parentId);
 			int[] idStack = Arrays.copyOf(parentId.getIntParts(),
 					parentId.getIntParts().length + 1);
@@ -389,7 +374,7 @@ public final class SectionImpl implements Section {
 						return false;
 					}
 				}
-				return true;
+				return (recurse) ? true : (toTest.getIntParts().length - this.getIntParts().length) == 1;
 			}
 			return false;
 		}
