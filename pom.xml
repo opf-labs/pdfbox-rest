@@ -25,6 +25,7 @@
 		<module>pdfbox-rest-api</module>
 		<module>pdfbox-rest-client</module>
 		<module>pdfbox-rest-application</module>
+		<module>vera-cli</module>
 	</modules>
 	<build>
 		<plugins>
