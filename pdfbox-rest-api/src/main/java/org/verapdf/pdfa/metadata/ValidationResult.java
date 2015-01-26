@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.activation.DataSource;
 
@@ -97,18 +101,27 @@ public class ValidationResult {
         // TODO: This is all wrong, it requires the grouping of checks made under a
         //       single check "clause" id and explanation. See Check ID for related
         //       info. Also the Preflight 1.8.7 doesnt support page numbers for errors. 
-        List<CheckAudit> checkAudits = new ArrayList<>();
+        Map<Check, List<CheckResult>> mappedResults = new HashMap<>();
         for (ValidationError preflightError : preflightResult.getErrorsList()) {
-            List<CheckResult> results = new ArrayList<>();
             Check check = Check.fromPreflightError(preflightError);
-            CheckResult result = CheckResult.fromValues(Status.FAILED, Location.fromValues(preflightError.getPageNumber().intValue()), preflightError.getDetails());
+            // Handle null page values from Preflight Error
+            int pageNumber =  (preflightError.getPageNumber() == null) ? 0 : preflightError.getPageNumber().intValue();
+            CheckResult result = CheckResult.fromValues(Status.FAILED, Location.fromValues(pageNumber), preflightError.getDetails());
             if (preflightError.isWarning()) {
                 summariser.warning();
             } else {
                 summariser.checkFailed();
             }
-            results.add(result);
-            checkAudits.add(CheckAudit.fromValues(check, results));
+            List<CheckResult> results = ((mappedResults.containsKey(check)) ? mappedResults.get(check) : new ArrayList<CheckResult>());
+           	results.add(result);
+            mappedResults.put(check, results);
+        }
+        // Populate the audit objects
+        List<CheckAudit> checkAudits = new ArrayList<>();
+        for (Check check : mappedResults.keySet()) {
+        	System.out.println("CheckID:" + check.getId());
+        	System.out.println("CheckMessage:" + check.getCode());
+        	checkAudits.add(CheckAudit.fromValues(check, mappedResults.get(check)));
         }
         return new ValidationResult(isCompliant, DEFAULT_STATEMENT, summariser.createSummary(), checkAudits);
     }
