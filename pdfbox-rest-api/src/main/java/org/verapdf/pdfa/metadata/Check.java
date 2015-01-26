@@ -71,6 +71,50 @@ public class Check {
     public final static Check fromPreflightError(final ValidationError preflightError) {
         // FIXME: This is most definitely wrong but this requires thinking about the 
         //        IDs for checks than I have time for now.
-        return new Check(preflightError.getErrorCode(), preflightError.getErrorCode());
+        return new Check(preflightError.getErrorCode(), preflightError.getDetails());
     }
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
+		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Check)) {
+			return false;
+		}
+		Check other = (Check) obj;
+		if (this.code == null) {
+			if (other.code != null) {
+				return false;
+			}
+		} else if (!this.code.equals(other.code)) {
+			return false;
+		}
+		if (this.id == null) {
+			if (other.id != null) {
+				return false;
+			}
+		} else if (!this.id.equals(other.id)) {
+			return false;
+		}
+		return true;
+	}
 }
