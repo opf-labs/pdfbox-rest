@@ -11,7 +11,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.verapdf.VeraPdfConfiguration;
+import org.verapdf.VeraPdfTaskConfig;
 import org.verapdf.pdfa.spec.PdfaFlavour;
 import org.verapdf.pdfa.spec.PdfaSpecifications;
 
@@ -111,7 +111,7 @@ public class VeraPdfCli {
 		System.exit(exitCode);
 	}
 	
-	private final static VeraPdfConfiguration createConfigfromCliOptions(final CommandLine cmdLine) {
+	private final static VeraPdfTaskConfig createConfigfromCliOptions(final CommandLine cmdLine) {
 		boolean validate = cmdLine.hasOption(VALIDATE_OPT);
 		boolean fixMetadata = cmdLine.hasOption(FIXMETADATA_OPT);
 		PdfaFlavour flavour = PdfaFlavour.NONE;
@@ -120,6 +120,6 @@ public class VeraPdfCli {
 			flavour = PdfaSpecifications.byFlavourString(flavourString);
 		}
 		
-		return VeraPdfConfiguration.defaultInstance();
+		return VeraPdfTaskConfig.defaultInstance();
 	}
 }

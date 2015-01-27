@@ -22,7 +22,7 @@ import com.google.common.base.Preconditions;
  * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  */
-public final class VeraPdfConfiguration {
+public final class VeraPdfTaskConfig {
 	/**
 	 * Default value for the number of errors encountered before validation is
 	 * halted. Defaults to zero which means continue validation regardless of
@@ -34,7 +34,7 @@ public final class VeraPdfConfiguration {
 	 */
 	public static final int VERBOSITY_DEFAULT = 3;
 
-	private static final VeraPdfConfiguration DEFAULT_INSTANCE = new VeraPdfConfiguration();
+	private static final VeraPdfTaskConfig DEFAULT_INSTANCE = new VeraPdfTaskConfig();
 
 	private final PdfaFlavour flavour;
 	private final boolean validate;
@@ -42,12 +42,12 @@ public final class VeraPdfConfiguration {
 	private final int verbosity;
 	private final int stopErrors;
 
-	private VeraPdfConfiguration() {
+	private VeraPdfTaskConfig() {
 		this(PdfaFlavour.PDFA_1_B, true, false, VERBOSITY_DEFAULT,
 				STOPERRORS_DEFAULT);
 	}
 
-	private VeraPdfConfiguration(final PdfaFlavour flavour,
+	private VeraPdfTaskConfig(final PdfaFlavour flavour,
 			final boolean validate, final boolean fixMetadata,
 			final int verbosity, final int stopErrors) {
 		this.flavour = flavour;
@@ -95,7 +95,7 @@ public final class VeraPdfConfiguration {
 	/**
 	 * @return
 	 */
-	public final static VeraPdfConfiguration defaultInstance() {
+	public final static VeraPdfTaskConfig defaultInstance() {
 		return DEFAULT_INSTANCE;
 	}
 
@@ -107,7 +107,7 @@ public final class VeraPdfConfiguration {
 	 * @param stopErrors
 	 * @return
 	 */
-	public final static VeraPdfConfiguration fromValues(
+	public final static VeraPdfTaskConfig fromValues(
 			final PdfaFlavour flavour, final boolean validate,
 			final boolean fixMetadata, final int verbosity, final int stopErrors) {
 		// Check that flavour is not null
@@ -118,7 +118,7 @@ public final class VeraPdfConfiguration {
 		// Check that stopErrors >= 0
 		Preconditions.checkArgument((stopErrors >= 0),
 				"stopErrors must be >= 0");
-		return new VeraPdfConfiguration(flavour, validate, fixMetadata,
+		return new VeraPdfTaskConfig(flavour, validate, fixMetadata,
 				verbosity, stopErrors);
 	}
 }
