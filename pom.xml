@@ -20,7 +20,8 @@
 		<jdk.target.version>1.7</jdk.target.version>
 		<junit.version>4.12</junit.version>
 		<dropwizard.version>0.7.1</dropwizard.version>
-	</properties>
+	    <guava.version>18.0</guava.version>
+    </properties>
 	<modules>
 		<module>verapdf-core</module>
 		<module>pdfbox-rest-client</module>
