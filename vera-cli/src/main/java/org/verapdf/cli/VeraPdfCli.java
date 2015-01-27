@@ -11,6 +11,9 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.verapdf.VeraPdfConfiguration;
+import org.verapdf.pdfa.spec.PdfaFlavour;
+import org.verapdf.pdfa.spec.PdfaSpecifications;
 
 /**
  * @author cfw
@@ -28,6 +31,8 @@ public class VeraPdfCli {
 	private static final String FILE_OPT = "file";
 	private static final String FILE_OPT_ARG = "filepath";
 	private static final String FILE_OPT_DESC = "Absolute path of file to validate.";
+	private static final String FIXMETADATA_OPT = "fixmetadata";
+	private static final String FIXMETADATA_OPT_DESC = "Request automatic fix of metadata.";
 	private static final String URL_OPT = "url";
 	private static final String URL_OPT_ARG = "URL";
 	private static final String URL_OPT_DESC = "URI encoded URL of file to validate.";
@@ -36,18 +41,19 @@ public class VeraPdfCli {
 	private static final String PDFA_OPT_DESC = "PDF/A flavour to use for validation, can be (none|1a|1b|2a|2b|3a|3b|3u).";
 	private static final String STOPERRORS_OPT = "stoperrors";
 	private static final String STOPERRORS_OPT_ARG = "number";
-	private static final String STOPERRORS_OPT_DESC = "The number of errors after which validation is interupted, must be an integer greater than 0.";
+	private static final String STOPERRORS_OPT_DESC = "The number of errors after which validation is interupted, must be an integer greater than 0. Default is to not stop on any error.";
+	private static final String VERBOSITY_OPT = "verbosity";
+	private static final String VERBOSITY_OPT_ARG = "number";
+	private static final String VERBOSITY_OPT_DESC = "Control reporting verbosity, a number between 0 and 9 (inclusive), defaults to 3.";
 	private static final String HELP_OPT = "help";
 	private static final String HELP_OPT_DESC = "Print this message.";
-
-	// Constants for default values
-	private static final int STOPERRORS_DEFAULT = 0;
 
 	// Create the options object
 	private static final Options OPTIONS = new Options();
 	static {
 		Option help = new Option(HELP_OPT, HELP_OPT_DESC);
 		Option validate = new Option(VALIDATE_OPT, VALIDATE_OPT_DESC);
+		Option fixMetadata = new Option(FIXMETADATA_OPT, FIXMETADATA_OPT_DESC);
 		@SuppressWarnings("static-access")
 		Option file = OptionBuilder.withArgName(FILE_OPT_ARG).hasArg()
 				.withDescription(FILE_OPT_DESC).create(FILE_OPT);
@@ -61,12 +67,18 @@ public class VeraPdfCli {
 		Option stopErrors = OptionBuilder.withArgName(STOPERRORS_OPT_ARG)
 				.hasArg().withDescription(STOPERRORS_OPT_DESC)
 				.create(STOPERRORS_OPT);
+		@SuppressWarnings("static-access")
+		Option verbosity = OptionBuilder.withArgName(VERBOSITY_OPT_ARG)
+				.hasArg().withDescription(VERBOSITY_OPT_DESC)
+				.create(VERBOSITY_OPT);
 
 		OPTIONS.addOption(help);
 		OPTIONS.addOption(validate);
+		OPTIONS.addOption(fixMetadata);
 		OPTIONS.addOption(file);
 		OPTIONS.addOption(url);
 		OPTIONS.addOption(pdfa);
+		OPTIONS.addOption(verbosity);
 		OPTIONS.addOption(stopErrors);
 	}
 
@@ -98,5 +110,4 @@ public class VeraPdfCli {
 		formatter.printHelp(APP_NAME, OPTIONS);
 		System.exit(exitCode);
 	}
-	
 }
