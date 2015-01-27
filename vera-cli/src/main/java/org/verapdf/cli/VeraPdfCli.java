@@ -110,4 +110,16 @@ public class VeraPdfCli {
 		formatter.printHelp(APP_NAME, OPTIONS);
 		System.exit(exitCode);
 	}
+	
+	private final static VeraPdfConfiguration createConfigfromCliOptions(final CommandLine cmdLine) {
+		boolean validate = cmdLine.hasOption(VALIDATE_OPT);
+		boolean fixMetadata = cmdLine.hasOption(FIXMETADATA_OPT);
+		PdfaFlavour flavour = PdfaFlavour.NONE;
+		if (cmdLine.hasOption(PDFA_OPT)) {
+			String flavourString = cmdLine.getOptionValue(PDFA_OPT);
+			flavour = PdfaSpecifications.byFlavourString(flavourString);
+		}
+		
+		return VeraPdfConfiguration.defaultInstance();
+	}
 }
