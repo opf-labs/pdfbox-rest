@@ -17,9 +17,11 @@ import org.verapdf.pdfa.spec.SectionImpl.IdImpl;
  *
  */
 public final class PdfaSpecifications {
+	final static String NONE = "none";
     final static String PDFA_STRING_PREFIX = "PDF/A-"; //$NON-NLS-1$
     final static String ISO = "ISO"; //$NON-NLS-1$
     final static String ISO_PREFIX = ISO + " "; //$NON-NLS-1$
+    final static int NONE_ID = 0;
     final static int ISO_19005_ID = 19005;
     final static String ISO_19005_DESCRIPTION = "Document management -- Electronic document file format for long-term preservation"; //$NON-NLS-1$
     final static int ISO_32000_ID = 32000;
@@ -187,6 +189,18 @@ public final class PdfaSpecifications {
             } 
         }
     }
+    private final static Map<String, PdfaFlavour> FLAVOUR_LOOKUP;
+    static {
+    	FLAVOUR_LOOKUP = new HashMap<>();
+    	FLAVOUR_LOOKUP.put(NONE, PdfaFlavour.NONE);
+    	FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_1_A);
+    	FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_1_B);
+    	FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_2_A);
+    	FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_2_B);
+    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_3_A);
+    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_3_B);
+    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_U_CODE, PdfaFlavour.PDFA_3_U);
+    }
     private final static Map<PdfaFlavour, PdfaSpecification> SPEC_LOOKUP;
     static {
         SPEC_LOOKUP = new HashMap<>();
@@ -212,5 +226,9 @@ public final class PdfaSpecifications {
      */
     public static PdfaSpecification byFlavour(PdfaFlavour flavour) {
         return SPEC_LOOKUP.get(flavour);
+    }
+    
+    public static PdfaFlavour byFlavourString(String flavourString) {
+    	return FLAVOUR_LOOKUP.get(flavourString);
     }
 }
