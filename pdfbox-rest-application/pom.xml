@@ -65,7 +65,7 @@
         </dependency>
         <dependency>
 	        <groupId>org.verapdf.pdfbox</groupId>
-	        <artifactId>pdfbox-rest-api</artifactId>
+	        <artifactId>verapdf-core</artifactId>
 	        <version>0.0.1-SNAPSHOT</version>
         </dependency>
 		<dependency>

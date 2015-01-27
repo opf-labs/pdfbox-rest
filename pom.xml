@@ -22,7 +22,7 @@
 		<dropwizard.version>0.7.1</dropwizard.version>
 	</properties>
 	<modules>
-		<module>pdfbox-rest-api</module>
+		<module>verapdf-core</module>
 		<module>pdfbox-rest-client</module>
 		<module>pdfbox-rest-application</module>
 		<module>vera-cli</module>

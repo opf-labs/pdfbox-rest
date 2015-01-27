@@ -5,9 +5,9 @@
         <artifactId>pdfbox-rest</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>pdfbox-rest-api</artifactId>
-    <name>PDFBox REST Services API</name>
-    <description>Representations for the PDFBox REST Services</description>
+    <artifactId>verapdf-core</artifactId>
+    <name>VeraPDF Core API</name>
+    <description>The core VeraPDF library, provides the API for the PDF/A validator, PDF policy checker, reporter and metadata fixer.</description>
     <dependencies>
         <dependency>
             <groupId>io.dropwizard</groupId>
