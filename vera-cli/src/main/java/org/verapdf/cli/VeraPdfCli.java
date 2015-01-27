@@ -91,6 +91,7 @@ public class VeraPdfCli {
 	 */
 	public static void main(String[] args) {
 		CommandLineParser gnuParser = new GnuParser();
+		VeraPdfTaskConfig taskConfig = VeraPdfTaskConfig.defaultInstance();
 		try {
 			CommandLine cmdLine = gnuParser.parse(OPTIONS, args);
 			
@@ -98,11 +99,14 @@ public class VeraPdfCli {
 			if (cmdLine.hasOption(HELP_OPT) || args.length == 0) {
 				outputHelpAndTerminate(0);
 			}
+			
+			taskConfig = createConfigFromCliOptions(cmdLine);
 		} catch (ParseException excep) {
 			System.err.println("Command line parsing failed, exception message: " + excep.getLocalizedMessage());
 			excep.printStackTrace();
 			outputHelpAndTerminate(1);
 		}
+		
 	}
 
 	private final static void outputHelpAndTerminate(final int exitCode) {
@@ -111,7 +115,7 @@ public class VeraPdfCli {
 		System.exit(exitCode);
 	}
 	
-	private final static VeraPdfTaskConfig createConfigfromCliOptions(final CommandLine cmdLine) {
+	private final static VeraPdfTaskConfig createConfigFromCliOptions(final CommandLine cmdLine) {
 		boolean validate = cmdLine.hasOption(VALIDATE_OPT);
 		boolean fixMetadata = cmdLine.hasOption(FIXMETADATA_OPT);
 		PdfaFlavour flavour = PdfaFlavour.NONE;
@@ -119,7 +123,14 @@ public class VeraPdfCli {
 			String flavourString = cmdLine.getOptionValue(PDFA_OPT);
 			flavour = PdfaSpecifications.byFlavourString(flavourString);
 		}
-		
-		return VeraPdfTaskConfig.defaultInstance();
+		int verbosity = VeraPdfTaskConfig.VERBOSITY_DEFAULT;
+		if (cmdLine.hasOption(VERBOSITY_OPT)) {
+			verbosity = Integer.valueOf(cmdLine.getOptionValue(VERBOSITY_OPT)).intValue();
+		}
+		int stopErrors = VeraPdfTaskConfig.STOPERRORS_DEFAULT;
+		if (cmdLine.hasOption(STOPERRORS_OPT)) {
+			verbosity = Integer.valueOf(cmdLine.getOptionValue(STOPERRORS_OPT)).intValue();
+		}
+		return VeraPdfTaskConfig.fromValues(flavour, validate, fixMetadata, verbosity, stopErrors);
 	}
 }
