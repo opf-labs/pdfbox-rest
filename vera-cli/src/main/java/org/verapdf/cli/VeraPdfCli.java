@@ -23,29 +23,29 @@ public class VeraPdfCli {
 	/**
 	 * The application name, used to invoke the CLI application
 	 */
-	public static final String APP_NAME = "veraPdf";
+	public static final String APP_NAME = "veraPdf"; //$NON-NLS-1$
 	
 	// String constants for CLI Options
-	private static final String VALIDATE_OPT = "validate";
+	private static final String VALIDATE_OPT = "validate"; //$NON-NLS-1$
 	private static final String VALIDATE_OPT_DESC = "Request PDF/A validation";
-	private static final String FILE_OPT = "file";
+	private static final String FILE_OPT = "file"; //$NON-NLS-1$
 	private static final String FILE_OPT_ARG = "filepath";
 	private static final String FILE_OPT_DESC = "Absolute path of file to validate.";
-	private static final String FIXMETADATA_OPT = "fixmetadata";
+	private static final String FIXMETADATA_OPT = "fixmetadata"; //$NON-NLS-1$
 	private static final String FIXMETADATA_OPT_DESC = "Request automatic fix of metadata.";
-	private static final String URL_OPT = "url";
+	private static final String URL_OPT = "url"; //$NON-NLS-1$
 	private static final String URL_OPT_ARG = "URL";
 	private static final String URL_OPT_DESC = "URI encoded URL of file to validate.";
-	private static final String PDFA_OPT = "pdfa";
+	private static final String PDFA_OPT = "pdfa"; //$NON-NLS-1$
 	private static final String PDFA_OPT_ARG = "PDF/A flavour";
 	private static final String PDFA_OPT_DESC = "PDF/A flavour to use for validation, can be (none|1a|1b|2a|2b|3a|3b|3u).";
-	private static final String STOPERRORS_OPT = "stoperrors";
+	private static final String STOPERRORS_OPT = "stoperrors"; //$NON-NLS-1$
 	private static final String STOPERRORS_OPT_ARG = "number";
 	private static final String STOPERRORS_OPT_DESC = "The number of errors after which validation is interupted, must be an integer greater than 0. Default is to not stop on any error.";
-	private static final String VERBOSITY_OPT = "verbosity";
+	private static final String VERBOSITY_OPT = "verbosity"; //$NON-NLS-1$
 	private static final String VERBOSITY_OPT_ARG = "number";
 	private static final String VERBOSITY_OPT_DESC = "Control reporting verbosity, a number between 0 and 9 (inclusive), defaults to 3.";
-	private static final String HELP_OPT = "help";
+	private static final String HELP_OPT = "help"; //$NON-NLS-1$
 	private static final String HELP_OPT_DESC = "Print this message.";
 
 	// Create the options object
@@ -129,7 +129,7 @@ public class VeraPdfCli {
 		}
 		int stopErrors = VeraPdfTaskConfig.STOPERRORS_DEFAULT;
 		if (cmdLine.hasOption(STOPERRORS_OPT)) {
-			verbosity = Integer.valueOf(cmdLine.getOptionValue(STOPERRORS_OPT)).intValue();
+			stopErrors = Integer.valueOf(cmdLine.getOptionValue(STOPERRORS_OPT)).intValue();
 		}
 		return VeraPdfTaskConfig.fromValues(flavour, validate, fixMetadata, verbosity, stopErrors);
 	}
