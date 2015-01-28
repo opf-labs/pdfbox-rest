@@ -24,7 +24,6 @@
     </properties>
 	<modules>
 		<module>verapdf-core</module>
-		<module>pdfbox-rest-client</module>
 		<module>pdfbox-rest-application</module>
 		<module>vera-cli</module>
 	</modules>
