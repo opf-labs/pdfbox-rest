@@ -176,7 +176,6 @@ public class TestSection {
         IdImpl topParent = IdImpl.fromValues(IdImpl.MINIMUM_VALUE);
         // List of children & grandchildren
         List<Id> children = new ArrayList<>();
-        List<Id> grandChildren = new ArrayList<>();
         
         // Populate children and test them
         for (int index = IdImpl.MINIMUM_VALUE; index < 20; index++) {

@@ -3,8 +3,6 @@
  */
 package org.verapdf;
 
-import java.net.URI;
-
 import org.verapdf.pdfa.spec.PdfaFlavour;
 
 import com.google.common.base.Preconditions;
