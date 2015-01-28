@@ -18,6 +18,7 @@ import org.verapdf.pdfa.metadata.ValidationResult;
 import org.verapdf.pdfa.spec.PdfaFlavour;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Preconditions;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
@@ -58,15 +59,26 @@ public class ValidationReport {
      *         process
      * @throws IOException
      *             when there's a problem reading the PDF input stream
+     * @throws NullPointerException
+     *             when the InputStream pdfStream parameter is null.
      */
     public final static ValidationReport fromPdfStream(InputStream pdfStream)
             throws IOException {
+        Preconditions.checkNotNull(pdfStream,
+                "InputStream pdfStream cannot be null");
+
+        // We need to use a data source for the PreflightParser, just create one
+        // from the input stream.
         DataSource source = new ByteArrayDataSource(pdfStream);
+        // Create the preflight parser and parse
         PreflightParser parser = new PreflightParser(source);
         parser.parse();
+        // Extract the document metadata from the parser
         DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser
                 .getPDDocument());
+        // Try with resource for the parser Preflight document
         try (PreflightDocument document = parser.getPreflightDocument()) {
+            // Request validation
             document.validate();
             ValidationResult result = ValidationResult
                     .fromPreflightValidationResult(document.getResult());
