@@ -29,10 +29,12 @@ public final class VeraPdfTaskConfig {
 	 * error count.
 	 */
 	public static final int STOPERRORS_DEFAULT = 0;
-	/**
-	 * Default value for the verbosity parameter
-	 */
+	/** Default value for the verbosity parameter */
 	public static final int VERBOSITY_DEFAULT = 3;
+	/** Minimum value of the verbosity parameter */
+	public static final int VERBOSITY_MIN = 0;
+	/** Maximum value of the verbosity parameter */
+	public static final int VERBOSITY_MAX = 9;
 
 	private static final VeraPdfTaskConfig DEFAULT_INSTANCE = new VeraPdfTaskConfig();
 
@@ -89,11 +91,11 @@ public final class VeraPdfTaskConfig {
 	 * @return the stopErrors
 	 */
 	public int getStopErrors() {
-		return stopErrors;
+		return this.stopErrors;
 	}
 
 	/**
-	 * @return
+	 * @return the default VeraPdfTaskConfig instance
 	 */
 	public final static VeraPdfTaskConfig defaultInstance() {
 		return DEFAULT_INSTANCE;
@@ -111,13 +113,13 @@ public final class VeraPdfTaskConfig {
 			final PdfaFlavour flavour, final boolean validate,
 			final boolean fixMetadata, final int verbosity, final int stopErrors) {
 		// Check that flavour is not null
-		Preconditions.checkNotNull(flavour, "PdfaFlavour cannot be null");
+		Preconditions.checkNotNull(flavour, "Expected PdfaFlavour to be non-null");
 		// Check that verbosity is between 0 - 9
-		Preconditions.checkArgument(((verbosity >= 0) && (verbosity <= 9)),
-				"verboity must an integer from 0-9");
+		Preconditions.checkArgument(((verbosity >= VERBOSITY_MIN) && (verbosity <= VERBOSITY_MAX)),
+				"Expected verbosity >= %s and <= %s, but %s is outside range.", Integer.valueOf(VERBOSITY_MIN), Integer.valueOf(VERBOSITY_MAX), Integer.valueOf(verbosity));
 		// Check that stopErrors >= 0
 		Preconditions.checkArgument((stopErrors >= 0),
-				"stopErrors must be >= 0");
+				"Expected stopErrors to be >= %s but is %s", Integer.valueOf(STOPERRORS_DEFAULT), Integer.valueOf(stopErrors));
 		return new VeraPdfTaskConfig(flavour, validate, fixMetadata,
 				verbosity, stopErrors);
 	}
