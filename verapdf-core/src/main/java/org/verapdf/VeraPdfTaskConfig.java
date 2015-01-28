@@ -63,28 +63,28 @@ public final class VeraPdfTaskConfig {
 	 * @return the flavour
 	 */
 	public PdfaFlavour getFlavour() {
-		return flavour;
+		return this.flavour;
 	}
 
 	/**
 	 * @return the validate
 	 */
 	public boolean isValidate() {
-		return validate;
+		return this.validate;
 	}
 
 	/**
 	 * @return the fixMetadata
 	 */
 	public boolean isFixMetadata() {
-		return fixMetadata;
+		return this.fixMetadata;
 	}
 
 	/**
 	 * @return the verbosity
 	 */
 	public int getVerbosity() {
-		return verbosity;
+		return this.verbosity;
 	}
 
 	/**
