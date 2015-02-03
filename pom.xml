@@ -124,6 +124,10 @@
 			<id>jcenter</id>
 			<url>http://jcenter.bintray.com</url>
 		</repository>
+		<repository>
+			<id>apache</id>
+			<url>https://repository.apache.org/snapshots/</url>
+		</repository>
 	</repositories>
 	<profiles>
 		<profile>
