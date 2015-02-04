@@ -3,14 +3,12 @@
  */
 package org.verapdf.pdfbox.rest.api.environment;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
+import org.junit.Test;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 
 /**
@@ -30,8 +28,8 @@ public class TestEnvironments {
 	@Test
 	public void testGetHostName() {
 		try {
-			assertEquals("Host name inconsistent.", TEST_ENV.getServer().getHostName(), InetAddress.getLocalHost().getHostName()); //$NON-NLS-1$
-			assertFalse("Environments.getHostName().isEmpty() == true", TEST_ENV.getServer().getHostName().isEmpty()); //$NON-NLS-1$
+			assertEquals("Host name inconsistent.", TEST_ENV.getHardware().getHostName(), InetAddress.getLocalHost().getHostName()); //$NON-NLS-1$
+			assertFalse("Environments.getHostName().isEmpty() == true", TEST_ENV.getHardware().getHostName().isEmpty()); //$NON-NLS-1$
 		} catch (UnknownHostException excep) {
 			excep.printStackTrace();
 			fail("Illegal length IP address, check your setup: " + excep.getMessage()); //$NON-NLS-1$

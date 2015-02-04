@@ -3,6 +3,16 @@
 <head>
     <title>VeraPDF | About</title>
 
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- FontAwesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Our theme -->
+    <link rel="stylesheet" href="/css/verapdf.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -12,27 +22,47 @@
 </head>
 
 <body>
-    <h1>Environment</h1>
-        <h2>Hardware</h2>
-            <div>
-                <span>IP address: {{environment.hardware.ipAddress}}</span>
-            </div>
-            <div>
-                <span>Hostname: {{environment.hardware.hostName}}</span>
-            </div>
-            <div>
-                <span>Mach address: {{environment.hardware.machAddress}}</span>
-            </div>
-        <h2>OS</h2>
-            <div>
-                <span>Name: {{environment.os.name}}</span>
-            </div>
-            <div>
-                <span>Version: {{environment.os.version}}</span>
-            </div>
-            <div>
-                <span>Architecture: {{environment.architecture}}</span>
-            </div>
+<div class="jumbotron" role="header">
+    <div class="container theme-showcase" role="header">
+        <h1>Environment</h1>
+    </div>
+</div>
+<div class="container theme-showcase" role="main">
+    <h2>Hardware</h2>
+    <div>
+        <span>IP address: {{environment.hardware.ipAddress}}</span>
+    </div>
+    <div>
+        <span>Hostname: {{environment.hardware.hostName}}</span>
+    </div>
+    <div>
+        <span>Mach address: {{environment.hardware.machAddress}}</span>
+    </div>
 
+    <h2>OS</h2>
+    <div>
+        <span>Name: {{environment.OS.name}}</span>
+    </div>
+    <div>
+        <span>Version: {{environment.OS.version}}</span>
+    </div>
+    <div>
+        <span>Architecture: {{environment.OS.architecture}}</span>
+    </div>
+
+    <h2>JAVA</h2>
+    <div>
+        <span>Vendor: {{environment.java.vendor}}</span>
+    </div>
+    <div>
+        <span>Version: {{environment.java.version}}</span>
+    </div>
+    <div>
+        <span>Architecture: {{environment.java.architecture}}</span>
+    </div>
+    <div>
+        <span>Home: {{environment.java.home}}</span>
+    </div>
+</div>
 </body>
 </html>

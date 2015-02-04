@@ -41,6 +41,10 @@ $(document).on('click', "#type-requested > button", function() {
 
 });
 
+function toAbout() {
+    window.location.href = "about";
+}
+
 function getRequestDataType() {
     return($("#type-requested > button.btn-success").attr("name"));
 }

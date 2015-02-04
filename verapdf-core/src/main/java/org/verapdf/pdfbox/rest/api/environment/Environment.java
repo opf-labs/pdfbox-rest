@@ -24,7 +24,7 @@ public class Environment {
      * @return the Server details
      */
     @JsonProperty
-    public ServerDetails getServer() {
+    public ServerDetails getHardware() {
         return this.hardware;
     }
 
