@@ -36,7 +36,7 @@ public enum PdfaFlavour {
 		this.level = level;
 	}
 
-	/**
+    /**
 	 * @return the specification part
 	 */
 	@JsonProperty

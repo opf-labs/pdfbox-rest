@@ -3,9 +3,8 @@
  */
 package org.verapdf;
 
-import org.verapdf.pdfa.spec.PdfaFlavour;
-
 import com.google.common.base.Preconditions;
+import org.verapdf.pdfa.spec.PdfaFlavour;
 
 /**
  * Encapsulation of the VeraPDF processing configuration. This class deals only
@@ -36,28 +35,84 @@ public final class VeraPdfTaskConfig {
 
 	private static final VeraPdfTaskConfig DEFAULT_INSTANCE = new VeraPdfTaskConfig();
 
+    private final boolean validate;
+    private final Input input;
 	private final PdfaFlavour flavour;
-	private final boolean validate;
+    private final String profile;
 	private final boolean fixMetadata;
 	private final int verbosity;
+    private final Progress progress;
 	private final int stopErrors;
+    private final String tempDir;
+    private final Output output;
+    private final String report;
 
 	private VeraPdfTaskConfig() {
-		this(PdfaFlavour.PDFA_1_B, true, false, VERBOSITY_DEFAULT,
-				STOPERRORS_DEFAULT);
+		this(false, null, PdfaFlavour.PDFA_1_B, null, false, VERBOSITY_DEFAULT, null,
+				STOPERRORS_DEFAULT, null, null, null);
 	}
 
-	private VeraPdfTaskConfig(final PdfaFlavour flavour,
-			final boolean validate, final boolean fixMetadata,
-			final int verbosity, final int stopErrors) {
-		this.flavour = flavour;
-		this.validate = validate;
-		this.fixMetadata = fixMetadata;
-		this.verbosity = verbosity;
-		this.stopErrors = stopErrors;
-	}
+    public VeraPdfTaskConfig(boolean validate, Input input, PdfaFlavour flavour,
+                             String profile, boolean fixMetadata, int verbosity,
+                             Progress progress, int stopErrors, String tempdir,
+                             Output output, String report) {
+        this.validate = validate;
+        this.input = input;
+        this.flavour = flavour;
+        this.profile = profile;
+        this.fixMetadata = fixMetadata;
+        this.verbosity = verbosity;
+        this.progress = progress;
+        this.stopErrors = stopErrors;
+        this.tempDir = tempdir;
+        this.output = output;
+        this.report = report;
+    }
 
-	/**
+    public VeraPdfTaskConfig(boolean validate, String inputPath, boolean inputPathURL,
+                             String flavour, String profile, boolean fixMetadata,
+                             Integer verbosity, boolean progress, boolean progressToStdout,
+                             String progressPath, boolean progressPathURL, Integer stopErrors,
+                             String tempDir, boolean output, boolean outputToInput,
+                             String outputPath, boolean outputPathURL, String report) {
+        this.validate = validate;
+        this.input = new Input(inputPath, inputPathURL);
+        //TODO: probably move this logic tto PdfaFlavour class?
+        switch (flavour) {
+            case "1a" : this.flavour = PdfaFlavour.PDFA_1_A;
+                break;
+            case "1b" : this.flavour = PdfaFlavour.PDFA_1_B;
+                break;
+            case "2a" : this.flavour = PdfaFlavour.PDFA_2_A;
+                break;
+            case "2b" : this.flavour = PdfaFlavour.PDFA_2_B;
+                break;
+            case "3a" : this.flavour = PdfaFlavour.PDFA_3_A;
+                break;
+            case "3b" : this.flavour = PdfaFlavour.PDFA_3_B;
+                break;
+            case "3u" : this.flavour = PdfaFlavour.PDFA_3_U;
+                break;
+            case "none" : this.flavour = PdfaFlavour.NONE;
+                break;
+            default : this.flavour = PdfaFlavour.NONE;
+                break;
+        }
+        this.profile = profile;
+        this.fixMetadata = fixMetadata;
+        this.verbosity = verbosity;
+        if (progress) {
+            this.progress = new Progress(progressToStdout, progressPath, progressPathURL);
+        } else this.progress = null;
+        this.stopErrors = stopErrors;
+        this.tempDir = tempDir;
+        if (output) {
+            this.output = new Output(outputToInput, outputPath, outputPathURL);
+        } else this.output = null;
+        this.report = report;
+    }
+
+    /**
 	 * @return the flavour
 	 */
 	public PdfaFlavour getFlavour() {
@@ -92,11 +147,53 @@ public final class VeraPdfTaskConfig {
 		return this.stopErrors;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
+    /**
+     * @return the input
+     */
+    public Input getInput() {
+        return input;
+    }
+
+    /**
+     * @return the profile
+     */
+    public String getProfile() {
+        return profile;
+    }
+
+    /**
+     * @return the progress
+     */
+    public Progress getProgress() {
+        return progress;
+    }
+
+    /**
+     * @return the tempDir
+     */
+    public String getTempDir() {
+        return tempDir;
+    }
+
+    /**
+     * @return the output
+     */
+    public Output getOutput() {
+        return output;
+    }
+
+    /**
+     * @return the report
+     */
+    public String getReport() {
+        return report;
+    }
+
+    /*
+         * (non-Javadoc)
+         *
+         * @see java.lang.Object#hashCode()
+         */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -177,12 +274,28 @@ public final class VeraPdfTaskConfig {
 	 * @throws IllegalArgumentException
 	 *             if the int stopErrors is negative.
 	 */
-	public final static VeraPdfTaskConfig fromValues(final PdfaFlavour flavour,
-			final boolean validate, final boolean fixMetadata,
-			final int verbosity, final int stopErrors) {
-		// Check that flavour is not null
-		Preconditions.checkNotNull(flavour,
-				"Expected PdfaFlavour to be non-null");
+	public final static VeraPdfTaskConfig fromValues(final boolean validate,
+            final String inputPath, final boolean inputPathURL, final String flavour,
+			final String profile, final boolean fixMetadata, final Integer verbosity,
+			final boolean progress, final boolean progressToStdout, final String progressPath,
+            final boolean progressPathURL, final Integer stopErrors, final String tempDir,
+            final boolean output, final boolean outputToInput, final String outputPath,
+            final boolean outputPathURL, final String report) {
+        //Check that input path is defined
+        Preconditions.checkNotNull(inputPath);
+        //if validate is true we need to check validation profile
+        if (validate) {
+            // Check that flavour is not null if profile is null
+            if (profile.isEmpty()) {
+                Preconditions.checkNotNull(flavour,
+                        "Expected PdfaFlavour to be non-null if profile is not defined");
+            }
+            // Check that profile is not null if flavour is null
+            if (flavour == null) {
+                Preconditions.checkNotNull(profile,
+                        "Expected profile to be non-null if PdfaFlavout is not defined");
+            }
+        }
 		// Check that verbosity is between 0 - 9
 		Preconditions.checkArgument(
 				((verbosity >= VERBOSITY_MIN) && (verbosity <= VERBOSITY_MAX)),
@@ -194,7 +307,17 @@ public final class VeraPdfTaskConfig {
 				"Expected stopErrors to be >= %s but is %s",
 				Integer.valueOf(STOPERRORS_DEFAULT),
 				Integer.valueOf(stopErrors));
-		return new VeraPdfTaskConfig(flavour, validate, fixMetadata, verbosity,
-				stopErrors);
+        // Check that output is not null if fixMetadata is true
+        if (fixMetadata) {
+            Preconditions.checkState(output);
+            Preconditions.checkNotNull(outputPath,
+                    "Expected output to be non-null if fixmetadata is true");
+        }
+        // Check that report is not null
+        Preconditions.checkNotNull(report,
+                "Expected report to be non-null");
+		return new VeraPdfTaskConfig(validate, inputPath, inputPathURL, flavour, profile, fixMetadata, verbosity,
+				progress, progressToStdout, progressPath, progressPathURL, stopErrors, tempDir, output, outputToInput,
+                outputPath, outputPathURL, report);
 	}
 }
