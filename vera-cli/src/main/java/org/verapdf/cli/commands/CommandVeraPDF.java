@@ -3,6 +3,10 @@ package org.verapdf.cli.commands;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 
+/**
+ * This class holds all command line options used by VeraPDF application.
+ * @author Timur Kamalov
+ */
 @Parameters(commandNames = "verapdf")
 public class CommandVeraPDF extends Command {
 
@@ -65,74 +69,128 @@ public class CommandVeraPDF extends Command {
     @Parameter(names = "-report", required = true)
     private String report;
 
+    /**
+     * @return the validate
+     */
     public boolean isValidate() {
         return validate;
     }
 
+    /**
+     * @return the inputPath
+     */
     public String getInputPath() {
         return inputPath;
     }
 
+    /**
+     * @return the inputPathURL
+     */
     public boolean isInputPathURL() {
         return inputPathURL;
     }
 
+    /**
+     * @return the flavour
+     */
     public String getFlavour() {
         return flavour;
     }
 
+    /**
+     * @return the profile
+     */
     public String getProfile() {
         return profile;
     }
 
+    /**
+     * @return the fixMetadata
+     */
     public boolean isFixMetadata() {
         return fixMetadata;
     }
 
+    /**
+     * @return the verbosity
+     */
     public Integer getVerbosity() {
         return verbosity;
     }
 
+    /**
+     * @return the progress
+     */
     public boolean isProgress() {
         return progress;
     }
 
+    /**
+     * @return the progressToStdout
+     */
     public boolean isProgressToStdout() {
         return progressToStdout;
     }
 
+    /**
+     * @return the progressPath
+     */
     public String getProgressPath() {
         return progressPath;
     }
 
+    /**
+     * @return the progressPathURL
+     */
     public boolean isProgressPathURL() {
         return progressPathURL;
     }
 
+    /**
+     * @return the stopErrors
+     */
     public Integer getStopErrors() {
         return stopErrors;
     }
 
+    /**
+     * @return the tempDir
+     */
     public String getTempDir() {
         return tempDir;
     }
 
+    /**
+     * @return the output
+     */
     public boolean isOutput() {
         return output;
     }
 
+    /**
+     * @return the outputToInput
+     */
     public boolean isOutputToInput() {
         return outputToInput;
     }
 
+    /**
+     * @return the outputPath
+     */
     public String getOutputPath() {
         return outputPath;
     }
 
+    /**
+     * @return the outputPathURL
+     */
     public boolean isOutputPathURL() {
         return outputPathURL;
     }
 
+    /**
+     * @return the report
+     */
     public String getReport() {
         return report;
     }

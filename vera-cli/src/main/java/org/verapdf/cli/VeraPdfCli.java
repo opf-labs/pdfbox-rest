@@ -40,7 +40,11 @@ public class VeraPdfCli {
         taskConfig = createConfigFromCliOptions(commandVeraPDF);
     }
 
-    //TODO: throw correct exception
+    /**
+     * Creates instance of VeraPdfTaskConfig from parsed cli options
+     * @param commandVeraPDF options used by VeraPDF software
+     * @return an immutable VeraPdfTaskConfig object populated from the parsed options
+     */
     private final static VeraPdfTaskConfig createConfigFromCliOptions(final CommandVeraPDF commandVeraPDF) {
         //TODO: if no logic will be placed there than I prefer not to use intermediate variables
         boolean validate = commandVeraPDF.isValidate();

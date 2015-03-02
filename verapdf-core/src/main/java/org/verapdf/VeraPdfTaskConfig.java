@@ -249,31 +249,7 @@ public final class VeraPdfTaskConfig {
 		return DEFAULT_INSTANCE;
 	}
 
-	/**
-	 * Factory method used to create VeraPdfTaskConfig instances from values.
-	 * This method will check the arguments against illegal values and throw the
-	 * appropriate runtime errors.
-	 * 
-	 * @param flavour
-	 *            enumeration indicating the PDF/A flavour to validate against
-	 * @param validate
-	 *            boolean set true to request PDF/A validation, false disable.
-	 * @param fixMetadata
-	 *            boolean set true to request metadata fixes, false to disable.
-	 * @param verbosity
-	 *            integer for requesting verbosity level, should be in range 0 -
-	 *            9
-	 * @param stopErrors
-	 *            requests that validation be stopped after encountering this
-	 *            number of errors, 0 indicates don't stop and show all errors
-	 * @return an immutable VeraPdfTaskConfig object populated from the values
-	 * @throws NullPointerException
-	 *             if the PdfaFlavour flavour argument is null.
-	 * @throws IllegalArgumentException
-	 *             if the int verbosity is outside the range 0-9
-	 * @throws IllegalArgumentException
-	 *             if the int stopErrors is negative.
-	 */
+    //TODO : add javadoc after creating builder
 	public final static VeraPdfTaskConfig fromValues(final boolean validate,
             final String inputPath, final boolean inputPathURL, final String flavour,
 			final String profile, final boolean fixMetadata, final Integer verbosity,
