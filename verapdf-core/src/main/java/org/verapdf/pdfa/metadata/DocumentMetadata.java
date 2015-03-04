@@ -37,27 +37,30 @@ public class DocumentMetadata {
     private final int pageCount;
     private final String trapped;
     private final List<FontMetadata> fonts;
+    private final List<ImageMetadata> images;
 
     private DocumentMetadata() {
         this(DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE, 0L,
-                0L, DEFAULT_VALUE, DEFAULT_VALUE, 0.0f, 0, DEFAULT_VALUE, null);
+                0L, DEFAULT_VALUE, DEFAULT_VALUE, 0.0f, 0, DEFAULT_VALUE, null, null);
     }
 
     private DocumentMetadata(final String title, final String author,
             final String subject, final String keywords,
             final Date creationDate, final Date modificationDate,
             final String creator, final String producer, final float version,
-            final int pageCount, final String trapped, final List<FontMetadata> fonts) {
+            final int pageCount, final String trapped, final List<FontMetadata> fonts,
+            final List<ImageMetadata> images) {
         this(title, author, subject, keywords, creationDate.getTime(),
                 modificationDate.getTime(), creator, producer, version,
-                pageCount, trapped, fonts);
+                pageCount, trapped, fonts, images);
     }
 
     private DocumentMetadata(final String title, final String author,
             final String subject, final String keywords,
             final long creationDate, final long modificationDate,
             final String creator, final String producer, final float version,
-            final int pageCount, final String trapped, final List<FontMetadata> fonts) {
+            final int pageCount, final String trapped, final List<FontMetadata> fonts,
+            final List<ImageMetadata> images) {
         this.title = title;
         this.author = author;
         this.subject = subject;
@@ -70,6 +73,7 @@ public class DocumentMetadata {
         this.pageCount = pageCount;
         this.trapped = trapped;
         this.fonts = fonts;
+        this.images = images;
     }
 
     /**
@@ -171,6 +175,14 @@ public class DocumentMetadata {
     }
 
     /**
+     * @return the images
+     */
+    @JsonProperty
+    public List<ImageMetadata> getImages() {
+        return images;
+    }
+
+    /**
      * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
      *
      */
@@ -188,6 +200,7 @@ public class DocumentMetadata {
         private int pageCount;
         private String trapped;
         private List<FontMetadata> fonts;
+        private List<ImageMetadata> images;
 
         /**
 	    *
@@ -212,6 +225,7 @@ public class DocumentMetadata {
             this.pageCount = docMd.pageCount;
             this.trapped = docMd.trapped;
             this.fonts = docMd.fonts;
+            this.images = docMd.images;
         }
 
         /**
@@ -364,13 +378,22 @@ public class DocumentMetadata {
         }
 
         /**
+         * @param images
+         * @return the builder instance for chaining
+         */
+        public Builder images(final List<ImageMetadata> images) {
+            this.images = images;
+            return this;
+        }
+
+        /**
          * @return a DocumentMetadata instance built from the builder value
          */
         public DocumentMetadata build() {
             return new DocumentMetadata(this.title, this.author, this.subject,
                     this.keywords, this.creationDate, this.modificationDate,
                     this.creator, this.producer, this.version, this.pageCount,
-                    this.trapped, this.fonts);
+                    this.trapped, this.fonts, this.images);
         }
     }
 }

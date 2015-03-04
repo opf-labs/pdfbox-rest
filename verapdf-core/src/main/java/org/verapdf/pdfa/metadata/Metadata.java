@@ -3,9 +3,14 @@
  */
 package org.verapdf.pdfa.metadata;
 
+import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDResources;
+import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.graphics.PDXObject;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.verapdf.pdfa.metadata.DocumentMetadata.Builder;
 
 import java.io.IOException;
@@ -44,28 +49,84 @@ public class Metadata {
         builder.creationDate(docInfo.getCreationDate());
         builder.modificationDate(docInfo.getModificationDate());
         builder.trapped(docInfo.getTrapped());
+        builder.fonts(extractFontInfoFromPdfBoxPages(doc.getPages().iterator()));
+        builder.images(extractImageInfoFromPdfBoxPages(doc.getPages().iterator()));
         return builder.build();
     }
 
     /**
-     * Populates a FontMetadata list instance from a PDFBox PDDocument
+     * Populates a FontMetadata list instance from a PDFBox pages
      *
-     * @param doc
-     *            A PDFBox PDDocument used to populate the DocumentMetadata
-     *            instance.
-     * @return a FontMetadata list populated from the PDDocument
+     * @param pages
+     *            A PDFBox pages used to populate the FontMetadata list.
+     * @return a FontMetadata list populated from the pages
      */
-    private final static List<FontMetadata> convertFromPdfBoxFontInfo(final PDDocument doc) {
+    private final static List<FontMetadata> extractFontInfoFromPdfBoxPages(final Iterator<PDPage> pages) throws IOException {
         List<FontMetadata> fonts = new ArrayList<>();
-        Iterator<PDPage> pages = doc.getPages().iterator();
         while (pages.hasNext()) {
             PDPage curPage = pages.next();
+            PDResources pdResources = curPage.getResources();
+            Iterable<COSName> fontNames = pdResources.getFontNames();
+            for (COSName fontName : fontNames) {
+                PDFont font = pdResources.getFont(fontName);
+                fonts.add(convertPDFont(font));
+            }
         }
         return fonts;
     }
 
     /**
-     * @param input an java.io.InputStream that's believed to be a PDF Document stream 
+     * Converts PDFBox PDFont object to FontMetadata
+     *
+     * @param font
+     * @return a FontMetadata object converted from PDFont
+     */
+    private final static FontMetadata convertPDFont(PDFont font) {
+        FontMetadata.Builder builder = new FontMetadata.Builder();
+        builder.subtype(font.getSubType());
+        builder.name(font.getName());
+        return builder.build();
+    }
+
+    /**
+     * Populates a ImageMetadata list instance from a PDFBox pages
+     *
+     * @param pages
+     *            A PDFBox pages used to populate the ImageMetadata list.
+     * @return a ImageMetadata list populated from the pages
+     */
+    private final static List<ImageMetadata> extractImageInfoFromPdfBoxPages(final Iterator<PDPage> pages) throws IOException {
+        List<ImageMetadata> images = new ArrayList<>();
+        while (pages.hasNext()) {
+            PDPage curPage = pages.next();
+            PDResources pdResources = curPage.getResources();
+            Iterable<COSName> imageNames = pdResources.getXObjectNames();
+            for (COSName imageName : imageNames) {
+                PDXObject xObject = pdResources.getXObject(imageName);
+                if (xObject instanceof PDImageXObject) {
+                    images.add(convertPDImageXObject((PDImageXObject) xObject));
+                }
+            }
+
+        }
+        return images;
+    }
+
+    /**
+     * Converts PDFBox PDImageXObject to ImageMetadata
+     *
+     * @param image
+     * @return a ImageMetadata object converted from PDImageXObject
+     */
+    private final static ImageMetadata convertPDImageXObject(PDImageXObject image) {
+        ImageMetadata.Builder builder = new ImageMetadata.Builder();
+        builder.width(image.getWidth());
+        builder.height(image.getHeight());
+        return builder.build();
+    }
+
+    /**
+     * @param input an java.io.InputStream that's believed to be a PDF Document stream
      * @return a DocumentMetadata instance populated from the parsed stream
      * @throws IOException when a problem occurs reading the stream
      */
