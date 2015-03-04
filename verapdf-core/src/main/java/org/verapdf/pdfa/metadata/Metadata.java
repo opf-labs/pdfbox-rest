@@ -3,13 +3,16 @@
  */
 package org.verapdf.pdfa.metadata;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.verapdf.pdfa.metadata.DocumentMetadata;
+import org.apache.pdfbox.pdmodel.PDPage;
 import org.verapdf.pdfa.metadata.DocumentMetadata.Builder;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
@@ -26,7 +29,7 @@ public class Metadata {
      * @param doc
      *            A PDFBox PDDocument used to populate the DocumentMetadata
      *            instance.
-     * @return a DocumentMetada object populated from the PDDocument
+     * @return a DocumentMetadata object populated from the PDDocument
      * @throws IOException
      */
     public final static DocumentMetadata fromPdfBoxDocInfo(final PDDocument doc)
@@ -40,7 +43,25 @@ public class Metadata {
                 doc.getNumberOfPages());
         builder.creationDate(docInfo.getCreationDate());
         builder.modificationDate(docInfo.getModificationDate());
+        builder.trapped(docInfo.getTrapped());
         return builder.build();
+    }
+
+    /**
+     * Populates a FontMetadata list instance from a PDFBox PDDocument
+     *
+     * @param doc
+     *            A PDFBox PDDocument used to populate the DocumentMetadata
+     *            instance.
+     * @return a FontMetadata list populated from the PDDocument
+     */
+    private final static List<FontMetadata> convertFromPdfBoxFontInfo(final PDDocument doc) {
+        List<FontMetadata> fonts = new ArrayList<>();
+        Iterator<PDPage> pages = doc.getPages().iterator();
+        while (pages.hasNext()) {
+            PDPage curPage = pages.next();
+        }
+        return fonts;
     }
 
     /**
