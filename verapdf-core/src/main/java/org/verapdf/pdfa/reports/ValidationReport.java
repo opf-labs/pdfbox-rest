@@ -71,19 +71,20 @@ public class ValidationReport {
         // from the input stream.
         DataSource source = new ByteArrayDataSource(pdfStream);
         // Create the preflight parser and parse
-        PreflightParser parser = new PreflightParser(source);
-        parser.parse();
-        // Extract the document metadata from the parser
-        DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser
-                .getPDDocument());
-        // Try with resource for the parser Preflight document
-        try (PreflightDocument document = parser.getPreflightDocument()) {
-            // Request validation
-            document.validate();
-            ValidationResult result = ValidationResult
-                    .fromPreflightValidationResult(document.getResult());
-            return new ValidationReport(docMd, ValidationMetadata.fromValues(
-                    PdfaFlavour.PDFA_1_B, result));
+        try (PreflightParser parser = new PreflightParser(source)) {
+            parser.parse();
+            // Extract the document metadata from the parser
+            DocumentMetadata docMd = Metadata.fromPdfBoxDocInfo(parser
+                    .getPDDocument());
+            // Try with resource for the parser Preflight document
+            try (PreflightDocument document = parser.getPreflightDocument()) {
+                // Request validation
+                document.validate();
+                ValidationResult result = ValidationResult
+                        .fromPreflightValidationResult(document.getResult());
+                return new ValidationReport(docMd, ValidationMetadata.fromValues(
+                        PdfaFlavour.PDFA_1_B, result));
+            }
         }
     }
 }
