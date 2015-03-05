@@ -128,10 +128,22 @@ public class Metadata {
      * @param image
      * @return a ImageMetadata object converted from PDImageXObject
      */
-    private final static ImageMetadata convertPDImageXObject(PDImageXObject image) {
+    private final static ImageMetadata convertPDImageXObject(PDImageXObject image) throws IOException {
         ImageMetadata.Builder builder = new ImageMetadata.Builder();
         builder.width(image.getWidth());
         builder.height(image.getHeight());
+        builder.bitsPerComponent(image.getBitsPerComponent());
+
+        //TODO: please review this code carefully
+        if (image.getSoftMask() != null) {
+            builder.imageMask(true);
+        } else builder.imageMask(false);
+        if (image.getMask() != null) {
+            builder.maskedImage(true);
+        } else builder.maskedImage(false);
+
+        //TODO: pdfbox stores only one color spacein image
+        builder.colorSpace(image.getColorSpace().getName());
         return builder.build();
     }
 
