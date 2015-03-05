@@ -13,7 +13,7 @@ public class ImageMetadata {
     private final int height;
 
     private ImageMetadata() {
-        this(Integer.valueOf(0), Integer.valueOf(0));
+        this(0, 0);
     }
 
     private ImageMetadata(final Integer width, final Integer height) {
@@ -84,7 +84,7 @@ public class ImageMetadata {
          * @return a ImageMetadata instance built from the builder value
          */
         public ImageMetadata build() {
-            return new ImageMetadata(Integer.valueOf(this.width), Integer.valueOf(this.height));
+            return new ImageMetadata(this.width, this.height);
         }
     }
 }
