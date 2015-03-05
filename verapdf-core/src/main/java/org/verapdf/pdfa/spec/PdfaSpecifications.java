@@ -17,7 +17,7 @@ import org.verapdf.pdfa.spec.SectionImpl.IdImpl;
  *
  */
 public final class PdfaSpecifications {
-	final static String NONE = "none";
+    final static String NONE = "none";
     final static String PDFA_STRING_PREFIX = "PDF/A-"; //$NON-NLS-1$
     final static String ISO = "ISO"; //$NON-NLS-1$
     final static String ISO_PREFIX = ISO + " "; //$NON-NLS-1$
@@ -122,11 +122,12 @@ public final class PdfaSpecifications {
                 OPTIONAL_CONTENT });
         List<String> graphicsNames = Arrays.asList(new String[] { GENERAL,
                 OUTPUT_INTENT, COLOUR_SPACES, IMAGES, FORM_XOBJECTS,
-                REFERENCE_XOBJECTS, POSTSCRIPT_XOBJECTS, EXTENDED_GRAPHICS, REDERING_INTENTS,
-                CONTENT_STREAMS, EMBEDDED_FILES, IMPLEMENTATION_LIMITS,
-                OPTIONAL_CONTENT });
+                REFERENCE_XOBJECTS, POSTSCRIPT_XOBJECTS, EXTENDED_GRAPHICS,
+                REDERING_INTENTS, CONTENT_STREAMS, EMBEDDED_FILES,
+                IMPLEMENTATION_LIMITS, OPTIONAL_CONTENT });
         List<String> colourSpaceNames = Arrays.asList(new String[] { GENERAL,
-                ICC_COLOUR_SPACES, UNCALIBRATED_COLOUR_SPACES, SEPARATION_COLOUR_SPACES });
+                ICC_COLOUR_SPACES, UNCALIBRATED_COLOUR_SPACES,
+                SEPARATION_COLOUR_SPACES });
         List<String> fontsNames = Arrays.asList(new String[] { GENERAL,
                 FONT_TYPES, COMPOSITE_FONTS, EMBEDDED_FONTS, FONT_SUBSETS,
                 FONT_METRICS, CHARACTER_ENCODING, UNICODE_MAPS });
@@ -140,12 +141,12 @@ public final class PdfaSpecifications {
                 FILTERS, EMBEDDED_FILES, IMPLEMENTATION_LIMITS,
                 OPTIONAL_CONTENT });
         List<String> metadataNames = Arrays.asList(new String[] { GENERAL,
-                PROPERTIES, DID, NORMALIZATION, XMP_HEADER,
-                FILE_IDENTIFIERS, FILE_PROVENANCE, EXTENSION_SCHEMAS, VALIDATION,
-                FONT_METADATA, VERSION_CONFORMANCE });
+                PROPERTIES, DID, NORMALIZATION, XMP_HEADER, FILE_IDENTIFIERS,
+                FILE_PROVENANCE, EXTENSION_SCHEMAS, VALIDATION, FONT_METADATA,
+                VERSION_CONFORMANCE });
         List<String> structureNames = Arrays.asList(new String[] { GENERAL,
-                TAGGED_PDF, ARTIFACTS, NATURAL_LANG, ALTERNATE_DESCRIPTIONS, NONTEXT_ANNOTATIONS,
-                REPLACEMENT_TEXT, EXPANSIONS });
+                TAGGED_PDF, ARTIFACTS, NATURAL_LANG, ALTERNATE_DESCRIPTIONS,
+                NONTEXT_ANNOTATIONS, REPLACEMENT_TEXT, EXPANSIONS });
         List<String> taggedNames = Arrays.asList(new String[] { GENERAL, MID });
         List<String> artifactNames = Arrays.asList(new String[] { GENERAL,
                 WORD_BREAKS, STRUCUTRE_HIERARCHY, STRUCUTRE_TYPES });
@@ -155,56 +156,75 @@ public final class PdfaSpecifications {
         PART_1_SECTION = builder.build();
         createChildren(PART_1_SECTION, level1names);
         for (Section parent : PART_1_SECTION.getSubSections()) {
-            if (parent.getId().equals(IdImpl.fromValues(1, PART_1_SECTION.getId()))) {
+            if (parent.getId().equals(
+                    IdImpl.fromValues(1, PART_1_SECTION.getId()))) {
                 createChildren(parent, fileNames);
-            } else if (parent.getId().equals(IdImpl.fromValues(2, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(2, PART_1_SECTION.getId()))) {
                 createChildren(parent, graphicsNames);
                 for (Section graphicsParent : parent.getSubSections()) {
-                    if (graphicsParent.getId().equals(IdImpl.fromValues(3, parent.getId()))) {
+                    if (graphicsParent.getId().equals(
+                            IdImpl.fromValues(3, parent.getId()))) {
                         createChildren(parent, colourSpaceNames);
                     }
                 }
-            } else if (parent.getId().equals(IdImpl.fromValues(3, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(3, PART_1_SECTION.getId()))) {
                 createChildren(parent, fontsNames);
                 for (Section fontsParent : parent.getSubSections()) {
-                    if (fontsParent.getId().equals(IdImpl.fromValues(3, parent.getId()))) {
+                    if (fontsParent.getId().equals(
+                            IdImpl.fromValues(3, parent.getId()))) {
                         createChildren(parent, compositeFontNames);
                     }
                 }
-            } else if (parent.getId().equals(IdImpl.fromValues(5, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(5, PART_1_SECTION.getId()))) {
                 createChildren(parent, annotationNames);
-            } else if (parent.getId().equals(IdImpl.fromValues(6, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(6, PART_1_SECTION.getId()))) {
                 createChildren(parent, actionNames);
-            } else if (parent.getId().equals(IdImpl.fromValues(7, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(7, PART_1_SECTION.getId()))) {
                 createChildren(parent, metadataNames);
-            } else if (parent.getId().equals(IdImpl.fromValues(8, PART_1_SECTION.getId()))) {
+            } else if (parent.getId().equals(
+                    IdImpl.fromValues(8, PART_1_SECTION.getId()))) {
                 createChildren(parent, structureNames);
                 for (Section structureParent : parent.getSubSections()) {
-                    if (structureParent.getId().equals(IdImpl.fromValues(2, parent.getId()))) {
+                    if (structureParent.getId().equals(
+                            IdImpl.fromValues(2, parent.getId()))) {
                         createChildren(parent, taggedNames);
-                    } else if (structureParent.getId().equals(IdImpl.fromValues(1, parent.getId()))) {
+                    } else if (structureParent.getId().equals(
+                            IdImpl.fromValues(1, parent.getId()))) {
                         createChildren(parent, artifactNames);
                     }
                 }
-            } 
+            }
         }
     }
     private final static Map<String, PdfaFlavour> FLAVOUR_LOOKUP;
     static {
-    	FLAVOUR_LOOKUP = new HashMap<>();
-    	FLAVOUR_LOOKUP.put(NONE, PdfaFlavour.NONE);
-    	FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_1_A);
-    	FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_1_B);
-    	FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_2_A);
-    	FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_2_B);
-    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_A_CODE, PdfaFlavour.PDFA_3_A);
-    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_B_CODE, PdfaFlavour.PDFA_3_B);
-    	FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_U_CODE, PdfaFlavour.PDFA_3_U);
+        FLAVOUR_LOOKUP = new HashMap<>();
+        FLAVOUR_LOOKUP.put(NONE, PdfaFlavour.NONE);
+        FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_A_CODE,
+                PdfaFlavour.PDFA_1_A);
+        FLAVOUR_LOOKUP.put(ISO_19005_1_PART + LEVEL_B_CODE,
+                PdfaFlavour.PDFA_1_B);
+        FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_A_CODE,
+                PdfaFlavour.PDFA_2_A);
+        FLAVOUR_LOOKUP.put(ISO_19005_2_PART + LEVEL_B_CODE,
+                PdfaFlavour.PDFA_2_B);
+        FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_A_CODE,
+                PdfaFlavour.PDFA_3_A);
+        FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_B_CODE,
+                PdfaFlavour.PDFA_3_B);
+        FLAVOUR_LOOKUP.put(ISO_19005_3_PART + LEVEL_U_CODE,
+                PdfaFlavour.PDFA_3_U);
     }
     private final static Map<PdfaFlavour, PdfaSpecification> SPEC_LOOKUP;
     static {
         SPEC_LOOKUP = new HashMap<>();
-        SPEC_LOOKUP.put(PdfaFlavour.PDFA_1_B, new PdfaSpecificationImpl(PdfaFlavour.PDFA_1_B, PART_1_SECTION));
+        SPEC_LOOKUP.put(PdfaFlavour.PDFA_1_B, new PdfaSpecificationImpl(
+                PdfaFlavour.PDFA_1_B, PART_1_SECTION));
     }
 
     private PdfaSpecifications() {
@@ -219,16 +239,22 @@ public final class PdfaSpecifications {
                     .build();
         }
     }
-    
+
     /**
      * @param flavour
-     * @return the full specifcation object for the flavor
+     * @return the full specification object for the flavour
      */
     public static PdfaSpecification byFlavour(PdfaFlavour flavour) {
         return SPEC_LOOKUP.get(flavour);
     }
-    
+
+    /**
+     * @param flavourString
+     *            a two letter String that denotes a PDF/A flavour, e.g. 1a, 1b,
+     *            2a, 2b, 2u, 3a, 3b, 3u
+     * @return the correct PDF/A flavour based on the passed String
+     */
     public static PdfaFlavour byFlavourString(String flavourString) {
-    	return FLAVOUR_LOOKUP.get(flavourString);
+        return FLAVOUR_LOOKUP.get(flavourString);
     }
 }
