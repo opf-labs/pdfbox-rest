@@ -163,7 +163,7 @@ public class DocumentMetadata {
      */
     @JsonProperty
     public String getTrapped() {
-        return trapped;
+        return this.trapped;
     }
 
     /**
@@ -171,7 +171,7 @@ public class DocumentMetadata {
      */
     @JsonProperty
     public List<FontMetadata> getFonts() {
-        return fonts;
+        return this.fonts;
     }
 
     /**
@@ -179,7 +179,7 @@ public class DocumentMetadata {
      */
     @JsonProperty
     public List<ImageMetadata> getImages() {
-        return images;
+        return this.images;
     }
 
     /**
