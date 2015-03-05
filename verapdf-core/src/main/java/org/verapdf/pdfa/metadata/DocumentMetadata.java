@@ -3,12 +3,13 @@
  */
 package org.verapdf.pdfa.metadata;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Strings;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Class that encapsualtes the PDF Document metadata. TODO: Terminology lesson
@@ -34,27 +35,32 @@ public class DocumentMetadata {
     private final String producer;
     private final float version;
     private final int pageCount;
+    private final String trapped;
+    private final List<FontMetadata> fonts;
+    private final List<ImageMetadata> images;
 
     private DocumentMetadata() {
         this(DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE, 0L,
-                0L, DEFAULT_VALUE, DEFAULT_VALUE, 0.0f, 0);
+                0L, DEFAULT_VALUE, DEFAULT_VALUE, 0.0f, 0, DEFAULT_VALUE, null, null);
     }
 
     private DocumentMetadata(final String title, final String author,
             final String subject, final String keywords,
             final Date creationDate, final Date modificationDate,
             final String creator, final String producer, final float version,
-            final int pageCount) {
+            final int pageCount, final String trapped, final List<FontMetadata> fonts,
+            final List<ImageMetadata> images) {
         this(title, author, subject, keywords, creationDate.getTime(),
                 modificationDate.getTime(), creator, producer, version,
-                pageCount);
+                pageCount, trapped, fonts, images);
     }
 
     private DocumentMetadata(final String title, final String author,
             final String subject, final String keywords,
             final long creationDate, final long modificationDate,
             final String creator, final String producer, final float version,
-            final int pageCount) {
+            final int pageCount, final String trapped, final List<FontMetadata> fonts,
+            final List<ImageMetadata> images) {
         this.title = title;
         this.author = author;
         this.subject = subject;
@@ -65,6 +71,9 @@ public class DocumentMetadata {
         this.producer = producer;
         this.version = version;
         this.pageCount = pageCount;
+        this.trapped = trapped;
+        this.fonts = fonts;
+        this.images = images;
     }
 
     /**
@@ -150,6 +159,30 @@ public class DocumentMetadata {
     }
 
     /**
+     * @return the trapped
+     */
+    @JsonProperty
+    public String getTrapped() {
+        return trapped;
+    }
+
+    /**
+     * @return the fonts
+     */
+    @JsonProperty
+    public List<FontMetadata> getFonts() {
+        return fonts;
+    }
+
+    /**
+     * @return the images
+     */
+    @JsonProperty
+    public List<ImageMetadata> getImages() {
+        return images;
+    }
+
+    /**
      * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>.</p>
      *
      */
@@ -165,10 +198,13 @@ public class DocumentMetadata {
         private String producer;
         private float version;
         private int pageCount;
+        private String trapped;
+        private List<FontMetadata> fonts;
+        private List<ImageMetadata> images;
 
         /**
-	 * 
-	 */
+	    *
+	    */
         public Builder() {
             this(DocumentMetadata.DEFAULT_INSTANCE);
         }
@@ -187,6 +223,9 @@ public class DocumentMetadata {
             this.producer = docMd.producer;
             this.version = docMd.version;
             this.pageCount = docMd.pageCount;
+            this.trapped = docMd.trapped;
+            this.fonts = docMd.fonts;
+            this.images = docMd.images;
         }
 
         /**
@@ -321,12 +360,40 @@ public class DocumentMetadata {
         }
 
         /**
+         * @param trapped
+         * @return the builder instance for chaining
+         */
+        public Builder trapped(final String trapped) {
+            this.trapped = trapped;
+            return this;
+        }
+
+        /**
+         * @param fonts
+         * @return the builder instance for chaining
+         */
+        public Builder fonts(final List<FontMetadata> fonts) {
+            this.fonts = fonts;
+            return this;
+        }
+
+        /**
+         * @param images
+         * @return the builder instance for chaining
+         */
+        public Builder images(final List<ImageMetadata> images) {
+            this.images = images;
+            return this;
+        }
+
+        /**
          * @return a DocumentMetadata instance built from the builder value
          */
         public DocumentMetadata build() {
             return new DocumentMetadata(this.title, this.author, this.subject,
                     this.keywords, this.creationDate, this.modificationDate,
-                    this.creator, this.producer, this.version, this.pageCount);
+                    this.creator, this.producer, this.version, this.pageCount,
+                    this.trapped, this.fonts, this.images);
         }
     }
 }
