@@ -149,13 +149,14 @@ public class ValidationResult {
 			throws IOException {
 		DataSource source = new ByteArrayDataSource(pdfStream);
 		Log.getLog().warn(source.getContentType());
-		PreflightParser parser = new PreflightParser(source);
-		parser.parse();
-		try (PreflightDocument document = parser.getPreflightDocument()) {
-			document.validate();
-			ValidationResult result = fromPreflightValidationResult(document
-					.getResult());
-			return result;
+		try (PreflightParser parser = new PreflightParser(source)) {
+	        parser.parse();
+	        try (PreflightDocument document = parser.getPreflightDocument()) {
+	            document.validate();
+	            ValidationResult result = fromPreflightValidationResult(document
+	                    .getResult());
+	            return result;
+	        }
 		}
 	}
 }
