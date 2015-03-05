@@ -13,12 +13,12 @@ public class ImageMetadata {
     private final int height;
 
     private ImageMetadata() {
-        this(0, 0);
+        this(Integer.valueOf(0), Integer.valueOf(0));
     }
 
     private ImageMetadata(final Integer width, final Integer height) {
-        this.width = width;
-        this.height = height;
+        this.width = width.intValue();
+        this.height = height.intValue();
     }
 
     /**
@@ -26,7 +26,7 @@ public class ImageMetadata {
      */
     @JsonProperty
     public int getWidth() {
-        return width;
+        return this.width;
     }
 
     /**
@@ -34,7 +34,7 @@ public class ImageMetadata {
      */
     @JsonProperty
     public int getHeight() {
-        return height;
+        return this.height;
     }
 
     /**
@@ -84,7 +84,7 @@ public class ImageMetadata {
          * @return a ImageMetadata instance built from the builder value
          */
         public ImageMetadata build() {
-            return new ImageMetadata(this.width, this.height);
+            return new ImageMetadata(Integer.valueOf(this.width), Integer.valueOf(this.height));
         }
     }
 }

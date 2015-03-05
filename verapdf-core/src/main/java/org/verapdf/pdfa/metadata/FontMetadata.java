@@ -35,7 +35,7 @@ public class FontMetadata {
      */
     @JsonProperty
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -57,7 +57,6 @@ public class FontMetadata {
 
         /**
          * @param fontMd
-         * @return the builder instance for chaining
          */
         public Builder(FontMetadata fontMd) {
             this.subtype = fontMd.subtype;
