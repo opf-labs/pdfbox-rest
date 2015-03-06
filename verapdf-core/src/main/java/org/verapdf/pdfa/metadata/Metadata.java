@@ -3,6 +3,7 @@
  */
 package org.verapdf.pdfa.metadata;
 
+import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
@@ -83,8 +84,17 @@ public class Metadata {
      */
     private final static FontMetadata convertPDFont(PDFont font) {
         FontMetadata.Builder builder = new FontMetadata.Builder();
-        builder.subtype(font.getSubType());
-        builder.name(font.getName());
+        builder.subtype(font.getCOSObject().getNameAsString(COSName.SUBTYPE));
+        builder.name(font.getCOSObject().getNameAsString(COSName.NAME));
+        builder.baseName(font.getCOSObject().getNameAsString(COSName.BASE_FONT));
+        builder.firstChar(font.getCOSObject().getInt(COSName.FIRST_CHAR));
+        builder.lastChar(font.getCOSObject().getInt(COSName.LAST_CHAR));
+
+        //TODO: some secure checks required
+        COSArray widthsArray = (COSArray) font.getCOSObject().getItem(COSName.WIDTHS);
+        builder.widths((List<Integer>) widthsArray.toList());
+
+        builder.embedded(font.isEmbedded());
         return builder.build();
     }
 
@@ -118,10 +128,22 @@ public class Metadata {
      * @param image
      * @return a ImageMetadata object converted from PDImageXObject
      */
-    private final static ImageMetadata convertPDImageXObject(PDImageXObject image) {
+    private final static ImageMetadata convertPDImageXObject(PDImageXObject image) throws IOException {
         ImageMetadata.Builder builder = new ImageMetadata.Builder();
         builder.width(image.getWidth());
         builder.height(image.getHeight());
+        builder.bitsPerComponent(image.getBitsPerComponent());
+
+        //TODO: please review this code carefully
+        if (image.getSoftMask() != null) {
+            builder.imageMask(true);
+        } else builder.imageMask(false);
+        if (image.getMask() != null) {
+            builder.maskedImage(true);
+        } else builder.maskedImage(false);
+
+        //TODO: pdfbox stores only one color spacein image
+        builder.colorSpace(image.getColorSpace().getName());
         return builder.build();
     }
 
