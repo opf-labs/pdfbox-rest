@@ -92,7 +92,9 @@ public class Metadata {
 
         //TODO: some secure checks required
         COSArray widthsArray = (COSArray) font.getCOSObject().getItem(COSName.WIDTHS);
-        builder.widths((List<Integer>) widthsArray.toList());
+        // FIXME: This isn't cutting it, the unchecked cast isn't safe as this is a list of COSIntegers
+        // Am commenting out for now
+        // builder.widths((List<Integer>) widthsArray.toList());
 
         builder.embedded(font.isEmbedded());
         return builder.build();
