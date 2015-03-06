@@ -3,10 +3,24 @@ body {
 }
 
 .jumbotron {
-	background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+	background: #d0404e;
 	padding: 30px 0;
 	color: white;
 }
+
+.jumbotron img {
+  float: left;
+  width: 200px;
+  background: white;
+  padding: 5px;
+  margin: 20px 10px 0 0;
+}
+
+.jumbotron h1 .jumbotron p {
+  position: relative;
+  left: 10px;
+}
+
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
