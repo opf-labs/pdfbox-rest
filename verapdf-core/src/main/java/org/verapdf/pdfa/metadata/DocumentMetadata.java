@@ -182,6 +182,8 @@ public class DocumentMetadata {
      * @return the images
      */
     @JsonProperty
+    @JacksonXmlElementWrapper(localName = "images")
+    @JacksonXmlProperty(localName = "image")
     public List<ImageMetadata> getImages() {
         return this.images;
     }
