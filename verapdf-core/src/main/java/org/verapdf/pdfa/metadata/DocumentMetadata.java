@@ -3,13 +3,15 @@
  */
 package org.verapdf.pdfa.metadata;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.Strings;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.google.common.base.Strings;
 
 /**
  * Class that encapsualtes the PDF Document metadata. TODO: Terminology lesson
@@ -170,6 +172,8 @@ public class DocumentMetadata {
      * @return the fonts
      */
     @JsonProperty
+    @JacksonXmlElementWrapper(localName = "fonts")
+    @JacksonXmlProperty(localName = "font")
     public List<FontMetadata> getFonts() {
         return this.fonts;
     }
