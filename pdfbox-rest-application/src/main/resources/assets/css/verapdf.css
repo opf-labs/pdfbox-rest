@@ -3,16 +3,13 @@ body {
 }
 
 .jumbotron {
-	background: #d0404e;
+	background: #ddd;
 	padding: 30px 0;
-	color: white;
 }
 
 .jumbotron img {
   float: left;
   width: 200px;
-  background: white;
-  padding: 5px;
   margin: 20px 10px 0 0;
 }
 

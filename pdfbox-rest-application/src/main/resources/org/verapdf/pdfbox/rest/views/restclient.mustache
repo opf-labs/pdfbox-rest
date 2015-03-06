@@ -27,21 +27,15 @@
         <div class="jumbotron" role="header">
             <div class="container theme-showcase" role="header">
                 <img src="/img/veraPDF-logo-400.png">
-                <h1>PDF Box PDF/A Validation</h1>
+                <h1>PDFBox PDF/A Validation</h1>
                 <p>
-                    Client for prototype REST PDFBox PDF/A-1b validation web service.
+                    Prototype PDFBox PDF/A-1b validation web service via REST
                 </p>
             </div>
         </div>
     <div class="container theme-showcase" role="main">
         <h4>
-            Use the green Browse button below to upload a PDF file,
-            the generated report will appear below. The REST service
-            currently serves <a href="http://www.w3schools.com/html/">HTML</a>,
-            <a href="http://www.w3schools.com/xml/">XML</a>, &amp;
-            <a href="http://www.json.org/">JSON</a> representations.
-            You can switch between them using the buttons,
-            but currently that repeats the service call.
+            Select a PDF document to upload it for validation; the generated report will appear below. This service currently serves HTML, XML, & JSON representations. NOTE: changing the representation currently repeats the validation process.
         </h4>
         <form enctype="multipart/form-data">
             <div class="input-group">
@@ -53,14 +47,14 @@
                 <input id="filename" type="text" class="form-control" placeholder="Select a file to upload." readonly />
             </div>
             <div class="input-group voffset2">
-                <span class="input-group-addon">JS SHA1: </span>
+                <span class="input-group-addon">JS SHA-1: </span>
                 <input id="digest" type="text" class="form-control" placeholder="Javascript calculated hash of file." readonly />
             </div>
         </form>
         <div class="list-group voffset2">
             <a href="#" class="list-group-item active">
                 <h2 class="list-group-item-heading">PDF/A Validation Report</h2>
-                <p class="list-group-item-text">The results of preflight validation will be shown below, this is a prototype so no guarantees.</p>
+                <p class="list-group-item-text">Validation results are shown below. NOTE: This service is a prototype only; no guarantees are offered!</p>
                 <div id="type-requested">
                     <h5>Choose report representation format:</h5>
                     <button type="button" class="btn btn-success" name="html">HTML</button>
